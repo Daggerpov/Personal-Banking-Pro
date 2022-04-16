@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class main {
     public static void main(String[] a) {
-        LoginFrame frame = new LoginFrame();
+        LoginScreen frame = new LoginScreen();
         frame.setTitle("Login");
         frame.setVisible(true);
         frame.setBounds(10, 10, 600, 600);
