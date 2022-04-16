@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 public class Login {
     public static void main(String[] a) {
         LoginFrame frame = new LoginFrame();
-        frame.setTitle("Login Form");
+        frame.setTitle("Login");
         frame.setVisible(true);
-        frame.setBounds(10, 10, 570, 600);
+        frame.setBounds(10, 10, 600, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
 

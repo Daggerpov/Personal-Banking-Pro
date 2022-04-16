@@ -3,18 +3,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginFrame extends JFrame implements ActionListener {
+public class RegisterationFrame extends JFrame implements ActionListener {
 
 	Container container = getContentPane();
-	JLabel userLabel = new JLabel("USERNAME:");
-	JLabel passwordLabel = new JLabel("PASSWORD:");
-	JTextField userTextField = new JTextField();
-	JPasswordField passwordField = new JPasswordField();
-	JButton loginButton = new JButton("LOGIN");
-	JButton resetButton = new JButton("REGISTER");
+    JLabel titleLabel = new JLabel("It;s time to pretend you're a real user with money!");
+	JLabel fNameLabel = new JLabel("What is your full name?");
+	JLabel lNameLabel = new JLabel("What would you like your username to be?");
+	JTextField fNameTextField = new JTextField();
+	JPasswordField lNameField = new JPasswordField();
+    JLabel passwordLabel = new JLabel("Password:");
+    JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
 	JCheckBox showPassword = new JCheckBox("Show Password");
 
-	LoginFrame() {
+	RegisterationFrame() {
 		// Calling methods inside constructor.
 		setLayoutManager();
 		setLocationAndSize();
