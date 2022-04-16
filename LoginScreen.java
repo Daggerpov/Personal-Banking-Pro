@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.registry.Registry;
 
 public class LoginScreen extends JFrame implements ActionListener {
 
@@ -11,6 +12,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 	JTextField userTextField = new JTextField();
 	JPasswordField passwordField = new JPasswordField();
 	JButton loginButton = new JButton("LOGIN");
+	JButton resetButton = new JButton("RESET");
 	JButton registerButton = new JButton("REGISTER");
 	JCheckBox showPassword = new JCheckBox("Show Password");
 
@@ -19,6 +21,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		setLayoutManager();
 		setLocationAndSize();
 		addComponentsToContainer();
+
 		addActionEvent();
 	}
 
@@ -40,10 +43,13 @@ public class LoginScreen extends JFrame implements ActionListener {
 		showPassword.setBounds(275, 250, 150, 30);
 
 		loginButton.setFont(new Font("Serif", Font.PLAIN, 20));
-		loginButton.setBounds(150, 300, 100, 40);
+		loginButton.setBounds(115, 300, 100, 40);
+
+		resetButton.setFont(new Font("Serif", Font.PLAIN, 20));
+		resetButton.setBounds(215, 300, 90, 40);
 
 		registerButton.setFont(new Font("Serif", Font.PLAIN, 20));
-		registerButton.setBounds(250, 300, 130, 40);
+		registerButton.setBounds(310, 300, 120, 40);
 
 	}
 
@@ -55,6 +61,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		container.add(passwordField);
 		container.add(showPassword);
 		container.add(loginButton);
+		container.add(resetButton);
 		container.add(registerButton);
 	}
 
@@ -69,6 +76,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		// Coding Part of LOGIN button
 		if (e.getSource() == loginButton) {
 			String userText;
+			String pwdText;
 			userText = userTextField.getText();
 			String passText = new String(passwordField.getPassword()); // this fixed a deprecation with getText()
 			if (userText.equalsIgnoreCase("Daggerpov") && passText.equalsIgnoreCase("12345")) {
