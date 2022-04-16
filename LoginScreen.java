@@ -19,7 +19,6 @@ public class LoginScreen extends JFrame implements ActionListener {
 		setLayoutManager();
 		setLocationAndSize();
 		addComponentsToContainer();
-
 		addActionEvent();
 	}
 
@@ -61,7 +60,6 @@ public class LoginScreen extends JFrame implements ActionListener {
 		// Coding Part of LOGIN button
 		if (e.getSource() == loginButton) {
 			String userText;
-			String pwdText;
 			userText = userTextField.getText();
 			String passText = new String(passwordField.getPassword()); // this fixed a deprecation with getText()
 			if (userText.equalsIgnoreCase("Daggerpov") && passText.equalsIgnoreCase("12345")) {
