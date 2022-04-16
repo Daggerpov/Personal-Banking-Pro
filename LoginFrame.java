@@ -11,7 +11,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 	JTextField userTextField = new JTextField();
 	JPasswordField passwordField = new JPasswordField();
 	JButton loginButton = new JButton("LOGIN");
-	JButton resetButton = new JButton("REGISTER");
+	JButton registerButton = new JButton("REGISTER");
 	JCheckBox showPassword = new JCheckBox("Show Password");
 
 	LoginFrame() {
@@ -28,13 +28,22 @@ public class LoginFrame extends JFrame implements ActionListener {
 
 	public void setLocationAndSize() {
 		// Setting location and Size of each components using setBounds() method.
-		userLabel.setBounds(175, 150, 100, 30);
+		userLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+		userLabel.setBounds(100, 150, 150, 30);
 		userTextField.setBounds(275, 150, 150, 30);
-		passwordLabel.setBounds(175, 220, 100, 30);
+
+		passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+		passwordLabel.setBounds(100, 220, 150, 30);
 		passwordField.setBounds(275, 220, 150, 30);
+		
+		showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
 		showPassword.setBounds(275, 250, 150, 30);
-		loginButton.setBounds(200, 300, 100, 30);
-		resetButton.setBounds(300, 300, 100, 30);
+
+		loginButton.setFont(new Font("Serif", Font.PLAIN, 20));
+		loginButton.setBounds(150, 300, 100, 40);
+
+		registerButton.setFont(new Font("Serif", Font.PLAIN, 20));
+		registerButton.setBounds(250, 300, 130, 40);
 
 	}
 
@@ -46,7 +55,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		container.add(passwordField);
 		container.add(showPassword);
 		container.add(loginButton);
-		container.add(resetButton);
+		container.add(registerButton);
 	}
 
 	@Override
