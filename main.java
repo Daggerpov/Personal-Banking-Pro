@@ -1,12 +1,17 @@
-// import javax.swing.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-// class gui {
-//     public static void main(String args[]) {
-//         JFrame frame = new JFrame("My First GUI");
-//         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//         frame.setSize(300, 300);
-//         JButton button = new JButton("Press");
-//         frame.getContentPane().add(button); // Adds Button to content pane of frame
-//         frame.setVisible(true);
-//     }
-// }
+public class main {
+    public static void main(String[] a) {
+        LoginFrame frame = new LoginFrame();
+        frame.setTitle("Login");
+        frame.setVisible(true);
+        frame.setBounds(10, 10, 600, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+
+    }
+
+}
