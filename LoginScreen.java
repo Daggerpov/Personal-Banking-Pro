@@ -38,7 +38,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		passwordLabel.setBounds(100, 220, 150, 30);
 		passwordField.setBounds(275, 220, 150, 30);
-		
+
 		showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
 		showPassword.setBounds(275, 250, 150, 30);
 
@@ -102,7 +102,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		// Coding Part of REGISTER button
 		if (e.getSource() == registerButton) {
 			RegistrationScreen frame2 = new RegistrationScreen();
-			frame2.setTitle("Registeration");
+			frame2.setTitle("Registration");
 			frame2.setVisible(true);
 			frame2.setBounds(10, 10, 600, 600);
 			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
