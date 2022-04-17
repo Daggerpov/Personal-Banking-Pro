@@ -49,7 +49,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		resetButton.setBounds(215, 300, 90, 40);
 
 		registerButton.setFont(new Font("Serif", Font.PLAIN, 20));
-		registerButton.setBounds(310, 300, 120, 40);
+		registerButton.setBounds(305, 300, 120, 40);
 
 	}
 
