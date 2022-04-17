@@ -69,6 +69,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 		loginButton.addActionListener(this);
 		resetButton.addActionListener(this);
 		showPassword.addActionListener(this);
+		registerButton.addActionListener(this);
 	}
 
 	@Override
@@ -76,7 +77,6 @@ public class LoginScreen extends JFrame implements ActionListener {
 		// Coding Part of LOGIN button
 		if (e.getSource() == loginButton) {
 			String userText;
-			String pwdText;
 			userText = userTextField.getText();
 			String passText = new String(passwordField.getPassword()); // this fixed a deprecation with getText()
 			if (userText.equalsIgnoreCase("Daggerpov") && passText.equalsIgnoreCase("12345")) {
@@ -98,7 +98,17 @@ public class LoginScreen extends JFrame implements ActionListener {
 			} else {
 				passwordField.setEchoChar('*');
 			}
-
+		}
+		// Coding Part of REGISTER button
+		if (e.getSource() == registerButton) {
+			RegistrationScreen frame2 = new RegistrationScreen();
+			frame2.setTitle("Registeration");
+			frame2.setVisible(true);
+			frame2.setBounds(10, 10, 600, 600);
+			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame2.setVisible(true);
+			this.dispose();
 		}
 	}
 }
