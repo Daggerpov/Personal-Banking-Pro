@@ -1,4 +1,6 @@
+package src.Authentication;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +18,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 	JButton registerButton = new JButton("REGISTER");
 	JCheckBox showPassword = new JCheckBox("Show Password");
 
-	LoginScreen() {
+	public LoginScreen() {
 		// Calling methods inside constructor.
 		setLayoutManager();
 		setLocationAndSize();

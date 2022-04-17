@@ -1,9 +1,10 @@
+package src.Accounts;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CheckingsAccountScreen extends JFrame implements ActionListener {
+public class InvestmentAccountScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JLabel titleLabel = new JLabel("It's time to pretend you're a real user with money!");
@@ -18,7 +19,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    CheckingsAccountScreen() {
+    InvestmentAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
