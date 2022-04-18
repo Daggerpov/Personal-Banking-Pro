@@ -25,7 +25,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        // addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
