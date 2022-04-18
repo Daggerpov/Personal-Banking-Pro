@@ -15,7 +15,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 	JPasswordField passwordField = new JPasswordField();
     JLabel passwordLabel = new JLabel("Password:");
     JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
-	JTextField confirmPasswordTextField = new JTextField();
+	JPasswordField confirmPasswordField = new JPasswordField();
 	JCheckBox showPassword = new JCheckBox("Show Password");
 	JButton setupAccountButton = new JButton("Setup Account");
 
@@ -50,7 +50,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 
 		confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		confirmPasswordLabel.setBounds(10, 260, 200, 40);
-		confirmPasswordTextField.setBounds(175,263,150,30);
+		confirmPasswordField.setBounds(175,263,150,30);
 
 		showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
 		showPassword.setBounds(175, 300, 150, 30);
@@ -71,7 +71,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		container.add(showPassword);
 		container.add(confirmPasswordLabel);
 		container.add(passwordField);
-		container.add(confirmPasswordTextField);
+		container.add(confirmPasswordField);
 		container.add(setupAccountButton);
 	}
 
@@ -81,6 +81,15 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//actions here
+		// Coding Part of showPassword JCheckBox
+		if (e.getSource() == showPassword) {
+			if (showPassword.isSelected()) {
+				passwordField.setEchoChar((char) 0);
+				confirmPasswordField.setEchoChar((char) 0);
+			} else {
+				passwordField.setEchoChar('*');
+				confirmPasswordField.setEchoChar('*');
+			}
+		}
 	}
 }
