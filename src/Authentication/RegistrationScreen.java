@@ -77,11 +77,12 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 
 	public void addActionEvent() {
 		showPassword.addActionListener(this);
+		setupAccountButton.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// Coding Part of showPassword JCheckBox
+		// showPassword JCheckBox logic
 		if (e.getSource() == showPassword) {
 			if (showPassword.isSelected()) {
 				passwordField.setEchoChar((char) 0);
@@ -90,6 +91,18 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 				passwordField.setEchoChar('*');
 				confirmPasswordField.setEchoChar('*');
 			}
+		}
+
+		// SETUP ACCOUNT button logic
+		if (e.getSource() == setupAccountButton) {
+			SetupAccountScreen frame3 = new SetupAccountScreen();
+			frame3.setTitle("Setup Account");
+			frame3.setVisible(true);
+			frame3.setBounds(10, 10, 600, 600);
+			frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame3.setVisible(true);
+			this.dispose();
 		}
 	}
 }

@@ -75,7 +75,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// Coding Part of LOGIN button
+		// LOGIN button logic
 		if (e.getSource() == loginButton) {
 			String userText;
 			userText = userTextField.getText();
@@ -87,12 +87,12 @@ public class LoginScreen extends JFrame implements ActionListener {
 			}
 
 		}
-		// Coding Part of RESET button
+		// RESET button logic
 		if (e.getSource() == resetButton) {
 			userTextField.setText("");
 			passwordField.setText("");
 		}
-		// Coding Part of showPassword JCheckBox
+		// showPassword JCheckBox logic
 		if (e.getSource() == showPassword) {
 			if (showPassword.isSelected()) {
 				passwordField.setEchoChar((char) 0);
@@ -100,7 +100,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 				passwordField.setEchoChar('*');
 			}
 		}
-		// Coding Part of REGISTER button
+		// REGISTER button logic
 		if (e.getSource() == registerButton) {
 			RegistrationScreen frame2 = new RegistrationScreen();
 			frame2.setTitle("Registration");
