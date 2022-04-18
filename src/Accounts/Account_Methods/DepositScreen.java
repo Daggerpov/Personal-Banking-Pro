@@ -1,5 +1,8 @@
 package src.Accounts.Account_Methods;
 import javax.swing.*;
+
+import src.GeneralScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +18,7 @@ public class DepositScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -38,12 +41,22 @@ public class DepositScreen extends JFrame implements ActionListener {
         container.add(confirmButton);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    public void addActionEvent() {
+       confirmButton.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // CONFIRM button logic
+		if (e.getSource() == confirmButton) {
+			GeneralScreen frame = new GeneralScreen();
+			frame.setTitle("General");
+			frame.setVisible(true);
+			frame.setBounds(10, 10, 600, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
+			this.dispose();
+		}
     }
 }
