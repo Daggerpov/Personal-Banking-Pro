@@ -7,17 +7,15 @@ import java.awt.event.ActionListener;
 public class ETransferScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel titleLabel = new JLabel("It's time to pretend you're a real user with money!");
-    JLabel fNameLabel = new JLabel("What is your full name?");
-    JLabel usernameLabel = new JLabel("What would you like your username to be?");
-    JTextField fNameTextField = new JTextField();
-    JTextField usernameTextField = new JTextField();
-    JPasswordField passwordField = new JPasswordField();
-    JLabel passwordLabel = new JLabel("Password:");
-    JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
-    JTextField confirmPasswordTextField = new JTextField();
-    JCheckBox showPassword = new JCheckBox("Show Password");
-    JButton setupAccountButton = new JButton("Setup Account");
+    JButton backButton = new JButton("Back");
+    JLabel chooseContactLabel = new JLabel("Choose Contact");
+    JLabel selectAccountLabel = new JLabel("Select Account");
+    JCheckBox box1 = new JCheckBox("Checkings");
+    JCheckBox box2 = new JCheckBox("Savings");
+    JLabel amountJLabel = new JLabel("Enter Amount:");
+    JTextField amounTextField = new JTextField();
+    JButton clearButton = new JButton("Clear");
+    JButton confirmButton = new JButton("Confirm");
 
     ETransferScreen() {
         // Calling methods inside constructor.
@@ -33,30 +31,24 @@ public class ETransferScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
-        titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        titleLabel.setBounds(85, 20, 600, 30);
+        backButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        backButton.setBounds(225, 350, 150, 40);
 
-        fNameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        fNameLabel.setBounds(10, 80, 500, 30);
-        fNameTextField.setBounds(225, 80, 150, 30);
+        chooseContactLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        selectAccountLabel.setBounds(85, 20, 600, 30);
 
-        usernameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        usernameLabel.setBounds(10, 140, 500, 30);
-        usernameTextField.setBounds(375, 140, 150, 30);
+        box1.setBounds(110, 200, 150, 30);
+        box2.setBounds(110, 200, 150, 30);
 
-        passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        passwordLabel.setBounds(10, 200, 100, 30);
-        passwordField.setBounds(110, 200, 150, 30);
+        amountJLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        amountJLabel.setBounds(10, 80, 500, 30);
+        amounTextField.setBounds(225, 80, 150, 30);
 
-        confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        confirmPasswordLabel.setBounds(10, 260, 200, 40);
-        confirmPasswordTextField.setBounds(175, 263, 150, 30);
+        clearButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        clearButton.setBounds(225, 350, 150, 40);
 
-        showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
-        showPassword.setBounds(175, 300, 150, 30);
-
-        setupAccountButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        setupAccountButton.setBounds(225, 350, 150, 40);
+        confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        confirmButton.setBounds(225, 350, 150, 40);
 
     }
 

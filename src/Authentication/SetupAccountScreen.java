@@ -50,7 +50,6 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         investmentBox.setBounds(110, 200, 150, 30);
 
 
-
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
         nextButton.setBounds(10, 500, 50, 40);
 

@@ -1,8 +1,6 @@
 package src;
 import javax.swing.*;
-
 import src.Authentication.LoginScreen;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
