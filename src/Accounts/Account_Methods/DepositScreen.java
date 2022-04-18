@@ -19,7 +19,7 @@ public class DepositScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    DepositScreen() {
+    public DepositScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

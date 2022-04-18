@@ -19,7 +19,7 @@ public class SellSharesScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    SellSharesScreen() {
+    public SellSharesScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

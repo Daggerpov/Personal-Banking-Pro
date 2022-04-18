@@ -12,7 +12,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton visitInvestmentsButton = new JButton("Investments");
     JButton settingsButton = new JButton("Settings");
 
-    GeneralScreen() {
+    // all of these constructors (as can be seen in most files) need to be 
+    // set to public so they're accessible by importing them to other files
+    public GeneralScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

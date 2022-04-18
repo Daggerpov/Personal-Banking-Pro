@@ -1,5 +1,8 @@
 package src.Authentication;
 import javax.swing.*;
+
+import src.GeneralScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,12 +24,12 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JTextField investmentsTextField = new JTextField();
     JButton nextButton = new JButton("Next");
 
-    SetupAccountScreen() {
+    public SetupAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -73,12 +76,22 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         container.add(nextButton);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    public void addActionEvent() {
+       nextButton.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // NEXT button logic
+        if (e.getSource() == nextButton) {
+            GeneralScreen frame4 = new GeneralScreen();
+            frame4.setTitle("General");
+            frame4.setVisible(true);
+            frame4.setBounds(10, 10, 600, 600);
+            frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame4.setVisible(true);
+            this.dispose();
+        }
     }
 }

@@ -19,7 +19,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    ETransferScreen() {
+    public ETransferScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

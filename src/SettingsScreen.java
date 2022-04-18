@@ -15,7 +15,7 @@ public class SettingsScreen extends JFrame implements ActionListener {
     JLabel messageLabel = new JLabel("Theme will change upon pressing back");
     JButton deleteAccountButton = new JButton("Delete Account");
 
-    SettingsScreen() {
+    public SettingsScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
