@@ -20,7 +20,7 @@ public class SettingsScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        addActionEvent();
+        //addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -51,22 +51,18 @@ public class SettingsScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
-        container.add(titleLabel);
-        container.add(passwordLabel);
-        container.add(fNameLabel);
-        container.add(usernameLabel);
-        container.add(fNameTextField);
-        container.add(usernameTextField);
-        container.add(showPassword);
-        container.add(confirmPasswordLabel);
-        container.add(passwordField);
-        container.add(confirmPasswordTextField);
-        container.add(setupAccountButton);
+        container.add(settingsLabel);
+        container.add(themeLabel);
+        container.add(theme1Box);
+        container.add(theme2Box);
+        container.add(theme3Box);
+        container.add(messageLabel);
+        container.add(deleteAccountButton);
     }
 
-    public void addActionEvent() {
-        showPassword.addActionListener(this);
-    }
+    //public void addActionEvent() {
+    //    showPassword.addActionListener(this);
+    //}
 
     @Override
     public void actionPerformed(ActionEvent e) {
