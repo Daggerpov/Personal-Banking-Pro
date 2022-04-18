@@ -1,4 +1,5 @@
 package src;
+import javax.security.auth.callback.NameCallback;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        addActionEvent();
+        //addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -54,22 +55,20 @@ public class ETransferScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
-        container.add(titleLabel);
-        container.add(passwordLabel);
-        container.add(fNameLabel);
-        container.add(usernameLabel);
-        container.add(fNameTextField);
-        container.add(usernameTextField);
-        container.add(showPassword);
-        container.add(confirmPasswordLabel);
-        container.add(passwordField);
-        container.add(confirmPasswordTextField);
-        container.add(setupAccountButton);
+        container.add(backButton);
+        container.add(chooseContactLabel);
+        container.add(selectAccountLabel);
+        container.add(box1);
+        container.add(box2);
+        container.add(amountJLabel);
+        container.add(amounTextField);
+        container.add(clearButton);
+        container.add(confirmButton);
     }
 
-    public void addActionEvent() {
-        showPassword.addActionListener(this);
-    }
+    //public void addActionEvent() {
+    //    showPassword.addActionListener(this);
+    //}
 
     @Override
     public void actionPerformed(ActionEvent e) {
