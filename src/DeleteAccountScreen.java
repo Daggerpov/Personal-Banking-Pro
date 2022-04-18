@@ -12,7 +12,7 @@ public class DeleteAccountScreen extends JFrame implements ActionListener {
     JButton backButton = new JButton("Back");
     JButton confirmButton = new JButton("Confirm");
 
-    DeleteAccountScreen() {
+    public DeleteAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

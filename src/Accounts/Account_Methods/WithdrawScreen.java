@@ -19,7 +19,7 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    WithdrawScreen() {
+    public WithdrawScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

@@ -19,7 +19,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton setupAccountButton = new JButton("Setup Account");
 
-    CheckingsAccountScreen() {
+    public CheckingsAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

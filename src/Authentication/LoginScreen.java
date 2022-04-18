@@ -1,10 +1,10 @@
 package src.Authentication;
+
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.rmi.registry.Registry;
 
 public class LoginScreen extends JFrame implements ActionListener {
 
@@ -76,7 +76,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// Coding Part of LOGIN button
+		// LOGIN button logic
 		if (e.getSource() == loginButton) {
 			String userText;
 			userText = userTextField.getText();
@@ -88,12 +88,12 @@ public class LoginScreen extends JFrame implements ActionListener {
 			}
 
 		}
-		// Coding Part of RESET button
+		// RESET button logic
 		if (e.getSource() == resetButton) {
 			userTextField.setText("");
 			passwordField.setText("");
 		}
-		// Coding Part of showPassword JCheckBox
+		// showPassword JCheckBox logic
 		if (e.getSource() == showPassword) {
 			if (showPassword.isSelected()) {
 				passwordField.setEchoChar((char) 0);
@@ -101,15 +101,15 @@ public class LoginScreen extends JFrame implements ActionListener {
 				passwordField.setEchoChar('*');
 			}
 		}
-		// Coding Part of REGISTER button
+		// REGISTER button logic
 		if (e.getSource() == registerButton) {
-			RegistrationScreen frame2 = new RegistrationScreen();
-			frame2.setTitle("Registration");
-			frame2.setVisible(true);
-			frame2.setBounds(10, 10, 600, 600);
-			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame2.setVisible(true);
+			RegistrationScreen frame = new RegistrationScreen();
+			frame.setTitle("Registration");
+			frame.setVisible(true);
+			frame.setBounds(10, 10, 600, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
 			this.dispose();
 		}
 	}

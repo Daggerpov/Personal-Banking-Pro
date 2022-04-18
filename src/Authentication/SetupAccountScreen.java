@@ -1,5 +1,9 @@
 package src.Authentication;
+
 import javax.swing.*;
+
+import src.GeneralScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,12 +25,12 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JTextField investmentsTextField = new JTextField();
     JButton nextButton = new JButton("Next");
 
-    SetupAccountScreen() {
+    public SetupAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -39,7 +43,6 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         savingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsLabel.setBounds(10, 50, 500, 30);
         savingsBox.setBounds(225, 50, 150, 30);
-        
 
         checkingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         checkingsLabel.setBounds(10, 140, 500, 30);
@@ -48,7 +51,6 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         investmentLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentLabel.setBounds(10, 200, 100, 30);
         investmentBox.setBounds(110, 200, 150, 30);
-
 
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
         nextButton.setBounds(10, 500, 50, 40);
@@ -72,12 +74,22 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         container.add(nextButton);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    public void addActionEvent() {
+        nextButton.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // NEXT button logic
+        if (e.getSource() == nextButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
     }
 }

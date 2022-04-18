@@ -17,7 +17,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     JButton clearButton = new JButton("Clear");
     JButton confirmButton = new JButton("Confirm");
 
-    ETransferScreen() {
+    public ETransferScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
