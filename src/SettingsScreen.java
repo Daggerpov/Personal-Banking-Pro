@@ -7,17 +7,13 @@ import java.awt.event.ActionListener;
 public class SettingsScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel titleLabel = new JLabel("It's time to pretend you're a real user with money!");
-    JLabel fNameLabel = new JLabel("What is your full name?");
-    JLabel usernameLabel = new JLabel("What would you like your username to be?");
-    JTextField fNameTextField = new JTextField();
-    JTextField usernameTextField = new JTextField();
-    JPasswordField passwordField = new JPasswordField();
-    JLabel passwordLabel = new JLabel("Password:");
-    JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
-    JTextField confirmPasswordTextField = new JTextField();
-    JCheckBox showPassword = new JCheckBox("Show Password");
-    JButton setupAccountButton = new JButton("Setup Account");
+    JLabel settingsLabel = new JLabel("Settings");
+    JLabel themeLabel = new JLabel("Select a Theme:");
+    JCheckBox theme1Box = new JCheckBox("Show Password");
+    JCheckBox theme2Box = new JCheckBox("Show Password");
+    JCheckBox theme3Box = new JCheckBox("Show Password");
+    JLabel messageLabel = new JLabel("Theme will change upon pressing back");
+    JButton deleteAccountButton = new JButton("Delete Account");
 
     SettingsScreen() {
         // Calling methods inside constructor.
@@ -33,30 +29,23 @@ public class SettingsScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
-        titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        titleLabel.setBounds(85, 20, 600, 30);
+        settingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        settingsLabel.setBounds(85, 20, 600, 30);
 
-        fNameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        fNameLabel.setBounds(10, 80, 500, 30);
-        fNameTextField.setBounds(225, 80, 150, 30);
+        themeLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        themeLabel.setBounds(10, 80, 500, 30);
 
-        usernameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        usernameLabel.setBounds(10, 140, 500, 30);
-        usernameTextField.setBounds(375, 140, 150, 30);
+        theme1Box.setBounds(10, 140, 500, 30);
 
-        passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        passwordLabel.setBounds(10, 200, 100, 30);
-        passwordField.setBounds(110, 200, 150, 30);
+        theme2Box.setBounds(10, 200, 100, 30);
 
-        confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        confirmPasswordLabel.setBounds(10, 260, 200, 40);
-        confirmPasswordTextField.setBounds(175, 263, 150, 30);
+        theme3Box.setBounds(175, 263, 150, 30);
 
-        showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
-        showPassword.setBounds(175, 300, 150, 30);
+        messageLabel.setFont(new Font("Serif", Font.PLAIN, 16));
+        messageLabel.setBounds(175, 300, 150, 30);
 
-        setupAccountButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        setupAccountButton.setBounds(225, 350, 150, 40);
+        deleteAccountButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        deleteAccountButton.setBounds(225, 350, 150, 40);
 
     }
 
