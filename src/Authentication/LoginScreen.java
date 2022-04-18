@@ -1,4 +1,5 @@
 package src.Authentication;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -102,13 +103,13 @@ public class LoginScreen extends JFrame implements ActionListener {
 		}
 		// REGISTER button logic
 		if (e.getSource() == registerButton) {
-			RegistrationScreen frame2 = new RegistrationScreen();
-			frame2.setTitle("Registration");
-			frame2.setVisible(true);
-			frame2.setBounds(10, 10, 600, 600);
-			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame2.setVisible(true);
+			RegistrationScreen frame = new RegistrationScreen();
+			frame.setTitle("Registration");
+			frame.setVisible(true);
+			frame.setBounds(10, 10, 600, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
 			this.dispose();
 		}
 	}
