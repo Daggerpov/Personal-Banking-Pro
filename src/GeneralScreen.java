@@ -10,6 +10,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton visitSavingsButton = new JButton("Savings");
     JButton visitCheckingsButton = new JButton("Checkings");
     JButton visitInvestmentsButton = new JButton("Investments");
+    JButton settingsButton = new JButton("Settings");
 
     GeneralScreen() {
         // Calling methods inside constructor.
@@ -34,6 +35,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
         visitSavingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitSavingsButton.setBounds(200, 400, 50, 40);
 
+        settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        settingsButton.setBounds(200, 400, 50, 40);
+
     }
 
     public void addComponentsToContainer() {
@@ -41,6 +45,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(visitCheckingsButton);
         container.add(visitInvestmentsButton);
         container.add(visitSavingsButton);
+        container.add(settingsButton);
         
     }
 
