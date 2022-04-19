@@ -1,5 +1,10 @@
 package src.Accounts;
 import javax.swing.*;
+
+import src.Accounts.Account_Methods.DepositScreen;
+import src.Accounts.Account_Methods.TransferScreen;
+import src.Accounts.Account_Methods.WithdrawScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +22,7 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -48,12 +53,46 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         container.add(transferButton);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    public void addActionEvent() {
+       withdrawButton.addActionListener(this);
+       depositButton.addActionListener(this);
+       transferButton.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // WITHDRAW button logic
+        if (e.getSource() == withdrawButton) {
+            WithdrawScreen frame = new WithdrawScreen();
+            frame.setTitle("Withdraw from Savings Account");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // DEPOSIT button logic
+        if (e.getSource() == depositButton) {
+            DepositScreen frame = new DepositScreen();
+            frame.setTitle("Deposit to Savings Account");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // TRANSFER button logic
+        if (e.getSource() == transferButton) {
+            TransferScreen frame = new TransferScreen();
+            frame.setTitle("Transfer from Savings Account");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
     }
 }
