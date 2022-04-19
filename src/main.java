@@ -7,6 +7,7 @@ import src.Accounts.SavingsAccountScreen;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.TransferScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
+import src.Accounts.Investment_Account_Methods.InvestmentsScreen;
 import src.Authentication.LoginScreen;
 import src.Authentication.SetupAccountScreen;
 
@@ -27,7 +28,7 @@ public class main {
         // change these names to the names of the classes such as ____Screen accordingly
         // ! only thing to keep in mind is that if it's underlined in red
         // ! that means you need to hover over it -> quick fix -> import ___Screen
-        ChequingAccountScreen frame = new ChequingAccountScreen();
+        InvestmentsScreen frame = new InvestmentsScreen();
 
         // don't need to change this title since this is
         // only for the purposes of you launching individual screens right now
