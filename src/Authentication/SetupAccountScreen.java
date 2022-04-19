@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class SetupAccountScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel savingsLabel = new JLabel("Creae Savings Account");
+    JLabel savingsLabel = new JLabel("Create Savings Account");
     JCheckBox savingsBox = new JCheckBox();
     JLabel checkingsLabel = new JLabel("Create Checking Account");
     JCheckBox checkingsBox = new JCheckBox();
@@ -42,18 +42,18 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
         savingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsLabel.setBounds(10, 50, 500, 30);
-        savingsBox.setBounds(225, 50, 150, 30);
+        savingsBox.setBounds(250, 50, 150, 30);
 
         checkingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         checkingsLabel.setBounds(10, 140, 500, 30);
-        checkingsBox.setBounds(375, 140, 150, 30);
+        checkingsBox.setBounds(250, 140, 150, 30);
 
         investmentLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        investmentLabel.setBounds(10, 200, 100, 30);
-        investmentBox.setBounds(110, 200, 150, 30);
+        investmentLabel.setBounds(10, 230, 400, 30);
+        investmentBox.setBounds(250, 230, 150, 30);
 
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        nextButton.setBounds(10, 500, 50, 40);
+        nextButton.setBounds(10, 500, 55, 40);
 
     }
 
