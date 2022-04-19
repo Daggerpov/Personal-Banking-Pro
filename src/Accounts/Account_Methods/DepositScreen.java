@@ -10,7 +10,8 @@ import java.awt.event.ActionListener;
 public class DepositScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel titleLabel = new JLabel("Enter the amount to transfer:");
+    JLabel titleLabel = new JLabel("Enter the amount to deposit into this account:");
+    JTextField amountTextField = new JTextField();
     JButton confirmButton = new JButton("Confirm");
 
     public DepositScreen() {
@@ -28,16 +29,19 @@ public class DepositScreen extends JFrame implements ActionListener {
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
         titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        titleLabel.setBounds(85, 20, 600, 30);
+        titleLabel.setBounds(120, 40, 600, 30);
+        amountTextField.setFont(new Font("Serif", Font.PLAIN, 20));
+        amountTextField.setBounds(230, 80, 150, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        confirmButton.setBounds(225, 350, 150, 40);
+        confirmButton.setBounds(225, 425, 150, 40);
 
     }
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
         container.add(titleLabel);
+        container.add(amountTextField);
         container.add(confirmButton);
     }
 

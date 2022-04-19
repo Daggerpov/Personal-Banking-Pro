@@ -1,6 +1,10 @@
 package src;
 
 import javax.swing.*;
+
+import src.Accounts.Account_Methods.DepositScreen;
+import src.Accounts.Account_Methods.TransferScreen;
+import src.Accounts.Account_Methods.WithdrawScreen;
 import src.Authentication.LoginScreen;
 import src.Authentication.SetupAccountScreen;
 
@@ -21,11 +25,11 @@ public class main {
         //change these names to the names of the classes such as ____Screen accordingly
         //! only thing to keep in mind is that if it's underlined in red
         //! that means you need to hover over it -> quick fix -> import ___Screen
-        SetupAccountScreen frame = new SetupAccountScreen();
+        DepositScreen frame = new DepositScreen();
         
         //don't need to change this title since this is 
         //only for the purposes of you launching individual screens right now
-        frame.setTitle("Setup Account");
+        frame.setTitle("Test");
         frame.setVisible(true);
         frame.setBounds(10, 10, 600, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

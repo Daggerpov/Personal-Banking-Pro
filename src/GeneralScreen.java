@@ -13,20 +13,20 @@ import java.awt.event.ActionListener;
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel nameLabel = new JLabel("*your name here*");
+    JLabel nameLabel = new JLabel("*your name here*"); //! user's full name appears here !\\
     JButton undoButton = new JButton("Undo");
-    JLabel timeLabel = new JLabel("It is currently the year:");
+    JLabel timeLabel = new JLabel("It is currently the year:"); //! year appears here !\\
     JButton forward1YearButton = new JButton("1 Year");
     JButton forward5YearButton = new JButton("5 Years");
-    JButton sendMoneyButton = new JButton("Send Someone Money");
+    JButton sendMoneyButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Current Balance:");
-    JButton visitCheckingsButton = new JButton("Checkings");
-    JLabel checkingsBalanceLabel = new JLabel("Current Balance:");
+    JLabel savingsBalanceLabel = new JLabel("Balance:"); //! savings balance appears here !\\
+    JButton visitCheckingsButton = new JButton("Checkings"); 
+    JLabel checkingsBalanceLabel = new JLabel("Balance:"); //! checkings balance appears here !\\
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Current Balance:");
+    JLabel investmentsBalanceLabel = new JLabel("Balance:"); //! investments balance appears here !\\
     JButton settingsButton = new JButton("Settings");
 
 
@@ -57,27 +57,27 @@ public class GeneralScreen extends JFrame implements ActionListener {
         forward5YearButton.setFont(new Font("Serif", Font.PLAIN, 20));
         forward5YearButton.setBounds(275, 70, 100, 40);
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        settingsButton.setBounds(450, 50, 100, 40);
+        settingsButton.setBounds(450, 30, 100, 40);
         sendMoneyButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        sendMoneyButton.setBounds(375, 30, 200, 40);
+        sendMoneyButton.setBounds(375, 10, 200, 40);
 
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
-        summaryLabel.setBounds(175, 275, 300, 40);
+        summaryLabel.setBounds(200, 275, 300, 40);
 
         visitCheckingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitCheckingsButton.setBounds(50, 350, 100, 40);
         checkingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        checkingsBalanceLabel.setBounds(35, 400, 300, 40);
+        checkingsBalanceLabel.setBounds(30, 400, 300, 40);
 
         visitInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitInvestmentsButton.setBounds(230, 350, 120, 40);
+        visitInvestmentsButton.setBounds(240, 350, 120, 40);
         investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        investmentsBalanceLabel.setBounds(210, 400, 300, 40);
+        investmentsBalanceLabel.setBounds(220, 400, 300, 40);
 
         visitSavingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitSavingsButton.setBounds(450, 350, 100, 40);
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        savingsBalanceLabel.setBounds(425, 400, 300, 40);
+        savingsBalanceLabel.setBounds(430, 400, 300, 40);
     }
 
     public void addComponentsToContainer() {

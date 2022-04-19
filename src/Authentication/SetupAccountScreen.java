@@ -17,6 +17,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JCheckBox checkingsBox = new JCheckBox();
     JLabel investmentLabel = new JLabel("Create Investment Account");
     JCheckBox investmentBox = new JCheckBox();
+
     JLabel savingsBalanceLabel = new JLabel("Balance:");
     JTextField savingsTextField = new JTextField();
     JLabel checkingsBalanceLabel = new JLabel("Balance:");
@@ -51,6 +52,21 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         investmentLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentLabel.setBounds(10, 230, 400, 30);
         investmentBox.setBounds(250, 230, 150, 30);
+
+        savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        savingsBalanceLabel.setBounds(375, 50, 500, 30);
+        savingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
+        savingsTextField.setBounds(450, 50, 100, 30);
+
+        checkingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        checkingsBalanceLabel.setBounds(375, 140, 500, 30);
+        checkingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
+        checkingsTextField.setBounds(450, 140, 100, 30);
+
+        investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        investmentsBalanceLabel.setBounds(375, 230, 500, 30);
+        investmentsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
+        investmentsTextField.setBounds(450, 230, 100, 30);
 
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
         nextButton.setBounds(10, 500, 55, 40);

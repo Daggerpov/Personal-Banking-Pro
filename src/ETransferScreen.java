@@ -10,6 +10,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
     JLabel chooseContactLabel = new JLabel("Choose Contact");
+    //! Need to create a dropdown menu !\\
     JLabel selectAccountLabel = new JLabel("Select Account");
     JCheckBox box1 = new JCheckBox("Checkings");
     JCheckBox box2 = new JCheckBox("Savings");
@@ -33,23 +34,24 @@ public class ETransferScreen extends JFrame implements ActionListener {
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
         backButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        backButton.setBounds(225, 350, 150, 40);
+        backButton.setBounds(10, 10, 60, 40);
 
         chooseContactLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        selectAccountLabel.setBounds(85, 20, 600, 30);
+        chooseContactLabel.setBounds(30, 80, 600, 30);
+        selectAccountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        selectAccountLabel.setBounds(30, 200, 600, 30);
 
-        box1.setBounds(110, 200, 150, 30);
-        box2.setBounds(110, 200, 150, 30);
+        box1.setBounds(110, 240, 150, 30);
+        box2.setBounds(350, 240, 150, 30);
 
         amountJLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        amountJLabel.setBounds(10, 80, 500, 30);
-        amounTextField.setBounds(225, 80, 150, 30);
+        amountJLabel.setBounds(160, 300, 500, 30);
+        amounTextField.setBounds(285, 300, 150, 30);
 
         clearButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        clearButton.setBounds(225, 350, 150, 40);
-
+        clearButton.setBounds(200, 450, 100, 40);
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        confirmButton.setBounds(225, 350, 150, 40);
+        confirmButton.setBounds(300, 450, 100, 40);
 
     }
 
