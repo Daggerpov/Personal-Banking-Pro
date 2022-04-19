@@ -22,6 +22,9 @@ public class main {
         //! only thing to keep in mind is that if it's underlined in red
         //! that means you need to hover over it -> quick fix -> import ___Screen
         SetupAccountScreen frame = new SetupAccountScreen();
+        
+        //don't need to change this title since this is 
+        //only for the purposes of you launching individual screens right now
         frame.setTitle("Setup Account");
         frame.setVisible(true);
         frame.setBounds(10, 10, 600, 600);
