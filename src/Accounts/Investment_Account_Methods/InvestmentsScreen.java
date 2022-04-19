@@ -1,5 +1,8 @@
 package src.Accounts.Investment_Account_Methods;
 import javax.swing.*;
+
+import src.GeneralScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +25,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -69,12 +72,54 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         container.add(sell4Button);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    public void addActionEvent() {
+        backButton.addActionListener(this);
+        buy1Button.addActionListener(this);
+        buy2Button.addActionListener(this);
+        buy3Button.addActionListener(this);
+        buy4Button.addActionListener(this);
+        sell1Button.addActionListener(this);
+        sell2Button.addActionListener(this);
+        sell3Button.addActionListener(this);
+        sell4Button.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // CONFIRM button logic
+        if (e.getSource() == backButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // BUY buttons logic
+        if (e.getSource() == buy1Button && e.getSource() == buy2Button && e.getSource() == buy3Button && e
+                .getSource() == buy4Button) {
+            BuySharesScreen frame = new BuySharesScreen();
+            frame.setTitle("Buy Shares");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // SELL buttons logic
+        if (e.getSource() == sell1Button && e.getSource() == sell2Button && e.getSource() == sell3Button && e
+                .getSource() == sell4Button) {
+            SellSharesScreen frame = new SellSharesScreen();
+            frame.setTitle("Sell Shares");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
     }
 }
