@@ -1,4 +1,5 @@
 package src.Accounts.Account_Methods;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
@@ -21,7 +22,7 @@ public class TransferScreen extends JFrame implements ActionListener {
     JTextField amountTextField = new JTextField();
     JLabel title2Label = new JLabel("Which account would you like to transfer to?");
     JCheckBox savingsCheckBox = new JCheckBox("Savings");
-    JCheckBox checkingsCheckBox = new JCheckBox("Checkings");
+    JCheckBox chequingsCheckBox = new JCheckBox("chequings");
     JButton confirmButton = new JButton("Confirm");
 
     public TransferScreen() {
@@ -61,8 +62,8 @@ public class TransferScreen extends JFrame implements ActionListener {
 
         savingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsCheckBox.setBounds(180, 340, 600, 30);
-        checkingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
-        checkingsCheckBox.setBounds(300, 340, 600, 30);
+        chequingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
+        chequingsCheckBox.setBounds(300, 340, 600, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 425, 150, 40);
@@ -82,12 +83,12 @@ public class TransferScreen extends JFrame implements ActionListener {
         container.add(amountTextField);
         container.add(title2Label);
         container.add(savingsCheckBox);
-        container.add(checkingsCheckBox);
+        container.add(chequingsCheckBox);
         container.add(confirmButton);
     }
 
     public void addActionEvent() {
-       confirmButton.addActionListener(this);
+        confirmButton.addActionListener(this);
     }
 
     @Override

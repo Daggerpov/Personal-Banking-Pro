@@ -2,7 +2,7 @@ package src;
 
 import javax.swing.*;
 
-import src.Accounts.CheckingsAccountScreen;
+import src.Accounts.chequingsAccountScreen;
 import src.Accounts.InvestmentAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 
@@ -13,22 +13,21 @@ import java.awt.event.ActionListener;
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel nameLabel = new JLabel("*your name here*"); //! user's full name appears here !\\
+    JLabel nameLabel = new JLabel("*your name here*"); // ! user's full name appears here !\\
     JButton undoButton = new JButton("Undo");
-    JLabel timeLabel = new JLabel("It is currently the year:"); //! year appears here !\\
+    JLabel timeLabel = new JLabel("It is currently the year:"); // ! year appears here !\\
     JButton forward1YearButton = new JButton("1 Year");
     JButton forward5YearButton = new JButton("5 Years");
     JButton sendMoneyButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance:"); //! savings balance appears here !\\
-    JButton visitCheckingsButton = new JButton("Checkings"); 
-    JLabel checkingsBalanceLabel = new JLabel("Balance:"); //! checkings balance appears here !\\
+    JLabel savingsBalanceLabel = new JLabel("Balance:"); // ! savings balance appears here !\\
+    JButton visitchequingsButton = new JButton("chequings");
+    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // ! chequings balance appears here !\\
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance:"); //! investments balance appears here !\\
+    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here !\\
     JButton settingsButton = new JButton("Settings");
-
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files
@@ -64,10 +63,10 @@ public class GeneralScreen extends JFrame implements ActionListener {
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(200, 275, 300, 40);
 
-        visitCheckingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitCheckingsButton.setBounds(50, 350, 100, 40);
-        checkingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        checkingsBalanceLabel.setBounds(30, 400, 300, 40);
+        visitchequingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        visitchequingsButton.setBounds(50, 350, 100, 40);
+        chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
+        chequingsBalanceLabel.setBounds(30, 400, 300, 40);
 
         visitInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitInvestmentsButton.setBounds(240, 350, 120, 40);
@@ -90,8 +89,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(sendMoneyButton);
         container.add(summaryLabel);
         container.add(visitLabel);
-        container.add(visitCheckingsButton);
-        container.add(checkingsBalanceLabel);
+        container.add(visitchequingsButton);
+        container.add(chequingsBalanceLabel);
         container.add(visitInvestmentsButton);
         container.add(investmentsBalanceLabel);
         container.add(visitSavingsButton);
@@ -100,7 +99,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-        visitCheckingsButton.addActionListener(this);
+        visitchequingsButton.addActionListener(this);
         visitInvestmentsButton.addActionListener(this);
         visitSavingsButton.addActionListener(this);
         settingsButton.addActionListener(this);
@@ -109,9 +108,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // SETUP ACCOUNT button logic
-        if (e.getSource() == visitCheckingsButton) {
-            CheckingsAccountScreen frame = new CheckingsAccountScreen();
-            frame.setTitle("Checkings Account");
+        if (e.getSource() == visitchequingsButton) {
+            chequingsAccountScreen frame = new chequingsAccountScreen();
+            frame.setTitle("chequings Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

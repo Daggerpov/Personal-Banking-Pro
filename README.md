@@ -1,6 +1,6 @@
 # Personal-Banking-Pro
 
-Java GUI for Personal Banking with a Savings, Checking, Investment, and a General Account. 
+Java GUI for Personal Banking with a Savings, chequing, Investment, and a General Account.
 
 ## Planning
 

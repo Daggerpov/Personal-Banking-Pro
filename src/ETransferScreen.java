@@ -1,4 +1,5 @@
 package src;
+
 import javax.security.auth.callback.NameCallback;
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,9 @@ public class ETransferScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
     JLabel chooseContactLabel = new JLabel("Choose Contact");
-    //! Need to create a dropdown menu !\\
+    // TODO Need to create a dropdown menu\\
     JLabel selectAccountLabel = new JLabel("Select Account");
-    JCheckBox box1 = new JCheckBox("Checkings");
+    JCheckBox box1 = new JCheckBox("chequings");
     JCheckBox box2 = new JCheckBox("Savings");
     JLabel amountJLabel = new JLabel("Enter Amount:");
     JTextField amounTextField = new JTextField();
@@ -24,7 +25,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        //addActionEvent();
+        // addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -68,9 +69,9 @@ public class ETransferScreen extends JFrame implements ActionListener {
         container.add(confirmButton);
     }
 
-    //public void addActionEvent() {
-    //    showPassword.addActionListener(this);
-    //}
+    // public void addActionEvent() {
+    // showPassword.addActionListener(this);
+    // }
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -1,4 +1,5 @@
 package src.Accounts;
+
 import javax.swing.*;
 
 import src.Accounts.Account_Methods.DepositScreen;
@@ -9,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CheckingsAccountScreen extends JFrame implements ActionListener {
+public class chequingsAccountScreen extends JFrame implements ActionListener {
 
     int maxSpendingLimit = 0;
     Container container = getContentPane();
@@ -20,7 +21,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
     JButton depositButton = new JButton("Deposit");
     JButton transferButton = new JButton("Transfer");
 
-    public CheckingsAccountScreen() {
+    public chequingsAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
@@ -75,7 +76,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
         // WITHDRAW button logic
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen();
-            frame.setTitle("Withdraw from Checkings Account");
+            frame.setTitle("Withdraw from chequings Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,7 +87,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
         // DEPOSIT button logic
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen();
-            frame.setTitle("Deposit to Checkings Account");
+            frame.setTitle("Deposit to chequings Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,7 +98,7 @@ public class CheckingsAccountScreen extends JFrame implements ActionListener {
         // TRANSFER button logic
         if (e.getSource() == transferButton) {
             TransferScreen frame = new TransferScreen();
-            frame.setTitle("Transfer from Checkings Account");
+            frame.setTitle("Transfer from chequings Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

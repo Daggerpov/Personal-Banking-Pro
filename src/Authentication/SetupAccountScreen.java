@@ -13,15 +13,15 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JLabel savingsLabel = new JLabel("Create Savings Account");
     JCheckBox savingsBox = new JCheckBox();
-    JLabel checkingsLabel = new JLabel("Create Checking Account");
-    JCheckBox checkingsBox = new JCheckBox();
+    JLabel chequingsLabel = new JLabel("Create chequing Account");
+    JCheckBox chequingsBox = new JCheckBox();
     JLabel investmentLabel = new JLabel("Create Investment Account");
     JCheckBox investmentBox = new JCheckBox();
 
     JLabel savingsBalanceLabel = new JLabel("Balance:");
     JTextField savingsTextField = new JTextField();
-    JLabel checkingsBalanceLabel = new JLabel("Balance:");
-    JTextField checkingsTextField = new JTextField();
+    JLabel chequingsBalanceLabel = new JLabel("Balance:");
+    JTextField chequingsTextField = new JTextField();
     JLabel investmentsBalanceLabel = new JLabel("Balance:");
     JTextField investmentsTextField = new JTextField();
     JButton nextButton = new JButton("Next");
@@ -45,9 +45,9 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         savingsLabel.setBounds(10, 50, 500, 30);
         savingsBox.setBounds(250, 50, 150, 30);
 
-        checkingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        checkingsLabel.setBounds(10, 140, 500, 30);
-        checkingsBox.setBounds(250, 140, 150, 30);
+        chequingsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        chequingsLabel.setBounds(10, 140, 500, 30);
+        chequingsBox.setBounds(250, 140, 150, 30);
 
         investmentLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentLabel.setBounds(10, 230, 400, 30);
@@ -58,10 +58,10 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         savingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsTextField.setBounds(450, 50, 100, 30);
 
-        checkingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        checkingsBalanceLabel.setBounds(375, 140, 500, 30);
-        checkingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
-        checkingsTextField.setBounds(450, 140, 100, 30);
+        chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        chequingsBalanceLabel.setBounds(375, 140, 500, 30);
+        chequingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
+        chequingsTextField.setBounds(450, 140, 100, 30);
 
         investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentsBalanceLabel.setBounds(375, 230, 500, 30);
@@ -77,14 +77,14 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         // Adding each components to the Container
         container.add(investmentLabel);
         container.add(savingsLabel);
-        container.add(checkingsLabel);
+        container.add(chequingsLabel);
         container.add(savingsBox);
-        container.add(checkingsBox);
+        container.add(chequingsBox);
         container.add(investmentBox);
         container.add(investmentsBalanceLabel);
         container.add(savingsBalanceLabel);
-        container.add(checkingsBalanceLabel);
-        container.add(checkingsTextField);
+        container.add(chequingsBalanceLabel);
+        container.add(chequingsTextField);
         container.add(savingsTextField);
         container.add(investmentsTextField);
         container.add(nextButton);
