@@ -2,7 +2,7 @@ package src;
 
 import javax.swing.*;
 
-import src.Accounts.chequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 
@@ -23,7 +23,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
     JLabel savingsBalanceLabel = new JLabel("Balance:"); // ! savings balance appears here !\\
-    JButton visitchequingsButton = new JButton("chequings");
+    JButton visitChequingsButton = new JButton("Chequing");
     JLabel chequingsBalanceLabel = new JLabel("Balance:"); // ! chequings balance appears here !\\
     JButton visitInvestmentsButton = new JButton("Investments");
     JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here !\\
@@ -63,8 +63,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(200, 275, 300, 40);
 
-        visitchequingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitchequingsButton.setBounds(50, 350, 100, 40);
+        visitChequingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        visitChequingsButton.setBounds(50, 350, 100, 40);
         chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
         chequingsBalanceLabel.setBounds(30, 400, 300, 40);
 
@@ -89,7 +89,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(sendMoneyButton);
         container.add(summaryLabel);
         container.add(visitLabel);
-        container.add(visitchequingsButton);
+        container.add(visitChequingsButton);
         container.add(chequingsBalanceLabel);
         container.add(visitInvestmentsButton);
         container.add(investmentsBalanceLabel);
@@ -99,7 +99,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-        visitchequingsButton.addActionListener(this);
+        visitChequingsButton.addActionListener(this);
         visitInvestmentsButton.addActionListener(this);
         visitSavingsButton.addActionListener(this);
         settingsButton.addActionListener(this);
@@ -108,9 +108,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // SETUP ACCOUNT button logic
-        if (e.getSource() == visitchequingsButton) {
-            chequingsAccountScreen frame = new chequingsAccountScreen();
-            frame.setTitle("chequings Account");
+        if (e.getSource() == visitChequingsButton) {
+            ChequingAccountScreen frame = new ChequingAccountScreen();
+            frame.setTitle("Chequings Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

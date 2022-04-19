@@ -1,6 +1,5 @@
 package src;
 
-import javax.security.auth.callback.NameCallback;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +12,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     JLabel chooseContactLabel = new JLabel("Choose Contact");
     // TODO Need to create a dropdown menu\\
     JLabel selectAccountLabel = new JLabel("Select Account");
-    JCheckBox box1 = new JCheckBox("chequings");
+    JCheckBox box1 = new JCheckBox("Chequings");
     JCheckBox box2 = new JCheckBox("Savings");
     JLabel amountJLabel = new JLabel("Enter Amount:");
     JTextField amounTextField = new JTextField();

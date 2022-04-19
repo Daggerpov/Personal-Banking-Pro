@@ -2,7 +2,7 @@ package src;
 
 import javax.swing.*;
 
-import src.Accounts.chequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.TransferScreen;
@@ -27,7 +27,7 @@ public class main {
         // change these names to the names of the classes such as ____Screen accordingly
         // ! only thing to keep in mind is that if it's underlined in red
         // ! that means you need to hover over it -> quick fix -> import ___Screen
-        chequingsAccountScreen frame = new chequingsAccountScreen();
+        ChequingAccountScreen frame = new ChequingAccountScreen();
 
         // don't need to change this title since this is
         // only for the purposes of you launching individual screens right now
