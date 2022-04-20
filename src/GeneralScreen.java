@@ -87,7 +87,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         savingsBalanceLabel.setBounds(430, 400, 300, 40);
 
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        signOutButton.setBounds(250, 450, 100, 40);
+        signOutButton.setBounds(250, 500, 100, 40);
     }
 
     public void addComponentsToContainer() {
