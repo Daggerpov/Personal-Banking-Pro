@@ -62,5 +62,6 @@ public class DepositScreen extends JFrame implements ActionListener {
 			frame.setVisible(true);
 			this.dispose();
 		}
+        
     }
 }
