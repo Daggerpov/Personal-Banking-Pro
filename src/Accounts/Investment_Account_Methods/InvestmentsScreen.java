@@ -2,6 +2,7 @@ package src.Accounts.Investment_Account_Methods;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.Accounts.InvestmentAccountScreen;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -125,8 +126,8 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == backButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
+            InvestmentsAccountScreen frame = new InvestmentAccountScreen();
+            frame.setTitle("Investments Account");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -135,7 +136,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
             this.dispose();
         }
         // BUY buttons logic
-        if (e.getSource() == buy1Button && e.getSource() == buy2Button && e.getSource() == buy3Button && e
+        if (e.getSource() == buy1Button || e.getSource() == buy2Button || e.getSource() == buy3Button || e
                 .getSource() == buy4Button) {
             BuySharesScreen frame = new BuySharesScreen();
             frame.setTitle("Buy Shares");
@@ -147,7 +148,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
             this.dispose();
         }
         // SELL buttons logic
-        if (e.getSource() == sell1Button && e.getSource() == sell2Button && e.getSource() == sell3Button && e
+        if (e.getSource() == sell1Button || e.getSource() == sell2Button || e.getSource() == sell3Button || e
                 .getSource() == sell4Button) {
             SellSharesScreen frame = new SellSharesScreen();
             frame.setTitle("Sell Shares");
