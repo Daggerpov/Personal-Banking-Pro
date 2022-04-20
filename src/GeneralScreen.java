@@ -5,6 +5,7 @@ import javax.swing.*;
 import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentAccountScreen;
 import src.Accounts.SavingsAccountScreen;
+import src.Authentication.LoginScreen;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,9 +34,25 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
-    // Toolkit t=Toolkit.getDefaultToolkit();  
-    //     Image i=t.getImage("images/Fast_Forward.jpeg");  
-    //     g.drawImage(i, 120, 100, this);
+    Image i = new Image();
+
+    public class Image extends JFrame {
+        JPanel imagePanel;
+        JLabel displayField;
+        ImageIcon image;
+
+        public Image(){
+            imagePanel = new JPanel();
+            try {
+                image = new ImageIcon(getClass().getResource("images/Fast_Forward.jpeg"));
+                displayField = new JLabel(image);
+                imagePanel.add(displayField);
+
+            } catch(Exception e){
+                System.out.println("Image cannot be found!");
+            }
+        }
+    }
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files
@@ -88,6 +105,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
 
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
         signOutButton.setBounds(250, 500, 100, 40);
+        i.setSize(400, 400);
+        i.setVisible(true);
     }
 
     public void addComponentsToContainer() {
@@ -108,6 +127,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(visitSavingsButton);
         container.add(savingsBalanceLabel);
         container.add(signOutButton);
+        container.add(i);
 
     }
 
@@ -117,6 +137,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         visitSavingsButton.addActionListener(this);
         settingsButton.addActionListener(this);
         eTransferButton.addActionListener(this);
+        signOutButton.addActionListener(this);
     }
 
     @Override
@@ -169,6 +190,17 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == eTransferButton) {
             ETransferScreen frame = new ETransferScreen();
             frame.setTitle("Send Money");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // SIGN OUT button logic
+        if (e.getSource() == signOutButton) {
+            LoginScreen frame = new LoginScreen();
+            frame.setTitle("Login");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
