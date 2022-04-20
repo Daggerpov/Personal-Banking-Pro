@@ -1,6 +1,7 @@
 package src.Accounts;
 import javax.swing.*;
 
+import src.GeneralScreen;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.TransferScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
@@ -67,6 +68,7 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
        withdrawButton.addActionListener(this);
        depositButton.addActionListener(this);
        transferButton.addActionListener(this);
+       backButton.addActionListener(this);
     }
 
     @Override
@@ -97,6 +99,17 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == transferButton) {
             TransferScreen frame = new TransferScreen();
             frame.setTitle("Transfer from Savings Account");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // BACK button logic
+        if (e.getSource() == backButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

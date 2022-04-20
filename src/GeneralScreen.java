@@ -21,7 +21,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel timeLabel = new JLabel("It is currently the year:"); // ! year appears here 
     JButton forward1YearButton = new JButton("1 Year");
     JButton forward5YearButton = new JButton("5 Years");
-    JButton sendMoneyButton = new JButton("E-Transfer");
+    JButton eTransferButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
@@ -63,9 +63,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
         forward5YearButton.setFont(new Font("Serif", Font.PLAIN, 20));
         forward5YearButton.setBounds(275, 70, 100, 40);
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        settingsButton.setBounds(475, 10, 100, 40);
-        sendMoneyButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        sendMoneyButton.setBounds(425, 180, 150, 40);
+        settingsButton.setBounds(450, 30, 100, 40);
+        eTransferButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        eTransferButton.setBounds(375, 10, 200, 40);
 
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(200, 275, 300, 40);
@@ -94,7 +94,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(timeLabel);
         container.add(forward1YearButton);
         container.add(forward5YearButton);
-        container.add(sendMoneyButton);
+        container.add(eTransferButton);
         container.add(summaryLabel);
         container.add(settingsButton);
         container.add(visitLabel);
@@ -112,11 +112,12 @@ public class GeneralScreen extends JFrame implements ActionListener {
         visitInvestmentsButton.addActionListener(this);
         visitSavingsButton.addActionListener(this);
         settingsButton.addActionListener(this);
+        eTransferButton.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // SETUP ACCOUNT button logic
+        // VISIT CHEQUINGS button logic
         if (e.getSource() == visitChequingsButton) {
             ChequingAccountScreen frame = new ChequingAccountScreen();
             frame.setTitle("Chequings Account");
@@ -127,7 +128,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
-        // SETUP ACCOUNT button logic
+        // VISIT INVESTMENTS button logic
         if (e.getSource() == visitInvestmentsButton) {
             InvestmentAccountScreen frame = new InvestmentAccountScreen();
             frame.setTitle("Investment Account");
@@ -138,7 +139,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
-        // SETUP ACCOUNT button logic
+        // VISIT SAVINGS button logic
         if (e.getSource() == visitSavingsButton) {
             SavingsAccountScreen frame = new SavingsAccountScreen();
             frame.setTitle("Savings Account");
@@ -149,10 +150,21 @@ public class GeneralScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
-        // SETUP ACCOUNT button logic
+        // SETTINGS button logic
         if (e.getSource() == settingsButton) {
             SettingsScreen frame = new SettingsScreen();
             frame.setTitle("Settings");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // E-TRANSFER button logic
+        if (e.getSource() == eTransferButton) {
+            ETransferScreen frame = new ETransferScreen();
+            frame.setTitle("Send Money");
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

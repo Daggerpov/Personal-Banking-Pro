@@ -15,7 +15,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     JCheckBox box1 = new JCheckBox("Chequings");
     JCheckBox box2 = new JCheckBox("Savings");
     JLabel amountJLabel = new JLabel("Enter Amount:");
-    JTextField amounTextField = new JTextField();
+    JTextField amountTextField = new JTextField();
     JButton clearButton = new JButton("Clear");
     JButton confirmButton = new JButton("Confirm");
 
@@ -24,7 +24,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
-        // addActionEvent();
+        addActionEvent();
     }
 
     public void setLayoutManager() {
@@ -46,7 +46,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
 
         amountJLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         amountJLabel.setBounds(160, 300, 500, 30);
-        amounTextField.setBounds(285, 300, 150, 30);
+        amountTextField.setBounds(285, 300, 150, 30);
 
         clearButton.setFont(new Font("Serif", Font.PLAIN, 20));
         clearButton.setBounds(200, 450, 100, 40);
@@ -63,17 +63,44 @@ public class ETransferScreen extends JFrame implements ActionListener {
         container.add(box1);
         container.add(box2);
         container.add(amountJLabel);
-        container.add(amounTextField);
+        container.add(amountTextField);
         container.add(clearButton);
         container.add(confirmButton);
     }
 
-    // public void addActionEvent() {
-    // showPassword.addActionListener(this);
-    // }
+    public void addActionEvent() {
+        backButton.addActionListener(this);
+        confirmButton.addActionListener(this);
+        clearButton.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // actions here
+        // BACK button logic
+        if (e.getSource() == backButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // CLEAR button logic
+        if (e.getSource() == clearButton) {
+            amountTextField.setText("");
+        }
+        // CONFIRM button logic
+        if (e.getSource() == confirmButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
     }
 }
