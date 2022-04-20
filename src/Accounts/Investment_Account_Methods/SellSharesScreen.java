@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class SellSharesScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
+    JButton backButton = new JButton("Back");
     JLabel titleLabel = new JLabel("Enter the amount to transfer:");
     JLabel title2Label = new JLabel("Select an Investment");
     JLabel sharesLabel = new JLabel("Amount of Shares:");

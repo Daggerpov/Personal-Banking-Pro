@@ -9,8 +9,20 @@ import java.awt.event.ActionListener;
 
 public class BuySharesScreen extends JFrame implements ActionListener {
 
+    String share1 = "";
+    String share2 = "";
+    String share3 = "";
+    String share4 = "";
+
     Container container = getContentPane();
-    JLabel titleLabel = new JLabel("Enter the amount to transfer:");
+    JButton backButton = new JButton("Back");
+    JLabel titleLabel = new JLabel("Select an Investment");
+    JLabel sharesLabel = new JLabel("Amount of Shares");
+    JCheckBox share1CheckBox = new JCheckBox(share1);
+    JCheckBox share2CheckBox = new JCheckBox(share2);
+    JCheckBox share3CheckBox = new JCheckBox(share3);
+    JCheckBox share4CheckBox = new JCheckBox(share4);
+    JCheckBox customCheckBox = new JCheckBox("Custom:");
     JButton confirmButton = new JButton("Confirm");
 
     public BuySharesScreen() {
