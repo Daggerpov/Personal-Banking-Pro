@@ -24,6 +24,9 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     JLabel share4Label = new JLabel(share4);
 
     JPanel share1Panel = new JPanel();
+    JPanel share2Panel = new JPanel();
+    JPanel share3Panel = new JPanel();
+    JPanel share4Panel = new JPanel();
 
     JButton sell1Button = new JButton("SELL");
     JButton buy2Button = new JButton("BUY");
@@ -51,9 +54,21 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         backButton.setBounds(10, 10, 60, 40);
 
         share1Panel.setFont(new Font("Serif", Font.PLAIN, 20));
-        share1Panel.setBounds(20, 100, 500, 40);
+        share1Panel.setBounds(50, 100, 510, 40);
         share1Panel.add(buy1Button); share1Panel.add(buy2Button);
         share1Panel.setBackground(Color.gray);
+        share2Panel.setFont(new Font("Serif", Font.PLAIN, 20));
+        share2Panel.setBounds(50, 150, 510, 40);
+        share2Panel.add(buy1Button); share1Panel.add(buy2Button);
+        share2Panel.setBackground(Color.gray);
+        share3Panel.setFont(new Font("Serif", Font.PLAIN, 20));
+        share3Panel.setBounds(50, 200, 510, 40);
+        share3Panel.add(buy1Button); share1Panel.add(buy2Button);
+        share3Panel.setBackground(Color.gray);
+        share4Panel.setFont(new Font("Serif", Font.PLAIN, 20));
+        share4Panel.setBounds(50, 250, 510, 40);
+        share4Panel.add(buy1Button); share1Panel.add(buy2Button);
+        share4Panel.setBackground(Color.gray);
 
         buy1Button.setFont(new Font("Serif", Font.PLAIN, 20));
         buy1Button.setBounds(400, 100, 70, 40);
@@ -80,7 +95,6 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     public void addComponentsToContainer() {
         // Adding each components to the Container
         container.add(backButton);
-        container.add(share1Panel);
         container.add(buy1Button);
         container.add(buy2Button);
         container.add(buy3Button);
@@ -89,6 +103,10 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         container.add(sell2Button);
         container.add(sell3Button);
         container.add(sell4Button);
+        container.add(share1Panel);
+        container.add(share2Panel);
+        container.add(share3Panel);
+        container.add(share4Panel);
     }
 
     public void addActionEvent() {
