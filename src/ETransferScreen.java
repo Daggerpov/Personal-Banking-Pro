@@ -10,7 +10,7 @@ public class ETransferScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
     JLabel chooseContactLabel = new JLabel("Choose Contact");
-    // TODO Need to create a dropdown menu\\
+    // TODO Need to create a dropdown menu
     JLabel selectAccountLabel = new JLabel("Select Account");
     JCheckBox box1 = new JCheckBox("Chequings");
     JCheckBox box2 = new JCheckBox("Savings");

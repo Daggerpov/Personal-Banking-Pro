@@ -9,25 +9,32 @@ import src.Accounts.SavingsAccountScreen;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.*;
 
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel nameLabel = new JLabel("*your name here*"); // ! user's full name appears here !\\
+    JLabel nameLabel = new JLabel("*your name here*"); // ! user's full name appears here 
     JButton undoButton = new JButton("Undo");
-    JLabel timeLabel = new JLabel("It is currently the year:"); // ! year appears here !\\
+    JLabel timeLabel = new JLabel("It is currently the year:"); // ! year appears here 
     JButton forward1YearButton = new JButton("1 Year");
     JButton forward5YearButton = new JButton("5 Years");
     JButton sendMoneyButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance:"); // ! savings balance appears here !\\
+    JLabel savingsBalanceLabel = new JLabel("Balance:"); // ! savings balance appears here
     JButton visitChequingsButton = new JButton("Chequing");
-    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // ! chequings balance appears here !\\
+    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // ! chequings balance appears here
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here !\\
+    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here
     JButton settingsButton = new JButton("Settings");
+
+    // Toolkit t=Toolkit.getDefaultToolkit();  
+    //     Image i=t.getImage("images/Fast_Forward.jpeg");  
+    //     g.drawImage(i, 120, 100, this);
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files
@@ -56,9 +63,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
         forward5YearButton.setFont(new Font("Serif", Font.PLAIN, 20));
         forward5YearButton.setBounds(275, 70, 100, 40);
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        settingsButton.setBounds(450, 30, 100, 40);
+        settingsButton.setBounds(475, 10, 100, 40);
         sendMoneyButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        sendMoneyButton.setBounds(375, 10, 200, 40);
+        sendMoneyButton.setBounds(425, 180, 150, 40);
 
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(200, 275, 300, 40);
@@ -77,6 +84,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         visitSavingsButton.setBounds(450, 350, 100, 40);
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
         savingsBalanceLabel.setBounds(430, 400, 300, 40);
+
     }
 
     public void addComponentsToContainer() {
@@ -88,6 +96,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(forward5YearButton);
         container.add(sendMoneyButton);
         container.add(summaryLabel);
+        container.add(settingsButton);
         container.add(visitLabel);
         container.add(visitChequingsButton);
         container.add(chequingsBalanceLabel);

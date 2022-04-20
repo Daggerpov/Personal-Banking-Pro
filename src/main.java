@@ -29,7 +29,7 @@ public class main {
         // change these names to the names of the classes such as ____Screen accordingly
         // ! only thing to keep in mind is that if it's underlined in red
         // ! that means you need to hover over it -> quick fix -> import ___Screen
-        BuySharesScreen frame = new BuySharesScreen();
+        GeneralScreen frame = new GeneralScreen();
 
         // don't need to change this title since this is
         // only for the purposes of you launching individual screens right now

@@ -16,7 +16,6 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JButton buy1Button = new JButton("BUY");
 
     JLabel share1Label = new JLabel(share1);
     JLabel share2Label = new JLabel(share2);
@@ -28,6 +27,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     JPanel share3Panel = new JPanel();
     JPanel share4Panel = new JPanel();
 
+    JButton buy1Button = new JButton("BUY");
     JButton sell1Button = new JButton("SELL");
     JButton buy2Button = new JButton("BUY");
     JButton sell2Button = new JButton("SELL");
