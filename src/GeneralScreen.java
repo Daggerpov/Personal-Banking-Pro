@@ -34,25 +34,13 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
-    Image i = new Image();
-
-    public class Image extends JFrame {
-        JPanel imagePanel;
-        JLabel displayField;
-        ImageIcon image;
-
-        public Image(){
-            imagePanel = new JPanel();
-            try {
-                image = new ImageIcon(getClass().getResource("images/Fast_Forward.jpeg"));
-                displayField = new JLabel(image);
-                imagePanel.add(displayField);
-
-            } catch(Exception e){
-                System.out.println("Image cannot be found!");
-            }
-        }
-    }
+    // JFrame fastForwardImage;
+    
+    // ImageIcon image = new ImageIcon(getClass().getResource("images/Fast_Forward.jpeg"))
+    // JLabel displayField = new JLabel(image);
+    // JPanel imagePanel = new JPanel();
+    // fastForwardImage.@add(displayField);
+    JLabel fastForwardLabel = new JLabel(new ImageIcon("images/Fast_Forward.jpeg"));
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files
@@ -105,8 +93,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
 
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
         signOutButton.setBounds(250, 500, 100, 40);
-        i.setSize(400, 400);
-        i.setVisible(true);
+        
+        fastForwardLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        fastForwardLabel.setBounds(450, 75, 100, 40);
     }
 
     public void addComponentsToContainer() {
@@ -127,7 +116,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(visitSavingsButton);
         container.add(savingsBalanceLabel);
         container.add(signOutButton);
-        container.add(i);
+        container.add(fastForwardLabel);
 
     }
 
