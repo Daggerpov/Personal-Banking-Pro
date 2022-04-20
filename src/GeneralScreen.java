@@ -31,6 +31,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton visitInvestmentsButton = new JButton("Investments");
     JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here
     JButton settingsButton = new JButton("Settings");
+    JButton signOutButton = new JButton("Sign Out");
 
     // Toolkit t=Toolkit.getDefaultToolkit();  
     //     Image i=t.getImage("images/Fast_Forward.jpeg");  
@@ -65,7 +66,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         settingsButton.setBounds(450, 30, 100, 40);
         eTransferButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        eTransferButton.setBounds(375, 10, 200, 40);
+        eTransferButton.setBounds(375, 180, 200, 40);
 
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(200, 275, 300, 40);
@@ -85,6 +86,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
         savingsBalanceLabel.setBounds(430, 400, 300, 40);
 
+        signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        signOutButton.setBounds(250, 450, 100, 40);
     }
 
     public void addComponentsToContainer() {
@@ -104,6 +107,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(investmentsBalanceLabel);
         container.add(visitSavingsButton);
         container.add(savingsBalanceLabel);
+        container.add(signOutButton);
 
     }
 
