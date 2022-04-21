@@ -2,6 +2,7 @@ package src;
 
 import javax.swing.*;
 
+import src.Accounts.InvestmentAccountScreen;
 import src.Accounts.Investment_Account_Methods.InvestmentsScreen;
 
 import java.awt.*;

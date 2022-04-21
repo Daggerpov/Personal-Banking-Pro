@@ -10,17 +10,17 @@ import java.awt.event.ActionListener;
 public class InvestmentsScreen extends JFrame implements ActionListener {
 
     String share1 = "Google";
-    String share2 = "";
-    String share3 = "";
-    String share4 = "";
+    String share2 = "Apple";
+    String share3 = "Microsoft";
+    String share4 = "Tesla";
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
 
-    JLabel share1Label = new JLabel(share1);
-    JLabel share2Label = new JLabel(share2);
-    JLabel share3Label = new JLabel(share3);
-    JLabel share4Label = new JLabel(share4);
+    JLabel share1Label = new JLabel("share1");
+    JLabel share2Label = new JLabel("share2");
+    JLabel share3Label = new JLabel("share3");
+    JLabel share4Label = new JLabel("share4");
 
     JPanel share1Panel = new JPanel();
     JPanel share2Panel = new JPanel();
@@ -43,6 +43,8 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
+        Color color=new Color(112, 230, 210);
+
         // Setting location and Size of each components using setBounds() method.
         backButton.setFont(new Font("Serif", Font.PLAIN, 20));
         backButton.setBounds(10, 10, 60, 40);
@@ -50,23 +52,22 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         share1Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share1Panel.setBounds(50, 100, 510, 40);
         share1Panel.add(share1Label); share1Panel.add(buyButton); share1Panel.add(sellButton);
-        Color color = new Color(10, 221, 8);
-        share1Panel.getRootPane().setBackground(color);
+        share1Panel.setBackground(color);
 
         share2Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share2Panel.setBounds(50, 150, 510, 40);
         share2Panel.add(share2Label); share2Panel.add(buyButton); share2Panel.add(sellButton);
-        share2Panel.getRootPane().setBackground(color);
+        share2Panel.setBackground(color);
 
         share3Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share3Panel.setBounds(50, 200, 510, 40);
         share3Panel.add(share3Label); share3Panel.add(buyButton); share3Panel.add(sellButton);
-        share3Panel.getRootPane().setBackground(color);
+        share3Panel.setBackground(color);
 
         share4Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share4Panel.setBounds(50, 250, 510, 40);
-        share4Panel.add(share4Label); share4Panel.add(buyButton); share4Panel.add(sellButton);
-        share4Panel.getRootPane().setBackground(color);
+         share4Panel.add(buyButton); share4Panel.add(sellButton);
+        share4Panel.setBackground(color);
 
         buyButton.setFont(new Font("Serif", Font.PLAIN, 20));
         buyButton.setBounds(400, 100, 70, 40);
@@ -79,6 +80,10 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         container.add(backButton);
         container.add(buyButton);
         container.add(sellButton);
+        container.add(share1Label);
+        container.add(share2Label);
+        container.add(share3Label);
+        container.add(share4Label);
         container.add(share1Panel);
         container.add(share2Panel);
         container.add(share3Panel);
