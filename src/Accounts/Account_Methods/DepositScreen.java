@@ -55,7 +55,9 @@ public class DepositScreen extends JFrame implements ActionListener {
 		if (e.getSource() == confirmButton) {
 			GeneralScreen frame = new GeneralScreen();
 			frame.setTitle("General");
-			frame.setVisible(true);
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);			
+            frame.setVisible(true);
 			frame.setBounds(10, 10, 600, 600);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

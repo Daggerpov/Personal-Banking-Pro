@@ -10,9 +10,6 @@ import src.Authentication.LoginScreen;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.io.*;
 
 public class GeneralScreen extends JFrame implements ActionListener {
 
@@ -90,11 +87,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
         signOutButton.setBounds(250, 500, 100, 40);
         
-        fastForward1Label.setFont(new Font("Serif", Font.PLAIN, 20));
-        fastForward1Label.setBounds(450, 75, 100, 40);
+        fastForward1Label.setBounds(225, 350, 100, 40);
 
-        fastForward5Label.setFont(new Font("Serif", Font.PLAIN, 20));
-        fastForward5Label.setBounds(450, 75, 100, 40);
+        fastForward5Label.setBounds(225, 300, 100, 40);
     }
 
     public void addComponentsToContainer() {
@@ -134,6 +129,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitChequingsButton) {
             ChequingAccountScreen frame = new ChequingAccountScreen();
             frame.setTitle("Chequings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);           
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -145,6 +142,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitInvestmentsButton) {
             InvestmentAccountScreen frame = new InvestmentAccountScreen();
             frame.setTitle("Investment Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);         
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -156,6 +155,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitSavingsButton) {
             SavingsAccountScreen frame = new SavingsAccountScreen();
             frame.setTitle("Savings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);         
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -167,6 +168,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == settingsButton) {
             SettingsScreen frame = new SettingsScreen();
             frame.setTitle("Settings");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);         
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -178,6 +181,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == eTransferButton) {
             ETransferScreen frame = new ETransferScreen();
             frame.setTitle("Send Money");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);       
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -189,6 +194,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == signOutButton) {
             LoginScreen frame = new LoginScreen();
             frame.setTitle("Login");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);            
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

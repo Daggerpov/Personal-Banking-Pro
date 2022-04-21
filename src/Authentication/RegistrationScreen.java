@@ -98,6 +98,8 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		if (e.getSource() == setupAccountButton) {
 			SetupAccountScreen frame = new SetupAccountScreen();
 			frame.setTitle("Setup Account");
+			Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);
 			frame.setVisible(true);
 			frame.setBounds(10, 10, 600, 600);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

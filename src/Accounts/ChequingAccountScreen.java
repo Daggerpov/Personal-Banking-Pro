@@ -79,6 +79,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen();
             frame.setTitle("Withdraw from Chequings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,6 +92,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen();
             frame.setTitle("Deposit to Chequings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);      
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,6 +105,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == transferButton) {
             TransferScreen frame = new TransferScreen();
             frame.setTitle("Transfer from Chequings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -112,6 +118,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

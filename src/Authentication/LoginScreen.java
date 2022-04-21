@@ -117,6 +117,8 @@ public class LoginScreen extends JFrame implements ActionListener {
 		if (e.getSource() == registerButton) {
 			RegistrationScreen frame = new RegistrationScreen();
 			frame.setTitle("Registration");
+			Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);
 			frame.setVisible(true);
 			frame.setBounds(10, 10, 600, 600);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

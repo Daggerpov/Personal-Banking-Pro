@@ -18,7 +18,6 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
     JButton manageInvestmentsButton = new JButton("Manage Investments");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
-    JButton transferButton = new JButton("Transfer");
 
     public InvestmentAccountScreen() {
         // Calling methods inside constructor.
@@ -49,9 +48,6 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         depositButton.setFont(new Font("Serif", Font.PLAIN, 20));
         depositButton.setBounds(225, 350, 150, 40);
 
-        transferButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        transferButton.setBounds(225, 400, 150, 40);
-
     }
 
     public void addComponentsToContainer() {
@@ -61,7 +57,6 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         container.add(manageInvestmentsButton);
         container.add(withdrawButton);
         container.add(depositButton);
-        container.add(transferButton);
     }
 
     public void addActionEvent() {
@@ -77,6 +72,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen();
             frame.setTitle("Withdraw from Investment Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);         
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,6 +85,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen();
             frame.setTitle("Deposit to Investment Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,6 +98,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == manageInvestmentsButton) {
             InvestmentsScreen frame = new InvestmentsScreen();
             frame.setTitle("Manage Investments");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);           
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,6 +111,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
