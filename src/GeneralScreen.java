@@ -14,11 +14,18 @@ import java.awt.event.ActionListener;
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
+
+    // this adds text right after the image
+    JLabel undoLabel = new JLabel(" Undo", new ImageIcon("images/undo.png"), SwingConstants.CENTER);
+    JLabel fastForward1Label = new JLabel(" 1 year", new ImageIcon("images/forward.png"), SwingConstants.CENTER);
+    JLabel fastForward5Label = new JLabel(" 5 years", new ImageIcon("images/Triple_Arrow_Forward.png"),
+            SwingConstants.CENTER);
+
     JLabel nameLabel = new JLabel("*your name here*"); // user's full name appears here 
-    JButton undoButton = new JButton("Undo");
+    JButton undoButton = new JButton();
     JLabel timeLabel = new JLabel("It is currently the year: "); // year appears here 
-    JButton forward1YearButton = new JButton("1 Year");
-    JButton forward5YearButton = new JButton("5 Years");
+    JButton forward1YearButton = new JButton();
+    JButton forward5YearButton = new JButton();
     JButton eTransferButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
@@ -31,9 +38,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
-    // this adds text right after the image
-    JLabel fastForward1Label = new JLabel("1 year", new ImageIcon("images/forward.jpeg"), SwingConstants.CENTER);
-    JLabel fastForward5Label = new JLabel("5 year", new ImageIcon("images/Triple_Arrow_Forward.jpeg"), SwingConstants.CENTER);
+    
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files
@@ -51,16 +56,20 @@ public class GeneralScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
+        fastForward1Label.setBounds(160, 75, 100, 40);
+        fastForward5Label.setBounds(285, 75, 100, 40);
+        undoLabel.setBounds(25, 75, 100, 40);
+
+        forward1YearButton.setBounds(150, 70, 115, 50);
+        forward5YearButton.setBounds(275, 70, 115, 50);
+        undoButton.setBounds(25, 70, 115, 50);
+
         nameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         nameLabel.setBounds(10, 10, 150, 40);
-        undoButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        undoButton.setBounds(25, 70, 100, 40);
+        
         timeLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         timeLabel.setBounds(50, 120, 200, 40);
-        forward1YearButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        forward1YearButton.setBounds(150, 70, 100, 40);
-        forward5YearButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        forward5YearButton.setBounds(275, 70, 100, 40);
+        
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         settingsButton.setBounds(450, 30, 100, 40);
         eTransferButton.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -86,14 +95,14 @@ public class GeneralScreen extends JFrame implements ActionListener {
 
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
         signOutButton.setBounds(250, 500, 100, 40);
-        
-        fastForward1Label.setBounds(225, 350, 100, 40);
-
-        fastForward5Label.setBounds(225, 300, 100, 40);
     }
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
+        container.add(fastForward1Label);
+        container.add(fastForward5Label);
+        container.add(undoLabel);
+        
         container.add(nameLabel);
         container.add(undoButton);
         container.add(timeLabel);
@@ -110,8 +119,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(visitSavingsButton);
         container.add(savingsBalanceLabel);
         container.add(signOutButton);
-        container.add(fastForward1Label);
-        container.add(fastForward5Label);
+        
     }
 
     public void addActionEvent() {
