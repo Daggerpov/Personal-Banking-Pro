@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 
 public class ChequingAccountScreen extends JFrame implements ActionListener {
 
-    int maxSpendingLimit = 0;
+    int maxSpendingLimit = 500;
     Container container = getContentPane();
     JLabel maxSpendingLabel = new JLabel("Your max spending limit is: " + maxSpendingLimit);
     JButton backButton = new JButton("Back");
