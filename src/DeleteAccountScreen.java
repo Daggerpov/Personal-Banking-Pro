@@ -1,5 +1,8 @@
 package src;
 import javax.swing.*;
+
+import src.Authentication.LoginScreen;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,8 +64,8 @@ public class DeleteAccountScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // BACK button logic
         if (e.getSource() == backButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
+            SettingsScreen frame = new SettingsScreen();
+            frame.setTitle("Settings");
             Color color=new Color(41, 171, 135);
             frame.getContentPane().setBackground(color);            
             frame.setVisible(true);
@@ -74,8 +77,8 @@ public class DeleteAccountScreen extends JFrame implements ActionListener {
         }
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
+            LoginScreen frame = new LoginScreen();
+            frame.setTitle("Login");
             Color color=new Color(41, 171, 135);
             frame.getContentPane().setBackground(color);            
             frame.setVisible(true);

@@ -63,6 +63,7 @@ public class SettingsScreen extends JFrame implements ActionListener {
 
     public void addActionEvent() {
         backButton.addActionListener(this);
+        deleteAccountButton.addActionListener(this);
     }
 
     @Override

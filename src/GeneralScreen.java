@@ -14,20 +14,20 @@ import java.awt.event.ActionListener;
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel nameLabel = new JLabel("*your name here*"); // ! user's full name appears here 
+    JLabel nameLabel = new JLabel("*your name here*"); // user's full name appears here 
     JButton undoButton = new JButton("Undo");
-    JLabel timeLabel = new JLabel("It is currently the year:"); // ! year appears here 
+    JLabel timeLabel = new JLabel("It is currently the year: "); // year appears here 
     JButton forward1YearButton = new JButton("1 Year");
     JButton forward5YearButton = new JButton("5 Years");
     JButton eTransferButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("Accounts Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance:"); // ! savings balance appears here
+    JLabel savingsBalanceLabel = new JLabel("Balance:"); // savings balance appears here
     JButton visitChequingsButton = new JButton("Chequing");
-    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // ! chequings balance appears here
+    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // chequings balance appears here
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // ! investments balance appears here
+    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // investments balance appears here
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
