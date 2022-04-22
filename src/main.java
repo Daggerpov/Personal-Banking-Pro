@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import src.Accounts.InvestmentAccountScreen;
 import src.Accounts.Investment_Account_Methods.InvestmentsScreen;
+import src.Authentication.LoginScreen;
 
 import java.awt.*;
 
@@ -21,7 +22,7 @@ public class main {
         // change these names to the names of the classes such as ____Screen accordingly
         // ! only thing to keep in mind is that if it's underlined in red
         // ! that means you need to hover over it -> quick fix -> import ___Screen
-        GeneralScreen frame = new GeneralScreen();
+        LoginScreen frame = new LoginScreen();
 
         // don't need to change this title since this is
         // only for the purposes of you launching individual screens right now

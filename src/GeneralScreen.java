@@ -29,7 +29,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton forward1YearButton = new JButton();
     JButton forward5YearButton = new JButton();
     JButton eTransferButton = new JButton("E-Transfer");
-    JLabel summaryLabel = new JLabel("Accounts Summary:");
+    JLabel summaryLabel = new JLabel("Account (#" + UserAccount.getUsername() + ") Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
     JLabel savingsBalanceLabel = new JLabel("Balance:"); // savings balance appears here

@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+import src.UserAccount;
+
 public class RegistrationScreen extends JFrame implements ActionListener {
 
 	Container container = getContentPane();
@@ -94,18 +97,44 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 			}
 		}
 
+		String passText = new String(passwordField.getPassword());
+		String confirmPassText = new String(confirmPasswordField.getPassword());
+
 		// SETUP ACCOUNT button logic
 		if (e.getSource() == setupAccountButton) {
-			SetupAccountScreen frame = new SetupAccountScreen();
-			frame.setTitle("Setup Account");
-			Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);
-			frame.setVisible(true);
-			frame.setBounds(10, 10, 600, 600);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setVisible(true);
-			this.dispose();
+			//couldn't use .isEmpty() since it's not a primitive string, so I have to compare it to an empty string 
+			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().equals("") || confirmPasswordField.getPassword().equals("")){
+				JOptionPane.showMessageDialog(this, "Empty Field(s)");
+				if (fNameTextField.equals("")){
+					//TODO red indicator next to field saying it's empty
+				} else if (usernameTextField.equals("")){
+					//TODO red indicator next to field saying it's empty
+				} else if (passwordField.equals("")){
+					//TODO red indicator next to field saying it's empty
+				} else {
+					//TODO red indicator next to field saying it's empty
+				}
+			} else if (!passText.equals(confirmPassText)){
+				JOptionPane.showMessageDialog(this, "Passwords don't match");
+				// TODO yellow indicator saying passwords don't match
+			} else {
+				JOptionPane.showMessageDialog(this, "Registration Successful");
+				this.dispose();
+				
+				UserAccount.setFirstName(fNameTextField.getText().split(" ")[0]);
+				UserAccount.setUsername(usernameTextField.getText());
+
+				SetupAccountScreen frame = new SetupAccountScreen();
+				frame.setTitle("Setup Account");
+				Color color = new Color(41, 171, 135);
+				frame.getContentPane().setBackground(color);
+				frame.setVisible(true);
+				frame.setBounds(10, 10, 600, 600);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(true);
+				this.dispose();
+			} 
 		}
 	}
 }

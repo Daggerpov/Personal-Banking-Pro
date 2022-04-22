@@ -82,8 +82,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// LOGIN button logic
 		if (e.getSource() == loginButton) {
-			String userText;
-			userText = userTextField.getText();
+			String userText = userTextField.getText();
 			String passText = new String(passwordField.getPassword()); // this fixed a deprecation with getText()
 			if (userText.equalsIgnoreCase("Daggerpov") && passText.equalsIgnoreCase("12345")) {
 				JOptionPane.showMessageDialog(this, "Login Successful");
@@ -92,8 +91,10 @@ public class LoginScreen extends JFrame implements ActionListener {
 				this.dispose();
 				GeneralScreen frame = new GeneralScreen();
 				frame.setTitle("General");
+				
 				Color color = new Color(41, 171, 135);
 				frame.getContentPane().setBackground(color);
+
 				frame.setVisible(true);
 				frame.setBounds(10, 10, 600, 600);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
