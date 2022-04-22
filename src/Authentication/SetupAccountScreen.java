@@ -55,18 +55,27 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsBalanceLabel.setBounds(375, 50, 500, 30);
+        savingsBalanceLabel.setVisible(false);
+
         savingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsTextField.setBounds(450, 50, 100, 30);
+        savingsTextField.setVisible(false);
 
         chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         chequingsBalanceLabel.setBounds(375, 140, 500, 30);
+        chequingsBalanceLabel.setVisible(false);
+
         chequingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
         chequingsTextField.setBounds(450, 140, 100, 30);
+        chequingsTextField.setVisible(false);
 
         investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentsBalanceLabel.setBounds(375, 230, 500, 30);
+        investmentsBalanceLabel.setVisible(false);
+
         investmentsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentsTextField.setBounds(450, 230, 100, 30);
+        investmentsTextField.setVisible(false);
 
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
         nextButton.setBounds(10, 500, 55, 40);
@@ -92,10 +101,27 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
     public void addActionEvent() {
         nextButton.addActionListener(this);
+        savingsBox.addActionListener(this);
+        chequingsBox.addActionListener(this);
+        investmentBox.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == savingsBox){
+            savingsBalanceLabel.setVisible(true);
+            savingsTextField.setVisible(true);
+
+        }
+        if (e.getSource() == chequingsBox) {
+            chequingsBalanceLabel.setVisible(true);
+            chequingsTextField.setVisible(true);
+        }
+        if (e.getSource() == investmentBox) {
+            investmentsBalanceLabel.setVisible(true);
+            investmentsTextField.setVisible(true);
+        }
+        
         // NEXT button logic
         if (e.getSource() == nextButton) {
             GeneralScreen frame = new GeneralScreen();
