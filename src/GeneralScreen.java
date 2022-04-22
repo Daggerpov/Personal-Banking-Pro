@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import src.UserAccount;
+
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
@@ -21,7 +23,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel fastForward5Label = new JLabel(" 5 years", new ImageIcon("images/Triple_Arrow_Forward.png"),
             SwingConstants.CENTER);
 
-    JLabel nameLabel = new JLabel("*your name here*"); // user's full name appears here 
+    JLabel nameLabel = new JLabel("Welcome, " + UserAccount.getFirstName()); // user's full name appears here 
     JButton undoButton = new JButton();
     JLabel timeLabel = new JLabel("It is currently the year: "); // year appears here 
     JButton forward1YearButton = new JButton();
@@ -37,8 +39,6 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel investmentsBalanceLabel = new JLabel("Balance:"); // investments balance appears here
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
-
-    
 
     // all of these constructors (as can be seen in most files) need to be
     // set to public so they're accessible by importing them to other files

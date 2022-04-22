@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import src.UserAccount;
+
 public class LoginScreen extends JFrame implements ActionListener {
 
 	Container container = getContentPane();
@@ -85,9 +87,13 @@ public class LoginScreen extends JFrame implements ActionListener {
 			String passText = new String(passwordField.getPassword()); // this fixed a deprecation with getText()
 			if (userText.equalsIgnoreCase("Daggerpov") && passText.equalsIgnoreCase("12345")) {
 				JOptionPane.showMessageDialog(this, "Login Successful");
+				UserAccount.setFirstName("Daniel");
+				
 				this.dispose();
 				GeneralScreen frame = new GeneralScreen();
 				frame.setTitle("General");
+				Color color = new Color(41, 171, 135);
+				frame.getContentPane().setBackground(color);
 				frame.setVisible(true);
 				frame.setBounds(10, 10, 600, 600);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,7 +104,6 @@ public class LoginScreen extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "Invalid Username or Password");
 			}
 		}
-
 
 		// RESET button logic
 		if (e.getSource() == resetButton) {
