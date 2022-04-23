@@ -139,16 +139,22 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         
         // NEXT button logic
         if (e.getSource() == nextButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);        
-            frame.setVisible(true);
-            frame.setBounds(10, 10, 600, 600);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            this.dispose();
+            if (savingsBalanceLabel.isVisible() == true && savingsTextField.getText().equals("") || chequingsBalanceLabel
+                    .isVisible() == true && chequingsTextField.getText().equals("") || investmentsBalanceLabel
+                            .isVisible() == true && investmentsTextField.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Empty Balance(s)");
+            } else {
+                GeneralScreen frame = new GeneralScreen();
+                frame.setTitle("General");
+                Color color = new Color(41, 171, 135);
+                frame.getContentPane().setBackground(color);
+                frame.setVisible(true);
+                frame.setBounds(10, 10, 600, 600);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                this.dispose();
+            }
         }
     }
 }
