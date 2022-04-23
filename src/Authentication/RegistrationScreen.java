@@ -103,7 +103,8 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		// SETUP ACCOUNT button logic
 		if (e.getSource() == setupAccountButton) {
 			//couldn't use .isEmpty() since it's not a primitive string, so I have to compare it to an empty string 
-			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().equals("") || confirmPasswordField.getPassword().equals("")){
+			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().length == 0 || confirmPasswordField
+					.getPassword().length == 0){
 				JOptionPane.showMessageDialog(this, "Empty Field(s)");
 				if (fNameTextField.equals("")){
 					//TODO red indicator next to field saying it's empty
@@ -120,7 +121,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(this, "Registration Successful");
 				this.dispose();
-				
+
 				UserAccount.setFirstName(fNameTextField.getText().split(" ")[0]);
 				UserAccount.setUsername(usernameTextField.getText());
 
