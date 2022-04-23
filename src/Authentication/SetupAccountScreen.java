@@ -18,11 +18,11 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JLabel investmentLabel = new JLabel("Create Investment Account");
     JCheckBox investmentBox = new JCheckBox();
 
-    JLabel savingsBalanceLabel = new JLabel("Balance:");
+    JLabel savingsBalanceLabel = new JLabel("Balance ($):");
     JTextField savingsTextField = new JTextField();
-    JLabel chequingsBalanceLabel = new JLabel("Balance:");
+    JLabel chequingsBalanceLabel = new JLabel("Balance ($):");
     JTextField chequingsTextField = new JTextField();
-    JLabel investmentsBalanceLabel = new JLabel("Balance:");
+    JLabel investmentsBalanceLabel = new JLabel("Balance ($):");
     JTextField investmentsTextField = new JTextField();
     JButton nextButton = new JButton("Next");
 

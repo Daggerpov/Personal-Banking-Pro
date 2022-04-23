@@ -32,11 +32,11 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel summaryLabel = new JLabel("User Account (" + UserAccount.getUsername() + ") Summary:");
     JLabel visitLabel = new JLabel("Visit:");
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance:"); // savings balance appears here
+    JLabel savingsBalanceLabel = new JLabel("Balance ($):"); // savings balance appears here
     JButton visitChequingsButton = new JButton("Chequing");
-    JLabel chequingsBalanceLabel = new JLabel("Balance:"); // chequings balance appears here
+    JLabel chequingsBalanceLabel = new JLabel("Balance ($):"); // chequings balance appears here
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance:"); // investments balance appears here
+    JLabel investmentsBalanceLabel = new JLabel("Balance ($):"); // investments balance appears here
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 

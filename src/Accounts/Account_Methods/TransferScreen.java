@@ -106,5 +106,12 @@ public class TransferScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
+        if (e.getSource() == customCheckBox) {
+            if (customCheckBox.isSelected() == true) {
+                customTextField.setVisible(true);
+            } else {
+                customTextField.setVisible(false);
+            }
+        }
     }
 }
