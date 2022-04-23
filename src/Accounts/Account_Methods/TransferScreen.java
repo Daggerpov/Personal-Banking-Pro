@@ -53,6 +53,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         customCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         customCheckBox.setBounds(225, 160, 600, 30);
         customTextField.setBounds(325, 160, 100, 30);
+        customTextField.setVisible(false);
+        
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         amountLabel.setBounds(225, 200, 600, 30);
         amountTextField.setBounds(310, 200, 100, 30);
@@ -89,6 +91,7 @@ public class TransferScreen extends JFrame implements ActionListener {
 
     public void addActionEvent() {
         confirmButton.addActionListener(this);
+        customCheckBox.addActionListener(this);
     }
 
     @Override
