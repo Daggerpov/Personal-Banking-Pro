@@ -13,7 +13,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JLabel savingsLabel = new JLabel("Create Savings Account");
     JCheckBox savingsBox = new JCheckBox();
-    JLabel chequingsLabel = new JLabel("Create chequing Account");
+    JLabel chequingsLabel = new JLabel("Create Chequings Account");
     JCheckBox chequingsBox = new JCheckBox();
     JLabel investmentLabel = new JLabel("Create Investment Account");
     JCheckBox investmentBox = new JCheckBox();
@@ -109,17 +109,32 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == savingsBox){
-            savingsBalanceLabel.setVisible(true);
-            savingsTextField.setVisible(true);
-
+            if (savingsBox.isSelected() == true){
+                savingsBalanceLabel.setVisible(true);
+                savingsTextField.setVisible(true);
+            } else {
+                savingsBalanceLabel.setVisible(false);
+                savingsTextField.setVisible(false);
+            }
+            
         }
-        if (e.getSource() == chequingsBox) {
-            chequingsBalanceLabel.setVisible(true);
-            chequingsTextField.setVisible(true);
+        if (e.getSource() == chequingsBox){
+            if (chequingsBox.isSelected() == true){
+                chequingsBalanceLabel.setVisible(true);
+                chequingsTextField.setVisible(true);
+            } else {
+                chequingsBalanceLabel.setVisible(false);
+                chequingsTextField.setVisible(false);
+            }
         }
         if (e.getSource() == investmentBox) {
-            investmentsBalanceLabel.setVisible(true);
-            investmentsTextField.setVisible(true);
+            if (investmentBox.isSelected() == true) {
+                investmentsBalanceLabel.setVisible(true);
+                investmentsTextField.setVisible(true);
+            } else {
+                investmentsBalanceLabel.setVisible(false);
+                investmentsTextField.setVisible(false);
+            }
         }
         
         // NEXT button logic
