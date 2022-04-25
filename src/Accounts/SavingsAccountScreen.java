@@ -75,10 +75,10 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // WITHDRAW button logic
         if (e.getSource() == withdrawButton) {
-            WithdrawScreen frame = new WithdrawScreen();
+            WithdrawScreen frame = new WithdrawScreen("Savings");
             frame.setTitle("Withdraw from Savings Account");
-Color color=new Color(41, 171, 135);
-        frame.getContentPane().setBackground(color);            frame.setVisible(true);
+            Color color=new Color(41, 171, 135);
+            frame.getContentPane().setBackground(color);            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,10 +87,10 @@ Color color=new Color(41, 171, 135);
         }
         // DEPOSIT button logic
         if (e.getSource() == depositButton) {
-            DepositScreen frame = new DepositScreen();
+            DepositScreen frame = new DepositScreen("Savings");
             frame.setTitle("Deposit to Savings Account");
-Color color=new Color(41, 171, 135);
-        frame.getContentPane().setBackground(color);            frame.setVisible(true);
+            Color color = new Color(41, 171, 135);
+            frame.getContentPane().setBackground(color);            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,10 +99,10 @@ Color color=new Color(41, 171, 135);
         }
         // TRANSFER button logic
         if (e.getSource() == transferButton) {
-            TransferScreen frame = new TransferScreen();
+            TransferScreen frame = new TransferScreen("Savings");
             frame.setTitle("Transfer from Savings Account");
-Color color=new Color(41, 171, 135);
-        frame.getContentPane().setBackground(color);            frame.setVisible(true);
+            Color color=new Color(41, 171, 135);
+            frame.getContentPane().setBackground(color);            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

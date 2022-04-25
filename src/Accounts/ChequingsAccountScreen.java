@@ -1,25 +1,28 @@
 package src.Accounts;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
 import src.Accounts.Account_Methods.DepositScreen;
+import src.Accounts.Account_Methods.TransferScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
-import src.Accounts.Investment_Account_Methods.InvestmentsScreen;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class InvestmentAccountScreen extends JFrame implements ActionListener {
+public class ChequingsAccountScreen extends JFrame implements ActionListener {
 
+    int maxSpendingLimit = 500;
     Container container = getContentPane();
+    JLabel maxSpendingLabel = new JLabel("Your max spending limit is: " + maxSpendingLimit);
     JButton backButton = new JButton("Back");
     JLabel balanceLabel = new JLabel("Balance:");
-    JButton manageInvestmentsButton = new JButton("Manage Investments");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
+    JButton transferButton = new JButton("Transfer");
 
-    public InvestmentAccountScreen() {
+    public ChequingsAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
@@ -39,8 +42,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         balanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         balanceLabel.setBounds(50, 60, 600, 30);
 
-        manageInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        manageInvestmentsButton.setBounds(200, 120, 200, 40);
+        maxSpendingLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        maxSpendingLabel.setBounds(50, 120, 600, 30);
 
         withdrawButton.setFont(new Font("Serif", Font.PLAIN, 20));
         withdrawButton.setBounds(225, 300, 150, 40);
@@ -48,21 +51,25 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
         depositButton.setFont(new Font("Serif", Font.PLAIN, 20));
         depositButton.setBounds(225, 350, 150, 40);
 
+        transferButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        transferButton.setBounds(225, 400, 150, 40);
+
     }
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
         container.add(backButton);
         container.add(balanceLabel);
-        container.add(manageInvestmentsButton);
+        container.add(maxSpendingLabel);
         container.add(withdrawButton);
         container.add(depositButton);
+        container.add(transferButton);
     }
 
     public void addActionEvent() {
         withdrawButton.addActionListener(this);
         depositButton.addActionListener(this);
-        manageInvestmentsButton.addActionListener(this);
+        transferButton.addActionListener(this);
         backButton.addActionListener(this);
     }
 
@@ -70,21 +77,8 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // WITHDRAW button logic
         if (e.getSource() == withdrawButton) {
-            WithdrawScreen frame = new WithdrawScreen();
-            frame.setTitle("Withdraw from Investment Account");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
-            frame.setVisible(true);
-            frame.setBounds(10, 10, 600, 600);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            this.dispose();
-        }
-        // DEPOSIT button logic
-        if (e.getSource() == depositButton) {
-            DepositScreen frame = new DepositScreen();
-            frame.setTitle("Deposit to Investment Account");
+            WithdrawScreen frame = new WithdrawScreen("Chequings");
+            frame.setTitle("Withdraw from Chequings Account");
             Color color=new Color(41, 171, 135);
         	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
@@ -94,12 +88,25 @@ public class InvestmentAccountScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
-        // TRANSFER button logic
-        if (e.getSource() == manageInvestmentsButton) {
-            InvestmentsScreen frame = new InvestmentsScreen();
-            frame.setTitle("Manage Investments");
+        // DEPOSIT button logic
+        if (e.getSource() == depositButton) {
+            DepositScreen frame = new DepositScreen("Chequings");
+            frame.setTitle("Deposit to Chequings Account");
             Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);           
+        	frame.getContentPane().setBackground(color);      
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+        // TRANSFER button logic
+        if (e.getSource() == transferButton) {
+            TransferScreen frame = new TransferScreen("Chequings");
+            frame.setTitle("Transfer from Chequings Account");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

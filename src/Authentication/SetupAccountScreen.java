@@ -15,7 +15,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JCheckBox savingsBox = new JCheckBox();
     JLabel chequingsLabel = new JLabel("Create Chequings Account");
     JCheckBox chequingsBox = new JCheckBox();
-    JLabel investmentLabel = new JLabel("Create Investment Account");
+    JLabel investmentLabel = new JLabel("Create Investments Account");
     JCheckBox investmentBox = new JCheckBox();
 
     JLabel savingsBalanceLabel = new JLabel("Balance ($):");
@@ -108,18 +108,18 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == savingsBox){
-            if (savingsBox.isSelected() == true){
+        if (e.getSource() == savingsBox) {
+            if (savingsBox.isSelected() == true) {
                 savingsBalanceLabel.setVisible(true);
                 savingsTextField.setVisible(true);
             } else {
                 savingsBalanceLabel.setVisible(false);
                 savingsTextField.setVisible(false);
             }
-            
+
         }
-        if (e.getSource() == chequingsBox){
-            if (chequingsBox.isSelected() == true){
+        if (e.getSource() == chequingsBox) {
+            if (chequingsBox.isSelected() == true) {
                 chequingsBalanceLabel.setVisible(true);
                 chequingsTextField.setVisible(true);
             } else {
@@ -136,12 +136,14 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
                 investmentsTextField.setVisible(false);
             }
         }
-        
+
         // NEXT button logic
         if (e.getSource() == nextButton) {
-            if (savingsBalanceLabel.isVisible() == true && savingsTextField.getText().equals("") || chequingsBalanceLabel
-                    .isVisible() == true && chequingsTextField.getText().equals("") || investmentsBalanceLabel
-                            .isVisible() == true && investmentsTextField.getText().equals("")){
+            if (savingsBalanceLabel.isVisible() == true && savingsTextField.getText().equals("")
+                    || chequingsBalanceLabel
+                            .isVisible() == true && chequingsTextField.getText().equals("")
+                    || investmentsBalanceLabel
+                            .isVisible() == true && investmentsTextField.getText().equals("")) {
                 JOptionPane.showMessageDialog(this, "Empty Balance(s)");
             } else {
                 GeneralScreen frame = new GeneralScreen();

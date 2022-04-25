@@ -1,7 +1,7 @@
 package src.Accounts.Investment_Account_Methods;
 import javax.swing.*;
 
-import src.Accounts.InvestmentAccountScreen;
+import src.Accounts.InvestmentsAccountScreen;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -100,7 +100,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == backButton) {
-            InvestmentAccountScreen frame = new InvestmentAccountScreen();
+            InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
             frame.setTitle("Investments Account");
             Color color=new Color(41, 171, 135);
         	frame.getContentPane().setBackground(color);          

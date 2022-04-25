@@ -2,6 +2,9 @@ package src.Accounts.Account_Methods;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.Accounts.ChequingsAccountScreen;
+import src.Accounts.InvestmentsAccountScreen;
+import src.Accounts.SavingsAccountScreen;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,14 +24,17 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     JLabel amountLabel = new JLabel("Amount:");
     JTextField amountTextField = new JTextField();
     JButton confirmButton = new JButton("Confirm");
+    
+    String accountFrom;
 
 
-    public WithdrawScreen() {
+    public WithdrawScreen(String accountScreenFrom) {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
         addActionEvent();
+        accountFrom = accountScreenFrom;
     }
 
     public void setLayoutManager() {
@@ -84,6 +90,7 @@ public class WithdrawScreen extends JFrame implements ActionListener {
        confirmButton.addActionListener(this);
 
        customCheckBox.addActionListener(this);
+       backButton.addActionListener(this);
     }
 
     @Override
@@ -109,16 +116,41 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             }
         }
         if (e.getSource() == backButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);          
-            frame.setVisible(true);
-            frame.setBounds(10, 10, 600, 600);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            this.dispose();
+            if (accountFrom.equals("Chequings")) {
+                ChequingsAccountScreen frame = new ChequingsAccountScreen();
+                frame.setTitle("Chequings");
+                Color color = new Color(41, 171, 135);
+                frame.getContentPane().setBackground(color);
+                frame.setVisible(true);
+                frame.setBounds(10, 10, 600, 600);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                this.dispose();
+            } else if (accountFrom.equals("Savings")) {
+                SavingsAccountScreen frame = new SavingsAccountScreen();
+                frame.setTitle("Savings");
+                Color color = new Color(41, 171, 135);
+                frame.getContentPane().setBackground(color);
+                frame.setVisible(true);
+                frame.setBounds(10, 10, 600, 600);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                this.dispose();
+            }
+            if (accountFrom.equals("Investments")) {
+                InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
+                frame.setTitle("Investments");
+                Color color = new Color(41, 171, 135);
+                frame.getContentPane().setBackground(color);
+                frame.setVisible(true);
+                frame.setBounds(10, 10, 600, 600);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                this.dispose();
+            }
         }
     }
 }
