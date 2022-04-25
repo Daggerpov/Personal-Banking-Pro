@@ -3,6 +3,7 @@ package src.Accounts;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
 import src.Accounts.Investment_Account_Methods.InvestmentsScreen;
@@ -15,7 +16,7 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JLabel balanceLabel = new JLabel("Balance:");
+    JLabel balanceLabel = new JLabel("Balance: " + UserAccount.getInvestmentsBalance());
     JButton manageInvestmentsButton = new JButton("Manage Investments");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");

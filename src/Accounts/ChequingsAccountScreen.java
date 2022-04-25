@@ -3,6 +3,7 @@ package src.Accounts;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.TransferScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
@@ -17,7 +18,7 @@ public class ChequingsAccountScreen extends JFrame implements ActionListener {
     Container container = getContentPane();
     JLabel maxSpendingLabel = new JLabel("Your max spending limit is: " + maxSpendingLimit);
     JButton backButton = new JButton("Back");
-    JLabel balanceLabel = new JLabel("Balance:");
+    JLabel balanceLabel = new JLabel("Balance: " + UserAccount.getChequingsBalance());
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
     JButton transferButton = new JButton("Transfer");

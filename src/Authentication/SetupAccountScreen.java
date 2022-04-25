@@ -3,6 +3,7 @@ package src.Authentication;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -148,6 +149,17 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
             } else {
                 GeneralScreen frame = new GeneralScreen();
                 frame.setTitle("General");
+
+                if (!chequingsTextField.getText().isEmpty()){
+                    UserAccount.setChequingsBalance((Integer.parseInt(chequingsTextField.getText())));
+                }
+                if (!savingsTextField.getText().isEmpty()) {
+                    UserAccount.setSavingsBalance((Integer.parseInt(savingsTextField.getText())));
+                }
+                if (!investmentsTextField.getText().isEmpty()) {
+                    UserAccount.setInvestmentsBalance((Integer.parseInt(investmentsTextField.getText())));
+                }
+
                 Color color = new Color(41, 171, 135);
                 frame.getContentPane().setBackground(color);
                 frame.setVisible(true);

@@ -31,12 +31,17 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton eTransferButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("User Account (" + UserAccount.getUsername() + ") Summary:");
     JLabel visitLabel = new JLabel("Visit:");
-    JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance ($):"); // savings balance appears here
+    
     JButton visitChequingsButton = new JButton("Chequing");
-    JLabel chequingsBalanceLabel = new JLabel("Balance ($):"); // chequings balance appears here
+    JLabel chequingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingsBalance()); // chequings balance
+                                                                                                    // appears here
+
+    JButton visitSavingsButton = new JButton("Savings");
+    JLabel savingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getSavingsBalance()); // savings balance appears here
+    
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance ($):"); // investments balance appears here
+    JLabel investmentsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getInvestmentsBalance()); // investments balance appears here
+    
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
@@ -83,15 +88,15 @@ public class GeneralScreen extends JFrame implements ActionListener {
         chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
         chequingsBalanceLabel.setBounds(30, 400, 300, 40);
 
-        visitInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitInvestmentsButton.setBounds(240, 350, 120, 40);
-        investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        investmentsBalanceLabel.setBounds(220, 400, 300, 40);
-
         visitSavingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitSavingsButton.setBounds(450, 350, 100, 40);
+        visitSavingsButton.setBounds(240, 350, 120, 40);
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        savingsBalanceLabel.setBounds(430, 400, 300, 40);
+        savingsBalanceLabel.setBounds(220, 400, 300, 40);
+
+        visitInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        visitInvestmentsButton.setBounds(450, 350, 100, 40);
+        investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
+        investmentsBalanceLabel.setBounds(430, 400, 300, 40);
 
         signOutButton.setFont(new Font("Serif", Font.PLAIN, 20));
         signOutButton.setBounds(250, 500, 100, 40);

@@ -2,6 +2,7 @@ package src.Accounts;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.Account_Methods.DepositScreen;
 import src.Accounts.Account_Methods.TransferScreen;
 import src.Accounts.Account_Methods.WithdrawScreen;
@@ -14,7 +15,7 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JLabel balanceLabel = new JLabel("Balance:");
+    JLabel balanceLabel = new JLabel("Balance: " + UserAccount.getSavingsBalance());
     JLabel interestLabel = new JLabel("Interest Earned to Date:");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
