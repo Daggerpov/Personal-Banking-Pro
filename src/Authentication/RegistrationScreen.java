@@ -105,7 +105,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 			//couldn't use .isEmpty() since it's not a primitive string, so I have to compare it to an empty string 
 			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().length == 0 || confirmPasswordField
 					.getPassword().length == 0){
-				JOptionPane.showMessageDialog(this, "Empty Field(s)");
+				JOptionPane.showMessageDialog(this, "Empty Field(s)", "Error", JOptionPane.ERROR_MESSAGE);
 				if (fNameTextField.equals("")){
 					//TODO red indicator next to field saying it's empty
 				} else if (usernameTextField.equals("")){
@@ -116,7 +116,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 					//TODO red indicator next to field saying it's empty
 				}
 			} else if (!passText.equals(confirmPassText)){
-				JOptionPane.showMessageDialog(this, "Passwords don't match");
+				JOptionPane.showMessageDialog(this, "Passwords don't match", "Warning", JOptionPane.WARNING_MESSAGE);
 				// TODO yellow indicator saying passwords don't match
 			} else {
 				JOptionPane.showMessageDialog(this, "Registration Successful");

@@ -15,7 +15,7 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JLabel balanceLabel = new JLabel("Balance: " + UserAccount.getSavingsBalance());
+    JLabel balanceLabel = new JLabel("Balance ($): " + UserAccount.getSavingsBalance());
     JLabel interestLabel = new JLabel("Interest Earned to Date:");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");

@@ -102,7 +102,7 @@ public class LoginScreen extends JFrame implements ActionListener {
 				frame.setVisible(true);
 				this.dispose();
 			} else {
-				JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+				JOptionPane.showMessageDialog(this, "Invalid Username or Password", "Warning", JOptionPane.WARNING_MESSAGE);
 			}
 		}
 

@@ -140,24 +140,31 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
         // NEXT button logic
         if (e.getSource() == nextButton) {
+            String chequingsBalance = chequingsTextField.getText();
+            String savingsBalance = savingsTextField.getText();
+            String investmentsBalance = investmentsTextField.getText();
+
             if (savingsBalanceLabel.isVisible() == true && savingsTextField.getText().equals("")
                     || chequingsBalanceLabel
                             .isVisible() == true && chequingsTextField.getText().equals("")
                     || investmentsBalanceLabel
                             .isVisible() == true && investmentsTextField.getText().equals("")) {
-                JOptionPane.showMessageDialog(this, "Empty Balance(s)");
+                JOptionPane.showMessageDialog(this, "Empty Balance(s)", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (chequingsBalance.matches("^\\d+\\.\\d+")) {
+                JOptionPane.showMessageDialog(this, "Cannot input decimal values", "Error",
+                        JOptionPane.ERROR_MESSAGE);
             } else {
                 GeneralScreen frame = new GeneralScreen();
                 frame.setTitle("General");
 
-                if (!chequingsTextField.getText().isEmpty()){
-                    UserAccount.setChequingsBalance((Integer.parseInt(chequingsTextField.getText())));
+                if (!chequingsBalance.isEmpty()) {
+                    UserAccount.setChequingsBalance((Integer.parseInt(chequingsBalance)));
                 }
-                if (!savingsTextField.getText().isEmpty()) {
-                    UserAccount.setSavingsBalance((Integer.parseInt(savingsTextField.getText())));
+                if (!savingsBalance.isEmpty()) {
+                    UserAccount.setSavingsBalance((Integer.parseInt(savingsBalance)));
                 }
-                if (!investmentsTextField.getText().isEmpty()) {
-                    UserAccount.setInvestmentsBalance((Integer.parseInt(investmentsTextField.getText())));
+                if (!investmentsBalance.isEmpty()) {
+                    UserAccount.setInvestmentsBalance((Integer.parseInt(investmentsBalance)));
                 }
 
                 Color color = new Color(41, 171, 135);

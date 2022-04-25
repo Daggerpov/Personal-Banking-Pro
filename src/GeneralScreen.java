@@ -11,8 +11,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import src.UserAccount;
-
 public class GeneralScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
