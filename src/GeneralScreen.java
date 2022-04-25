@@ -20,8 +20,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     // this adds text right after the image
     JLabel undoLabel = new JLabel(" Undo", new ImageIcon("images/undo.png"), SwingConstants.CENTER);
     JLabel fastForward1Label = new JLabel(" 1 year", new ImageIcon("images/forward.png"), SwingConstants.CENTER);
-    JLabel fastForward5Label = new JLabel(" 5 years", new ImageIcon("images/Triple_Arrow_Forward.png"),
-            SwingConstants.CENTER);
+    JLabel fastForward5Label = new JLabel(" 5 years", new ImageIcon("images/Triple_Arrow_Forward.png"), SwingConstants.CENTER);
 
     JLabel nameLabel = new JLabel("Welcome, " + UserAccount.getFirstName()); // user's full name appears here 
     JButton undoButton = new JButton();
@@ -57,11 +56,11 @@ public class GeneralScreen extends JFrame implements ActionListener {
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
         fastForward1Label.setBounds(160, 75, 100, 40);
-        fastForward5Label.setBounds(285, 75, 100, 40);
+        fastForward5Label.setBounds(285, 75, 110, 40);
         undoLabel.setBounds(25, 75, 100, 40);
 
         forward1YearButton.setBounds(150, 70, 115, 50);
-        forward5YearButton.setBounds(275, 70, 115, 50);
+        forward5YearButton.setBounds(275, 70, 125, 50);
         undoButton.setBounds(25, 70, 115, 50);
 
         nameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -73,10 +72,10 @@ public class GeneralScreen extends JFrame implements ActionListener {
         settingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         settingsButton.setBounds(450, 30, 100, 40);
         eTransferButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        eTransferButton.setBounds(375, 180, 200, 40);
+        eTransferButton.setBounds(425, 180, 150, 40);
 
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
-        summaryLabel.setBounds(200, 275, 300, 40);
+        summaryLabel.setBounds(100, 275, 500, 40);
 
         visitChequingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitChequingsButton.setBounds(50, 350, 100, 40);

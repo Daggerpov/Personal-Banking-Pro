@@ -11,9 +11,10 @@ public class SellSharesScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JLabel titleLabel = new JLabel("Enter the amount to transfer:");
-    JLabel title2Label = new JLabel("Select an Investment");
-    JLabel sharesLabel = new JLabel("Amount of Shares:");
+    JLabel titleLabel = new JLabel("Enter the number of shares to sell:");
+    JTextArea sharesSoldTextArea = new JTextArea();
+    JLabel sharesLabel = new JLabel("$___ per share");
+    JLabel paymentAmountLabel = new JLabel("$____");
     JButton confirmButton = new JButton("Confirm");
 
     public SellSharesScreen() {
@@ -30,8 +31,19 @@ public class SellSharesScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
+        backButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        backButton.setBounds(10, 10, 60, 40);
+
         titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        titleLabel.setBounds(85, 20, 600, 30);
+        titleLabel.setBounds(85, 100, 600, 30);
+        sharesSoldTextArea.setFont(new Font("Serif", Font.PLAIN, 20));
+        sharesSoldTextArea.setBounds(375, 100, 150, 30);
+
+        sharesLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        sharesLabel.setBounds(450, 50, 600, 30);
+
+        paymentAmountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        paymentAmountLabel.setBounds(225, 275, 600, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 350, 150, 40);
@@ -40,7 +52,11 @@ public class SellSharesScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
+        container.add(backButton);
         container.add(titleLabel);
+        container.add(sharesSoldTextArea);
+        container.add(sharesLabel);
+        container.add(paymentAmountLabel);
         container.add(confirmButton);
     }
 

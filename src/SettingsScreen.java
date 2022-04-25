@@ -10,8 +10,12 @@ public class SettingsScreen extends JFrame implements ActionListener {
     JButton backButton = new JButton("Back");
     JLabel themeLabel = new JLabel("Select a Theme:");
     JCheckBox theme1Box = new JCheckBox("Theme 1");
+    JLabel theme1Label = new JLabel("", new ImageIcon("images/Theme1Color.png"), SwingConstants.CENTER);
     JCheckBox theme2Box = new JCheckBox("Theme 2");
+    JLabel theme2Label = new JLabel("", new ImageIcon("images/Theme2Color.png"), SwingConstants.CENTER);
     JCheckBox theme3Box = new JCheckBox("Theme 3");
+    JLabel theme3Label = new JLabel("", new ImageIcon("images/Theme3Color.png"), SwingConstants.CENTER);
+
     JLabel messageLabel = new JLabel("Theme will change upon pressing back");
     JButton deleteAccountButton = new JButton("Delete Account");
 
@@ -36,10 +40,13 @@ public class SettingsScreen extends JFrame implements ActionListener {
         themeLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         themeLabel.setBounds(10, 130, 500, 30);
 
-        theme1Box.setBounds(150, 180, 100, 60);
+        theme1Label.setBounds(130,135,150,60);
+        theme1Box.setBounds(155, 180, 100, 60);
 
+        theme2Label.setBounds(290,135,150,60);
         theme2Box.setBounds(320, 180, 100, 60);
 
+        theme3Label.setBounds(460,135,150,60);
         theme3Box.setBounds(490, 180, 100, 60);
 
         messageLabel.setFont(new Font("Serif", Font.PLAIN, 16));
@@ -54,8 +61,11 @@ public class SettingsScreen extends JFrame implements ActionListener {
         // Adding each components to the Container
         container.add(backButton);
         container.add(themeLabel);
+        container.add(theme1Label);
         container.add(theme1Box);
+        container.add(theme2Label);
         container.add(theme2Box);
+        container.add(theme3Label);
         container.add(theme3Box);
         container.add(messageLabel);
         container.add(deleteAccountButton);
