@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class TransferScreen extends JFrame implements ActionListener {
 
     Container container = getContentPane();
+    JButton backButton = new JButton("Back");
     JLabel title1Label = new JLabel("Select the amount to transfer:");
     JCheckBox percent10CheckBox = new JCheckBox("10%");
     JCheckBox percent25CheckBox = new JCheckBox("25%");
@@ -39,6 +40,9 @@ public class TransferScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
+        backButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        backButton.setBounds(10, 10, 60, 40);
+
         title1Label.setFont(new Font("Serif", Font.PLAIN, 20));
         title1Label.setBounds(190, 40, 600, 30);
 
@@ -74,6 +78,7 @@ public class TransferScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
+        container.add(backButton);
         container.add(title1Label);
         container.add(percent10CheckBox);
         container.add(percent25CheckBox);
@@ -115,6 +120,18 @@ public class TransferScreen extends JFrame implements ActionListener {
             } else {
                 customTextField.setVisible(false);
             }
+        }
+        if (e.getSource() == backButton) {
+            GeneralScreen frame = new GeneralScreen();
+            frame.setTitle("General");
+            Color color=new Color(41, 171, 135);
+        	frame.getContentPane().setBackground(color);          
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
         }
     }
 }
