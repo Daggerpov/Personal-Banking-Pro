@@ -58,7 +58,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         savingsBalanceLabel.setVisible(false);
 
         savingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
-        savingsTextField.setBounds(450, 50, 100, 30);
+        savingsTextField.setBounds(475, 50, 100, 30);
         savingsTextField.setVisible(false);
 
         chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -66,7 +66,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         chequingsBalanceLabel.setVisible(false);
 
         chequingsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
-        chequingsTextField.setBounds(450, 140, 100, 30);
+        chequingsTextField.setBounds(475, 140, 100, 30);
         chequingsTextField.setVisible(false);
 
         investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -74,7 +74,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         investmentsBalanceLabel.setVisible(false);
 
         investmentsTextField.setFont(new Font("Serif", Font.PLAIN, 20));
-        investmentsTextField.setBounds(450, 230, 100, 30);
+        investmentsTextField.setBounds(475, 230, 100, 30);
         investmentsTextField.setVisible(false);
 
         nextButton.setFont(new Font("Serif", Font.PLAIN, 20));
