@@ -92,7 +92,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
         savingsBalanceLabel.setBounds(220, 400, 300, 40);
 
         visitInvestmentsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitInvestmentsButton.setBounds(450, 350, 100, 40);
+        visitInvestmentsButton.setBounds(450, 350, 120, 40);
         investmentsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
         investmentsBalanceLabel.setBounds(430, 400, 300, 40);
 

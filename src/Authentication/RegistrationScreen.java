@@ -23,6 +23,12 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 	JCheckBox showPassword = new JCheckBox("Show Password");
 	JButton setupAccountButton = new JButton("Setup Account");
 
+	JLabel errorIcon1Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
+	JLabel errorIcon2Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
+	JLabel errorIcon3Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
+	JLabel errorIcon4Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
+
+
 	public RegistrationScreen() {
 		// Calling methods inside constructor.
 		setLayoutManager();
@@ -43,14 +49,17 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		fNameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		fNameLabel.setBounds(10, 80, 500, 30);
 		fNameTextField.setBounds(225, 80, 150, 30);
+		errorIcon1Label.setBounds(350,70,100,40);
 
 		usernameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		usernameLabel.setBounds(10, 140, 500, 30);
 		usernameTextField.setBounds(375, 140, 150, 30);
+		errorIcon2Label.setBounds(500,130,100,40);
 
 		passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		passwordLabel.setBounds(10, 200, 100, 30);
 		passwordField.setBounds(110, 200, 150, 30);
+		errorIcon3Label.setBounds(240,190,100,40);
 
 		confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		confirmPasswordLabel.setBounds(10, 260, 200, 40);
@@ -77,6 +86,10 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		container.add(passwordField);
 		container.add(confirmPasswordField);
 		container.add(setupAccountButton);
+		container.add(errorIcon1Label);
+		container.add(errorIcon2Label);
+		container.add(errorIcon3Label);
+		container.add(errorIcon4Label);
 	}
 
 	public void addActionEvent() {
@@ -108,6 +121,7 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "Empty Field(s)", "Error", JOptionPane.ERROR_MESSAGE);
 				if (fNameTextField.equals("")){
 					//TODO red indicator next to field saying it's empty
+					errorIcon1Label.setVisible(true);
 				} else if (usernameTextField.equals("")){
 					//TODO red indicator next to field saying it's empty
 				} else if (passwordField.equals("")){

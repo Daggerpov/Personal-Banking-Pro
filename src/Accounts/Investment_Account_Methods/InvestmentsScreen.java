@@ -17,10 +17,14 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     String share2Value = "$3463";
     String share3Value = "$36567";
     String share4Value = "$1244";
-    String share1Change = "34.6%";
-    String share2Change = "12%";
-    String share3Change = "18.9%";
-    String share4Change = "23.6%";
+    String share1Change = "(34.6%)";
+    String share2Change = "(12%)";
+    String share3Change = "(18.9%)";
+    String share4Change = "(23.6%)";
+    String share1ValueChange = "$3450";
+    String share2ValueChange = "$3525";
+    String share3ValueChange = "$2340";
+    String share4ValueChange = "$1200";
     int amountChangedShare1 = 12;
     int amountChangedShare2 = 34;
     int amountChangedShare3 = 457;
@@ -43,6 +47,11 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     JLabel share2ChangeLabel = new JLabel(share2Change);
     JLabel share3ChangeLabel = new JLabel(share3Change);
     JLabel share4ChangeLabel = new JLabel(share4Change);
+
+    JLabel share1ValueChangeLabel = new JLabel(share1ValueChange);
+    JLabel share2ValueChangeLabel = new JLabel(share2ValueChange);
+    JLabel share3ValueChangeLabel = new JLabel(share3ValueChange);
+    JLabel share4ValueChangeLabel = new JLabel(share4ValueChange);
 
     JPanel share1Panel = new JPanel();
     JPanel share2Panel = new JPanel();
@@ -103,70 +112,65 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         buy1Button.setBounds(400, 100, 70, 40);
         sell1Button.setBounds(480, 100, 70, 40);
         if(amountChangedShare1 < 0){
-            redArrowLabel1.setBounds(170, 100, 100, 40);
+            redArrowLabel1.setBounds(100, 100, 100, 40);
 
         }
         else if(amountChangedShare1 > 0){
-            greenArrowLabel1.setBounds(170, 100, 100, 40);
+            greenArrowLabel1.setBounds(100, 100, 100, 40);
         }
 
-        share1Panel.add(share1Label); share1Panel.add(share1ValueLabel); share1Panel.add(share1ChangeLabel);
+        share1Panel.add(share1Label); share1Panel.add(share1ValueChangeLabel); share1Panel.add(share1ChangeLabel); share1Panel.add(share1ValueLabel);
         share1Panel.setBackground(color);
 
         share2Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share2Panel.setBounds(50, 150, 510, 40);
         share2Label.setBounds(60, 150, 100, 40);
-        //share2ValueLabel.setBounds(200, 100, 100, 40);
         buy2Button.setBounds(400, 150, 70, 40);
         sell2Button.setBounds(480, 150, 70, 40);
         if(amountChangedShare2 < 0){
             greenArrowLabel2.setVisible(false);
-            redArrowLabel2.setBounds(170, 150, 100, 40);
+            redArrowLabel2.setBounds(100, 150, 100, 40);
 
         }
         else if(amountChangedShare2 > 0){
-            greenArrowLabel2.setBounds(170, 150, 100, 40);
+            greenArrowLabel2.setBounds(100, 150, 100, 40);
             greenArrowLabel2.setVisible(true);
         }
-        share2Panel.add(share2Label); share2Panel.add(share2ValueLabel); share2Panel.add(share2ChangeLabel);
+        share2Panel.add(share2Label); share2Panel.add(share2ValueChangeLabel); share2Panel.add(share2ChangeLabel); share2Panel.add(share2ValueLabel);
         share2Panel.setBackground(color);
 
 
         share3Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share3Panel.setBounds(50, 200, 510, 40);
         share3Label.setBounds(60, 200, 100, 40);
-        //share3ValueLabel.setBounds(200, 100, 100, 40);
         buy3Button.setBounds(400, 200, 70, 40);
         sell3Button.setBounds(480, 200, 70, 40);
         if(amountChangedShare3 < 0){
-            greenArrowLabel3.setVisible(false);
-            redArrowLabel3.setBounds(170, 200, 100, 40);
+            redArrowLabel3.setBounds(100, 200, 100, 40);
 
         }
         else if(amountChangedShare3 > 0){
-            greenArrowLabel3.setBounds(170, 200, 100, 40);
-            greenArrowLabel3.setVisible(true);
+            greenArrowLabel3.setBounds(100, 200, 100, 40);
         }
-        share3Panel.add(share3Label); share3Panel.add(share3ValueLabel); share3Panel.add(share3ChangeLabel);
+        share3Panel.add(share3Label); share3Panel.add(share3ValueChangeLabel); share3Panel.add(share3ChangeLabel); share3Panel.add(share3ValueLabel);
         share3Panel.setBackground(color);
 
 
         share4Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share4Panel.setBounds(50, 250, 510, 40);
         share4Label.setBounds(60, 250, 100, 40);
-        //share4ValueLabel.setBounds(200, 100, 100, 40);
         buy4Button.setBounds(400, 250, 70, 40);
         sell4Button.setBounds(480, 250, 70, 40);
         if(amountChangedShare4 < 0){
             greenArrowLabel4.setVisible(false);
-            redArrowLabel4.setBounds(170, 250, 100, 40);
+            redArrowLabel4.setBounds(100, 250, 100, 40);
 
         }
         else if(amountChangedShare4 > 0){
-            greenArrowLabel4.setBounds(170, 250, 100, 40);
+            greenArrowLabel4.setBounds(100, 250, 100, 40);
             greenArrowLabel4.setVisible(true);
         }
-        share4Panel.add(share4ValueLabel); share4Panel.add(share4ChangeLabel);
+        share4Panel.add(share4ValueLabel); share4Panel.add(share4ChangeLabel); share4Panel.add(share4ValueChangeLabel);
         share4Panel.setBackground(color);
     }
 
