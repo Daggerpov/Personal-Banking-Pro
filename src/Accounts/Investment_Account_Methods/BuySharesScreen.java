@@ -1,5 +1,6 @@
 package src.Accounts.Investment_Account_Methods;
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicLabelUI;
 
 import src.GeneralScreen;
 
@@ -9,20 +10,14 @@ import java.awt.event.ActionListener;
 
 public class BuySharesScreen extends JFrame implements ActionListener {
 
-    String share1 = "";
-    String share2 = "";
-    String share3 = "";
-    String share4 = "";
+    String share = "Google";
 
     Container container = getContentPane();
     JButton backButton = new JButton("Back");
-    JLabel titleLabel = new JLabel("Select an Investment");
-    JLabel sharesLabel = new JLabel("Amount of Shares");
-    JCheckBox share1CheckBox = new JCheckBox(share1);
-    JCheckBox share2CheckBox = new JCheckBox(share2);
-    JCheckBox share3CheckBox = new JCheckBox(share3);
-    JCheckBox share4CheckBox = new JCheckBox(share4);
-    JCheckBox customCheckBox = new JCheckBox("Custom:");
+    JLabel titleLabel = new JLabel("Enter the number of shares to buy:");
+    JTextArea sharesBoughtTextArea = new JTextArea();
+    JLabel sharesLabel = new JLabel("$___ per share");
+    JLabel paymentAmountLabel = new JLabel("$____");
     JButton confirmButton = new JButton("Confirm");
 
     public BuySharesScreen() {
@@ -39,8 +34,19 @@ public class BuySharesScreen extends JFrame implements ActionListener {
 
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
+        backButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        backButton.setBounds(10, 10, 60, 40);
+
         titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        titleLabel.setBounds(85, 20, 600, 30);
+        titleLabel.setBounds(85, 100, 600, 30);
+        sharesBoughtTextArea.setFont(new Font("Serif", Font.PLAIN, 20));
+        sharesBoughtTextArea.setBounds(375, 100, 150, 30);
+
+        sharesLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        sharesLabel.setBounds(450, 50, 600, 30);
+
+        paymentAmountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        paymentAmountLabel.setBounds(225, 275, 600, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 350, 150, 40);
@@ -49,7 +55,11 @@ public class BuySharesScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
+        container.add(backButton);
         container.add(titleLabel);
+        container.add(sharesBoughtTextArea);
+        container.add(sharesLabel);
+        container.add(paymentAmountLabel);
         container.add(confirmButton);
     }
 
