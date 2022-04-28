@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class main {
     public static void main(String[] a) {
-        RegistrationScreen frame = new RegistrationScreen();
+        LoginScreen frame = new LoginScreen();
         frame.setVisible(true);
         frame.setTitle("Login");
         Color color=new Color(41, 171, 135);

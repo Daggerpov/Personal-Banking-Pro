@@ -64,7 +64,9 @@ public class DepositScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
 		if (e.getSource() == confirmButton) {
-			GeneralScreen frame = new GeneralScreen();
+			// if (accountFrom.equals("Chequings")){
+            
+            GeneralScreen frame = new GeneralScreen();
 			frame.setTitle("General");
             Color color=new Color(41, 171, 135);
         	frame.getContentPane().setBackground(color);			

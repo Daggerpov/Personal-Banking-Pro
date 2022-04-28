@@ -50,20 +50,25 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		fNameLabel.setBounds(10, 80, 500, 30);
 		fNameTextField.setBounds(225, 80, 150, 30);
 		errorIcon1Label.setBounds(350,70,100,40);
+		errorIcon1Label.setVisible(false);
 
 		usernameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		usernameLabel.setBounds(10, 140, 500, 30);
 		usernameTextField.setBounds(375, 140, 150, 30);
 		errorIcon2Label.setBounds(500,130,100,40);
+		errorIcon2Label.setVisible(false);
 
 		passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		passwordLabel.setBounds(10, 200, 100, 30);
 		passwordField.setBounds(110, 200, 150, 30);
 		errorIcon3Label.setBounds(240,190,100,40);
+		errorIcon3Label.setVisible(false);
 
 		confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		confirmPasswordLabel.setBounds(10, 260, 200, 40);
 		confirmPasswordField.setBounds(175, 263, 150, 30);
+		errorIcon4Label.setBounds(300, 260, 100, 40);
+		errorIcon4Label.setVisible(false);
 
 		showPassword.setFont(new Font("Serif", Font.PLAIN, 16));
 		showPassword.setBounds(175, 300, 150, 30);
@@ -119,19 +124,34 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().length == 0 || confirmPasswordField
 					.getPassword().length == 0){
 				JOptionPane.showMessageDialog(this, "Empty Field(s)", "Error", JOptionPane.ERROR_MESSAGE);
-				if (fNameTextField.equals("")){
-					//TODO red indicator next to field saying it's empty
+				if (fNameTextField.getText().equals("")){
 					errorIcon1Label.setVisible(true);
-				} else if (usernameTextField.equals("")){
-					//TODO red indicator next to field saying it's empty
-				} else if (passwordField.equals("")){
-					//TODO red indicator next to field saying it's empty
 				} else {
-					//TODO red indicator next to field saying it's empty
+					errorIcon1Label.setVisible(false);
 				}
+				
+				if (usernameTextField.getText().equals("")){
+					errorIcon2Label.setVisible(true);
+				} else {
+					errorIcon2Label.setVisible(false);
+				}
+
+				if (passwordField.getPassword().length == 0){
+					errorIcon3Label.setVisible(true);
+				} else {
+					errorIcon3Label.setVisible(true);
+				}
+
+				if (confirmPasswordField.getPassword().length == 0) {
+					errorIcon4Label.setVisible(true);
+				} else {
+					errorIcon4Label.setVisible(false);
+				}
+				
 			} else if (!passText.equals(confirmPassText)){
 				JOptionPane.showMessageDialog(this, "Passwords don't match", "Warning", JOptionPane.WARNING_MESSAGE);
-				// TODO yellow indicator saying passwords don't match
+				errorIcon3Label.setVisible(true);
+				errorIcon4Label.setVisible(true);
 			} else {
 				JOptionPane.showMessageDialog(this, "Registration Successful");
 				this.dispose();
