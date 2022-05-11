@@ -5,7 +5,7 @@ import javax.swing.*;
 import src.Authentication.LoginScreen;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         LoginScreen frame = new LoginScreen();
         frame.setVisible(true);
         frame.setTitle("Login");
