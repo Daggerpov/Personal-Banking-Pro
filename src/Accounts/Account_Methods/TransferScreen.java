@@ -69,8 +69,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         customTextField.setVisible(false);
 
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        amountLabel.setBounds(225, 200, 600, 30);
-        amountTextField.setBounds(310, 200, 100, 30);
+        amountLabel.setBounds(225, 240, 600, 30);
+        amountTextField.setBounds(310, 240, 100, 30);
 
         title2Label.setFont(new Font("Serif", Font.PLAIN, 20));
         title2Label.setBounds(120, 300, 600, 30);

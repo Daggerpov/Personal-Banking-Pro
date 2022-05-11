@@ -23,8 +23,10 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     JCheckBox customCheckBox = new JCheckBox("Custom:");
     JTextField customTextField = new JTextField();
     JLabel amountLabel = new JLabel("Amount:");
-    JTextField amountTextField = new JTextField();
+    JLabel amountTextField = new JLabel();
     JButton confirmButton = new JButton("Confirm");
+
+    int amountToWithdraw;
     
     String accountFrom;
 
@@ -64,8 +66,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         customTextField.setVisible(false);
 
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        amountLabel.setBounds(225, 200, 600, 30);
-        amountTextField.setBounds(310, 200, 100, 30);
+        amountLabel.setBounds(225, 240, 600, 30);
+        amountTextField.setBounds(310, 240, 100, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 425, 150, 40);
@@ -88,10 +90,13 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-       confirmButton.addActionListener(this);
-
-       customCheckBox.addActionListener(this);
-       backButton.addActionListener(this);
+        confirmButton.addActionListener(this);
+        percent10CheckBox.addActionListener(this);
+        percent25CheckBox.addActionListener(this);
+        percent50CheckBox.addActionListener(this);
+        percent100CheckBox.addActionListener(this);
+        customCheckBox.addActionListener(this);
+        backButton.addActionListener(this);
     }
 
     @Override
@@ -123,12 +128,38 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             this.dispose();
         }
         if (e.getSource() == customCheckBox) {
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
             if (customCheckBox.isSelected() == true) {
-                customTextField.setVisible(true);
+                customTextField.setVisible(true); 
             } else {
                 customTextField.setVisible(false);
             }
+        } else if (e.getSource() == percent100CheckBox) {
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+        } else if (e.getSource() == percent50CheckBox) {
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
+        } else if (e.getSource() == percent25CheckBox) {
+            percent10CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
+        } else if (e.getSource() == percent10CheckBox) {
+            customCheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
         }
+
+
         if (e.getSource() == backButton) {
             if (accountFrom.equals("Chequings")) {
                 ChequingsAccountScreen frame = new ChequingsAccountScreen();
