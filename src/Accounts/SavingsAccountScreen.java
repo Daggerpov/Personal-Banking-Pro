@@ -103,7 +103,8 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
             TransferScreen frame = new TransferScreen("Savings");
             frame.setTitle("Transfer from Savings Account");
             Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            frame.setVisible(true);
+            frame.getContentPane().setBackground(color);            
+            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

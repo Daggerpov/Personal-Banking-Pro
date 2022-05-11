@@ -2,6 +2,7 @@ package src.Accounts.Account_Methods;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.ChequingsAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
@@ -64,8 +65,18 @@ public class DepositScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
 		if (e.getSource() == confirmButton) {
-			// if (accountFrom.equals("Chequings")){
-            
+			if (accountFrom.equals("Chequings")){
+                UserAccount.setChequingsBalance(UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
+            }
+            if (accountFrom.equals("Savings")){
+                UserAccount.setSavingsBalance(UserAccount.getSavingsBalance() + Integer.parseInt(amountTextField.getText()));
+            }
+            if (accountFrom.equals("Investment")) {
+                UserAccount.setInvestmentsBalance(
+                        UserAccount.getInvestmentsBalance() + Integer.parseInt(amountTextField.getText()));
+            }
+
+              
             GeneralScreen frame = new GeneralScreen();
 			frame.setTitle("General");
             Color color=new Color(41, 171, 135);
@@ -98,8 +109,7 @@ public class DepositScreen extends JFrame implements ActionListener {
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-                this.dispose();
+                frame.setVisible(true); this.dispose();
             }
             if (accountFrom.equals("Investments")) {
                 InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
@@ -109,8 +119,9 @@ public class DepositScreen extends JFrame implements ActionListener {
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                         
                 frame.setVisible(true);
+                this.dispose();
                 this.dispose();
             }
         }

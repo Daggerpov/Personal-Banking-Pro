@@ -3,6 +3,7 @@ package src.Accounts.Account_Methods;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.ChequingsAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
@@ -25,10 +26,12 @@ public class TransferScreen extends JFrame implements ActionListener {
     JLabel amountLabel = new JLabel("Amount:");
     JTextField amountTextField = new JTextField();
     JLabel title2Label = new JLabel("Which account would you like to transfer to?");
-    JCheckBox savingsCheckBox = new JCheckBox("Savings");
-    JCheckBox chequingsCheckBox = new JCheckBox("chequings");
-    JButton confirmButton = new JButton("Confirm");
 
+    JCheckBox savingsCheckBox = new JCheckBox("Savings");
+    JCheckBox chequingsCheckBox = new JCheckBox("Chequings");
+    JCheckBox investmentsCheckBox = new JCheckBox("Investments");
+    
+    JButton confirmButton = new JButton("Confirm");
     String accountFrom;
 
     public TransferScreen(String accountScreenFrom) {
@@ -64,7 +67,7 @@ public class TransferScreen extends JFrame implements ActionListener {
         customCheckBox.setBounds(225, 160, 600, 30);
         customTextField.setBounds(325, 160, 100, 30);
         customTextField.setVisible(false);
-        
+
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         amountLabel.setBounds(225, 200, 600, 30);
         amountTextField.setBounds(310, 200, 100, 30);
@@ -72,10 +75,15 @@ public class TransferScreen extends JFrame implements ActionListener {
         title2Label.setFont(new Font("Serif", Font.PLAIN, 20));
         title2Label.setBounds(120, 300, 600, 30);
 
+        
         savingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsCheckBox.setBounds(180, 340, 600, 30);
+        
         chequingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         chequingsCheckBox.setBounds(300, 340, 600, 30);
+
+        investmentsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
+        investmentsCheckBox.setBounds(420, 340, 600, 30); 
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 425, 150, 40);
@@ -97,6 +105,7 @@ public class TransferScreen extends JFrame implements ActionListener {
         container.add(title2Label);
         container.add(savingsCheckBox);
         container.add(chequingsCheckBox);
+        container.add(investmentsCheckBox);
         container.add(confirmButton);
     }
 
@@ -104,22 +113,52 @@ public class TransferScreen extends JFrame implements ActionListener {
         confirmButton.addActionListener(this);
         customCheckBox.addActionListener(this);
         backButton.addActionListener(this);
+        savingsCheckBox.addActionListener(this);
+        chequingsCheckBox.addActionListener(this);
+        investmentsCheckBox.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
-            GeneralScreen frame = new GeneralScreen();
-            frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);       
-            frame.setVisible(true);
-            frame.setBounds(10, 10, 600, 600);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            this.dispose();
+            if ((accountFrom.equals("Savings") && savingsCheckBox.isSelected() == true) || (accountFrom.equals("Chequings") && chequingsCheckBox.isSelected() == true) || (accountFrom.equals("Investments") && investmentsCheckBox.isSelected() == true)){
+                JOptionPane.showMessageDialog(this, "Cannot transfer to the same account as its from.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (accountFrom.equals("Chequings")) {
+                    UserAccount.setChequingsBalance(
+                        UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
+                } else if (accountFrom.equals("Savings")) {
+                    UserAccount.setSavingsBalance(
+                        UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+                } else if (accountFrom.equals("Investments")) {
+                    UserAccount.setInvestmentsBalance(
+                        UserAccount.getInvestmentsBalance() + Integer.parseInt(amountTextField.getText()));
+                }
+
+                if (savingsCheckBox.isSelected()){
+                    UserAccount.setSavingsBalance(
+                            UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+                } else if (chequingsCheckBox.isSelected()) {
+                    UserAccount.setChequingsBalance(
+                            UserAccount.getChequingsBalance() - Integer.parseInt(amountTextField.getText()));
+                } else if (investmentsCheckBox.isSelected()) {
+                    UserAccount.setInvestmentsBalance(
+                            UserAccount.getInvestmentsBalance() - Integer.parseInt(amountTextField.getText()));
+                }
+                
+
+                GeneralScreen frame = new GeneralScreen();
+                frame.setTitle("General");
+                Color color = new Color(41, 171, 135);
+                frame.getContentPane().setBackground(color);
+                frame.setVisible(true);
+                frame.setBounds(10, 10, 600, 600);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                this.dispose();
+            }
         }
         if (e.getSource() == customCheckBox) {
             if (customCheckBox.isSelected() == true) {

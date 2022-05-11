@@ -2,6 +2,7 @@ package src.Accounts.Account_Methods;
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 import src.Accounts.ChequingsAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
@@ -97,6 +98,19 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
+            if (accountFrom.equals("Chequings")) {
+                UserAccount.setChequingsBalance(
+                        UserAccount.getChequingsBalance() - Integer.parseInt(amountTextField.getText()));
+            }
+            if (accountFrom.equals("Savings")) {
+                UserAccount.setSavingsBalance(
+                        UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+            }
+            if (accountFrom.equals("Investment")) {
+                UserAccount.setInvestmentsBalance(
+                        UserAccount.getInvestmentsBalance() - Integer.parseInt(amountTextField.getText()));
+            }
+            
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
             Color color=new Color(41, 171, 135);

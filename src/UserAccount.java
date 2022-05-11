@@ -59,11 +59,7 @@ public class UserAccount {
         investmentsBalance = inputtedInvestmentsBalance;
     }
 
-    public static int getInvestmentsBalance() {
-        return investmentsBalance;
-    }
-
-
+    public static int getInvestmentsBalance() { return investmentsBalance; }
     
 
     
