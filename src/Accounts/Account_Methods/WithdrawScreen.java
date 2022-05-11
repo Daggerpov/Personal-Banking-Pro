@@ -110,7 +110,7 @@ public class WithdrawScreen extends JFrame implements ActionListener {
                 UserAccount.setSavingsBalance(
                         UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
-            if (accountFrom.equals("Investment")) {
+            if (accountFrom.equals("Investments")) {
                 UserAccount.setInvestmentsBalance(
                         UserAccount.getInvestmentsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }

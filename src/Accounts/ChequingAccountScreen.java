@@ -79,8 +79,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // WITHDRAW button logic
         if (e.getSource() == withdrawButton) {
-            WithdrawScreen frame = new WithdrawScreen("Chequings");
-            frame.setTitle("Withdraw from Chequings Account");
+            WithdrawScreen frame = new WithdrawScreen("Chequing");
+            frame.setTitle("Withdraw from Chequing Account");
 
             frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
@@ -92,8 +92,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         }
         // DEPOSIT button logic
         if (e.getSource() == depositButton) {
-            DepositScreen frame = new DepositScreen("Chequings");
-            frame.setTitle("Deposit to Chequings Account");
+            DepositScreen frame = new DepositScreen("Chequing");
+            frame.setTitle("Deposit to Chequing Account");
 
             frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
@@ -105,8 +105,8 @@ public class ChequingAccountScreen extends JFrame implements ActionListener {
         }
         // TRANSFER button logic
         if (e.getSource() == transferButton) {
-            TransferScreen frame = new TransferScreen("Chequings");
-            frame.setTitle("Transfer from Chequings Account");
+            TransferScreen frame = new TransferScreen("Chequing");
+            frame.setTitle("Transfer from Chequing Account");
 
             frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);

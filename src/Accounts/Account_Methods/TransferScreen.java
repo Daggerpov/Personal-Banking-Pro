@@ -229,6 +229,8 @@ public class TransferScreen extends JFrame implements ActionListener {
             percent100CheckBox.setSelected(false);
         }
 
+        // if (e.getSource() == )
+
         if (e.getSource() == backButton) {
             if (accountFrom.equals("Chequing")) {
                 ChequingAccountScreen frame = new ChequingAccountScreen();

@@ -74,7 +74,7 @@ public class DepositScreen extends JFrame implements ActionListener {
                 UserAccount.setSavingsBalance(
                         UserAccount.getSavingsBalance() + Integer.parseInt(amountTextField.getText()));
             }
-            if (accountFrom.equals("Investment")) {
+            if (accountFrom.equals("Investments")) {
                 UserAccount.setInvestmentsBalance(
                         UserAccount.getInvestmentsBalance() + Integer.parseInt(amountTextField.getText()));
             }

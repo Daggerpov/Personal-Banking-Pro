@@ -16,8 +16,8 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
     JCheckBox savingsBox = new JCheckBox();
     JLabel chequingLabel = new JLabel("Create Chequing Account");
     JCheckBox chequingBox = new JCheckBox();
-    JLabel investmentLabel = new JLabel("Create Investments Account");
-    JCheckBox investmentBox = new JCheckBox();
+    JLabel investmentsLabel = new JLabel("Create Investments Account");
+    JCheckBox investmentsBox = new JCheckBox();
 
     JLabel savingsBalanceLabel = new JLabel("Balance ($):");
     JTextField savingsTextField = new JTextField();
@@ -50,9 +50,9 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         chequingLabel.setBounds(10, 140, 500, 30);
         chequingBox.setBounds(250, 140, 150, 30);
 
-        investmentLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-        investmentLabel.setBounds(10, 230, 400, 30);
-        investmentBox.setBounds(250, 230, 150, 30);
+        investmentsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+        investmentsLabel.setBounds(10, 230, 400, 30);
+        investmentsBox.setBounds(250, 230, 150, 30);
 
         savingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsBalanceLabel.setBounds(375, 50, 500, 30);
@@ -85,12 +85,12 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
 
     public void addComponentsToContainer() {
         // Adding each components to the Container
-        container.add(investmentLabel);
+        container.add(investmentsLabel);
         container.add(savingsLabel);
         container.add(chequingLabel);
         container.add(savingsBox);
         container.add(chequingBox);
-        container.add(investmentBox);
+        container.add(investmentsBox);
         container.add(investmentsBalanceLabel);
         container.add(savingsBalanceLabel);
         container.add(chequingBalanceLabel);
@@ -104,7 +104,10 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
         nextButton.addActionListener(this);
         savingsBox.addActionListener(this);
         chequingBox.addActionListener(this);
-        investmentBox.addActionListener(this);
+        investmentsBox.addActionListener(this);
+        savingsTextField.addActionListener(this);
+        chequingTextField.addActionListener(this);
+        investmentsTextField.addActionListener(this);
     }
 
     @Override
@@ -128,8 +131,8 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
                 chequingTextField.setVisible(false);
             }
         }
-        if (e.getSource() == investmentBox) {
-            if (investmentBox.isSelected() == true) {
+        if (e.getSource() == investmentsBox) {
+            if (investmentsBox.isSelected() == true) {
                 investmentsBalanceLabel.setVisible(true);
                 investmentsTextField.setVisible(true);
             } else {
@@ -154,8 +157,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(this, "Cannot input decimal values", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else {
-                GeneralScreen frame = new GeneralScreen();
-                frame.setTitle("General");
+                
 
                 if (!chequingBalance.isEmpty()) {
                     UserAccount.setChequingBalance((Integer.parseInt(chequingBalance)));
@@ -167,6 +169,8 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
                     UserAccount.setInvestmentsBalance((Integer.parseInt(investmentsBalance)));
                 }
 
+                GeneralScreen frame = new GeneralScreen();
+                frame.setTitle("General");
                 frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
