@@ -23,11 +23,10 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     JCheckBox customCheckBox = new JCheckBox("Custom:");
     JTextField customTextField = new JTextField();
     JLabel amountLabel = new JLabel("Amount:");
-    JLabel amountTextField = new JLabel();
+
+    JLabel amountValueLabel = new JLabel("0");
     JButton confirmButton = new JButton("Confirm");
 
-    int amountToWithdraw;
-    
     String accountFrom;
 
 
@@ -67,7 +66,7 @@ public class WithdrawScreen extends JFrame implements ActionListener {
 
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         amountLabel.setBounds(225, 240, 600, 30);
-        amountTextField.setBounds(310, 240, 100, 30);
+        amountValueLabel.setBounds(310, 240, 100, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 425, 150, 40);
@@ -85,7 +84,7 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         container.add(customCheckBox);
         container.add(customTextField);
         container.add(amountLabel);
-        container.add(amountTextField);
+        container.add(amountValueLabel);
         container.add(confirmButton);
     }
 
@@ -105,15 +104,15 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         if (e.getSource() == confirmButton) {
             if (accountFrom.equals("Chequings")) {
                 UserAccount.setChequingsBalance(
-                        UserAccount.getChequingsBalance() - Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getChequingsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
             if (accountFrom.equals("Savings")) {
                 UserAccount.setSavingsBalance(
-                        UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
             if (accountFrom.equals("Investment")) {
                 UserAccount.setInvestmentsBalance(
-                        UserAccount.getInvestmentsBalance() - Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getInvestmentsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
             
             GeneralScreen frame = new GeneralScreen();
@@ -138,21 +137,49 @@ public class WithdrawScreen extends JFrame implements ActionListener {
                 customTextField.setVisible(false);
             }
         } else if (e.getSource() == percent100CheckBox) {
+            if (accountFrom.equals("Savings")){
+                amountValueLabel.setText(Integer.toString(UserAccount.getSavingsBalance()));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getChequingsBalance()));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getInvestmentsBalance()));
+            }
             percent10CheckBox.setSelected(false);
             percent25CheckBox.setSelected(false);
             percent50CheckBox.setSelected(false);
             customCheckBox.setSelected(false);
         } else if (e.getSource() == percent50CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.5));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.5));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.5));
+            }
             percent10CheckBox.setSelected(false);
             percent25CheckBox.setSelected(false);
             customCheckBox.setSelected(false);
             percent100CheckBox.setSelected(false);
         } else if (e.getSource() == percent25CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.25));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.25));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.25));
+            }
             percent10CheckBox.setSelected(false);
             customCheckBox.setSelected(false);
             percent50CheckBox.setSelected(false);
             percent100CheckBox.setSelected(false);
         } else if (e.getSource() == percent10CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.10));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.10));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.10));
+            }
             customCheckBox.setSelected(false);
             percent25CheckBox.setSelected(false);
             percent50CheckBox.setSelected(false);

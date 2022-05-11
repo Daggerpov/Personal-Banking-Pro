@@ -24,7 +24,8 @@ public class TransferScreen extends JFrame implements ActionListener {
     JCheckBox customCheckBox = new JCheckBox("Custom:");
     JTextField customTextField = new JTextField();
     JLabel amountLabel = new JLabel("Amount:");
-    JTextField amountTextField = new JTextField();
+
+    JLabel amountValueLabel = new JLabel();
     JLabel title2Label = new JLabel("Which account would you like to transfer to?");
 
     JCheckBox savingsCheckBox = new JCheckBox("Savings");
@@ -32,6 +33,7 @@ public class TransferScreen extends JFrame implements ActionListener {
     JCheckBox investmentsCheckBox = new JCheckBox("Investments");
     
     JButton confirmButton = new JButton("Confirm");
+    
     String accountFrom;
 
     public TransferScreen(String accountScreenFrom) {
@@ -70,7 +72,7 @@ public class TransferScreen extends JFrame implements ActionListener {
 
         amountLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         amountLabel.setBounds(225, 240, 600, 30);
-        amountTextField.setBounds(310, 240, 100, 30);
+        amountValueLabel.setBounds(310, 240, 100, 30);
 
         title2Label.setFont(new Font("Serif", Font.PLAIN, 20));
         title2Label.setBounds(120, 300, 600, 30);
@@ -101,7 +103,7 @@ public class TransferScreen extends JFrame implements ActionListener {
         container.add(customCheckBox);
         container.add(customTextField);
         container.add(amountLabel);
-        container.add(amountTextField);
+        container.add(amountValueLabel);
         container.add(title2Label);
         container.add(savingsCheckBox);
         container.add(chequingsCheckBox);
@@ -112,6 +114,11 @@ public class TransferScreen extends JFrame implements ActionListener {
     public void addActionEvent() {
         confirmButton.addActionListener(this);
         customCheckBox.addActionListener(this);
+        percent10CheckBox.addActionListener(this);
+        percent25CheckBox.addActionListener(this);
+        percent50CheckBox.addActionListener(this);
+        percent100CheckBox.addActionListener(this);
+
         backButton.addActionListener(this);
         savingsCheckBox.addActionListener(this);
         chequingsCheckBox.addActionListener(this);
@@ -127,26 +134,25 @@ public class TransferScreen extends JFrame implements ActionListener {
             } else {
                 if (accountFrom.equals("Chequings")) {
                     UserAccount.setChequingsBalance(
-                        UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getChequingsBalance() + Integer.parseInt(amountValueLabel.getText()));
                 } else if (accountFrom.equals("Savings")) {
                     UserAccount.setSavingsBalance(
-                        UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (accountFrom.equals("Investments")) {
                     UserAccount.setInvestmentsBalance(
-                        UserAccount.getInvestmentsBalance() + Integer.parseInt(amountTextField.getText()));
+                        UserAccount.getInvestmentsBalance() + Integer.parseInt(amountValueLabel.getText()));
                 }
 
                 if (savingsCheckBox.isSelected()){
                     UserAccount.setSavingsBalance(
-                            UserAccount.getSavingsBalance() - Integer.parseInt(amountTextField.getText()));
+                            UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (chequingsCheckBox.isSelected()) {
                     UserAccount.setChequingsBalance(
-                            UserAccount.getChequingsBalance() - Integer.parseInt(amountTextField.getText()));
+                            UserAccount.getChequingsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (investmentsCheckBox.isSelected()) {
                     UserAccount.setInvestmentsBalance(
-                            UserAccount.getInvestmentsBalance() - Integer.parseInt(amountTextField.getText()));
+                            UserAccount.getInvestmentsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 }
-                
 
                 GeneralScreen frame = new GeneralScreen();
                 frame.setTitle("General");
@@ -160,13 +166,67 @@ public class TransferScreen extends JFrame implements ActionListener {
                 this.dispose();
             }
         }
+
         if (e.getSource() == customCheckBox) {
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
             if (customCheckBox.isSelected() == true) {
                 customTextField.setVisible(true);
             } else {
                 customTextField.setVisible(false);
             }
+        } else if (e.getSource() == percent100CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getSavingsBalance()));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getChequingsBalance()));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getInvestmentsBalance()));
+            }
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+        } else if (e.getSource() == percent50CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.5));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.5));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.5));
+            }
+            percent10CheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
+        } else if (e.getSource() == percent25CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.25));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.25));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.25));
+            }
+            percent10CheckBox.setSelected(false);
+            customCheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
+        } else if (e.getSource() == percent10CheckBox) {
+            if (accountFrom.equals("Savings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.10));
+            } else if (accountFrom.equals("Chequings")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.10));
+            } else if (accountFrom.equals("Investments")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.10));
+            }
+            customCheckBox.setSelected(false);
+            percent25CheckBox.setSelected(false);
+            percent50CheckBox.setSelected(false);
+            percent100CheckBox.setSelected(false);
         }
+
         if (e.getSource() == backButton) {
             if (accountFrom.equals("Chequings")) {
                 ChequingsAccountScreen frame = new ChequingsAccountScreen();
