@@ -74,8 +74,8 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen("Investments");
             frame.setTitle("Withdraw from Investments Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,8 +87,8 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen("Investments");
             frame.setTitle("Deposit to Investments Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -100,8 +100,8 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == manageInvestmentsButton) {
             InvestmentsScreen frame = new InvestmentsScreen();
             frame.setTitle("Manage Investments");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,8 +113,8 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

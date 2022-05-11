@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 
 public class ChequingsAccountScreen extends JFrame implements ActionListener {
 
-    //! can change to whatever value
+    // ! can change to whatever value
     int maxSpendingLimit = 250;
     Container container = getContentPane();
     JLabel maxSpendingLabel = new JLabel("Your max spending limit is: " + maxSpendingLimit);
@@ -81,8 +81,8 @@ public class ChequingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen("Chequings");
             frame.setTitle("Withdraw from Chequings Account");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);          
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,8 +94,8 @@ public class ChequingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen("Chequings");
             frame.setTitle("Deposit to Chequings Account");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);      
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,8 +107,8 @@ public class ChequingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == transferButton) {
             TransferScreen frame = new TransferScreen("Chequings");
             frame.setTitle("Transfer from Chequings Account");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);          
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,8 +120,8 @@ public class ChequingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);          
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

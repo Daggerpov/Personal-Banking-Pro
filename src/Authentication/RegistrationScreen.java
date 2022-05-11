@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import src.UserAccount;
 
 public class RegistrationScreen extends JFrame implements ActionListener {
@@ -28,7 +27,6 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 	JLabel errorIcon3Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
 	JLabel errorIcon4Label = new JLabel("", new ImageIcon("images/Error Icon.png"), SwingConstants.CENTER);
 
-
 	public RegistrationScreen() {
 		// Calling methods inside constructor.
 		setLayoutManager();
@@ -49,19 +47,19 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 		fNameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		fNameLabel.setBounds(10, 80, 500, 30);
 		fNameTextField.setBounds(225, 80, 150, 30);
-		errorIcon1Label.setBounds(350,70,100,40);
+		errorIcon1Label.setBounds(350, 70, 100, 40);
 		errorIcon1Label.setVisible(false);
 
 		usernameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		usernameLabel.setBounds(10, 140, 500, 30);
 		usernameTextField.setBounds(375, 140, 150, 30);
-		errorIcon2Label.setBounds(500,130,100,40);
+		errorIcon2Label.setBounds(500, 130, 100, 40);
 		errorIcon2Label.setVisible(false);
 
 		passwordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		passwordLabel.setBounds(10, 200, 100, 30);
 		passwordField.setBounds(110, 200, 150, 30);
-		errorIcon3Label.setBounds(240,190,100,40);
+		errorIcon3Label.setBounds(240, 190, 100, 40);
 		errorIcon3Label.setVisible(false);
 
 		confirmPasswordLabel.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -120,23 +118,25 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 
 		// SETUP ACCOUNT button logic
 		if (e.getSource() == setupAccountButton) {
-			//couldn't use .isEmpty() since it's not a primitive string, so I have to compare it to an empty string 
-			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("") || passwordField.getPassword().length == 0 || confirmPasswordField
-					.getPassword().length == 0){
+			// couldn't use .isEmpty() since it's not a primitive string, so I have to
+			// compare it to an empty string
+			if (fNameTextField.getText().equals("") || usernameTextField.getText().equals("")
+					|| passwordField.getPassword().length == 0 || confirmPasswordField
+							.getPassword().length == 0) {
 				JOptionPane.showMessageDialog(this, "Empty Field(s)", "Error", JOptionPane.ERROR_MESSAGE);
-				if (fNameTextField.getText().equals("")){
+				if (fNameTextField.getText().equals("")) {
 					errorIcon1Label.setVisible(true);
 				} else {
 					errorIcon1Label.setVisible(false);
 				}
-				
-				if (usernameTextField.getText().equals("")){
+
+				if (usernameTextField.getText().equals("")) {
 					errorIcon2Label.setVisible(true);
 				} else {
 					errorIcon2Label.setVisible(false);
 				}
 
-				if (passwordField.getPassword().length == 0){
+				if (passwordField.getPassword().length == 0) {
 					errorIcon3Label.setVisible(true);
 				} else {
 					errorIcon3Label.setVisible(true);
@@ -147,8 +147,8 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 				} else {
 					errorIcon4Label.setVisible(false);
 				}
-				
-			} else if (!passText.equals(confirmPassText)){
+
+			} else if (!passText.equals(confirmPassText)) {
 				JOptionPane.showMessageDialog(this, "Passwords don't match", "Warning", JOptionPane.WARNING_MESSAGE);
 				errorIcon3Label.setVisible(true);
 				errorIcon4Label.setVisible(true);
@@ -161,15 +161,15 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 
 				SetupAccountScreen frame = new SetupAccountScreen();
 				frame.setTitle("Setup Account");
-				Color color = new Color(41, 171, 135);
-				frame.getContentPane().setBackground(color);
+
+				frame.getContentPane().setBackground(UserAccount.getColourTheme());
 				frame.setVisible(true);
 				frame.setBounds(10, 10, 600, 600);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setVisible(true);
 				this.dispose();
-			} 
+			}
 		}
 	}
 }

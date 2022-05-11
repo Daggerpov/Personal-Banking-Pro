@@ -1,7 +1,9 @@
 package src.Accounts.Investment_Account_Methods;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
+import src.UserAccount;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -61,7 +63,7 @@ public class SellSharesScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-       confirmButton.addActionListener(this);
+        confirmButton.addActionListener(this);
     }
 
     @Override
@@ -70,8 +72,8 @@ public class SellSharesScreen extends JFrame implements ActionListener {
         if (e.getSource() == confirmButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

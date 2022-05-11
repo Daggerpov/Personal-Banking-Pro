@@ -1,5 +1,8 @@
 package src;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+import java.awt.*;
 
 public class UserAccount {    
     //* login info default values
@@ -61,6 +64,28 @@ public class UserAccount {
 
     public static int getInvestmentsBalance() { return investmentsBalance; }
     
+    private static String colourTheme = "turquoise"; // default
 
+    public static void setColourTheme(String selectedColourTheme) {
+        if (selectedColourTheme.equals("turquoise") || selectedColourTheme.equals("red") || selectedColourTheme.equals("purple")){
+            colourTheme = selectedColourTheme;
+        }
+    }
+
+    public static Color getColourTheme() { 
+        Map<String, Color> colourThemesRGB = new HashMap<String, Color>();
+
+        final Color red = new Color(255, 28, 71);
+        final Color purple = new Color(196, 178, 229);
+        final Color turquoise = new Color(41, 171, 135);
+
+        colourThemesRGB.put("red", red);
+        colourThemesRGB.put("purple", purple);
+        colourThemesRGB.put("turquoise", turquoise);
+
+        return colourThemesRGB.get(colourTheme);
+    }
+
+    
     
 }

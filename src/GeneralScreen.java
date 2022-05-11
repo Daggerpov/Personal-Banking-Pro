@@ -29,17 +29,20 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JButton eTransferButton = new JButton("E-Transfer");
     JLabel summaryLabel = new JLabel("User Account (" + UserAccount.getUsername() + ") Summary:");
     JLabel visitLabel = new JLabel("Visit:");
-    
+
     JButton visitChequingsButton = new JButton("Chequing");
     JLabel chequingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingsBalance()); // chequings balance
                                                                                                     // appears here
 
     JButton visitSavingsButton = new JButton("Savings");
-    JLabel savingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getSavingsBalance()); // savings balance appears here
-    
+    JLabel savingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getSavingsBalance()); // savings balance
+                                                                                                // appears here
+
     JButton visitInvestmentsButton = new JButton("Investments");
-    JLabel investmentsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getInvestmentsBalance()); // investments balance appears here
-    
+    JLabel investmentsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getInvestmentsBalance()); // investments
+                                                                                                        // balance
+                                                                                                        // appears here
+
     JButton settingsButton = new JButton("Settings");
     JButton signOutButton = new JButton("Sign Out");
 
@@ -140,8 +143,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitChequingsButton) {
             ChequingsAccountScreen frame = new ChequingsAccountScreen();
             frame.setTitle("Chequings Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -153,8 +156,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitInvestmentsButton) {
             InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
             frame.setTitle("Investments Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -166,8 +169,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == visitSavingsButton) {
             SavingsAccountScreen frame = new SavingsAccountScreen();
             frame.setTitle("Savings Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -179,8 +182,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == settingsButton) {
             SettingsScreen frame = new SettingsScreen();
             frame.setTitle("Settings");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -192,8 +195,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == eTransferButton) {
             ETransferScreen frame = new ETransferScreen();
             frame.setTitle("Send Money");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -205,8 +208,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         if (e.getSource() == signOutButton) {
             LoginScreen frame = new LoginScreen();
             frame.setTitle("Login");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

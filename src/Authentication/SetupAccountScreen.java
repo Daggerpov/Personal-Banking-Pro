@@ -167,8 +167,7 @@ public class SetupAccountScreen extends JFrame implements ActionListener {
                     UserAccount.setInvestmentsBalance((Integer.parseInt(investmentsBalance)));
                 }
 
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

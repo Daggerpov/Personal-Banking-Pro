@@ -1,6 +1,8 @@
 package src.Accounts.Investment_Account_Methods;
+
 import javax.swing.*;
 
+import src.UserAccount;
 import src.Accounts.InvestmentsAccountScreen;
 
 import java.awt.*;
@@ -89,7 +91,7 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
-        Color color=new Color(112, 230, 210);
+        Color color = new Color(112, 230, 210);
 
         // Setting location and Size of each components using setBounds() method.
         backButton.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -105,73 +107,77 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         sell4Button.setFont(new Font("Serif", Font.PLAIN, 20));
         share1Panel.setFont(new Font("Serif", Font.PLAIN, 20));
 
-
         share1Panel.setBounds(50, 100, 510, 40);
         share1Label.setBounds(60, 100, 100, 40);
         share1ValueLabel.setBounds(200, 100, 100, 40);
         buy1Button.setBounds(400, 100, 70, 40);
         sell1Button.setBounds(480, 100, 70, 40);
-        if(amountChangedShare1 < 0){
+        if (amountChangedShare1 < 0) {
             redArrowLabel1.setBounds(100, 100, 100, 40);
 
-        }
-        else if(amountChangedShare1 > 0){
+        } else if (amountChangedShare1 > 0) {
             greenArrowLabel1.setBounds(100, 100, 100, 40);
         }
 
-        share1Panel.add(share1Label); share1Panel.add(share1ValueChangeLabel); share1Panel.add(share1ChangeLabel); share1Panel.add(share1ValueLabel);
-        share1Panel.setBackground(color);
+        share1Panel.add(share1Label);
+        share1Panel.add(share1ValueChangeLabel);
+        share1Panel.add(share1ChangeLabel);
+        share1Panel.add(share1ValueLabel);
+        share1Panel.setBackground(UserAccount.getColourTheme());
 
         share2Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share2Panel.setBounds(50, 150, 510, 40);
         share2Label.setBounds(60, 150, 100, 40);
         buy2Button.setBounds(400, 150, 70, 40);
         sell2Button.setBounds(480, 150, 70, 40);
-        if(amountChangedShare2 < 0){
+        if (amountChangedShare2 < 0) {
             greenArrowLabel2.setVisible(false);
             redArrowLabel2.setBounds(100, 150, 100, 40);
 
-        }
-        else if(amountChangedShare2 > 0){
+        } else if (amountChangedShare2 > 0) {
             greenArrowLabel2.setBounds(100, 150, 100, 40);
             greenArrowLabel2.setVisible(true);
         }
-        share2Panel.add(share2Label); share2Panel.add(share2ValueChangeLabel); share2Panel.add(share2ChangeLabel); share2Panel.add(share2ValueLabel);
-        share2Panel.setBackground(color);
-
+        share2Panel.add(share2Label);
+        share2Panel.add(share2ValueChangeLabel);
+        share2Panel.add(share2ChangeLabel);
+        share2Panel.add(share2ValueLabel);
+        share2Panel.setBackground(UserAccount.getColourTheme());
 
         share3Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share3Panel.setBounds(50, 200, 510, 40);
         share3Label.setBounds(60, 200, 100, 40);
         buy3Button.setBounds(400, 200, 70, 40);
         sell3Button.setBounds(480, 200, 70, 40);
-        if(amountChangedShare3 < 0){
+        if (amountChangedShare3 < 0) {
             redArrowLabel3.setBounds(100, 200, 100, 40);
 
-        }
-        else if(amountChangedShare3 > 0){
+        } else if (amountChangedShare3 > 0) {
             greenArrowLabel3.setBounds(100, 200, 100, 40);
         }
-        share3Panel.add(share3Label); share3Panel.add(share3ValueChangeLabel); share3Panel.add(share3ChangeLabel); share3Panel.add(share3ValueLabel);
-        share3Panel.setBackground(color);
-
+        share3Panel.add(share3Label);
+        share3Panel.add(share3ValueChangeLabel);
+        share3Panel.add(share3ChangeLabel);
+        share3Panel.add(share3ValueLabel);
+        share3Panel.setBackground(UserAccount.getColourTheme());
 
         share4Panel.setFont(new Font("Serif", Font.PLAIN, 20));
         share4Panel.setBounds(50, 250, 510, 40);
         share4Label.setBounds(60, 250, 100, 40);
         buy4Button.setBounds(400, 250, 70, 40);
         sell4Button.setBounds(480, 250, 70, 40);
-        if(amountChangedShare4 < 0){
+        if (amountChangedShare4 < 0) {
             greenArrowLabel4.setVisible(false);
             redArrowLabel4.setBounds(100, 250, 100, 40);
 
-        }
-        else if(amountChangedShare4 > 0){
+        } else if (amountChangedShare4 > 0) {
             greenArrowLabel4.setBounds(100, 250, 100, 40);
             greenArrowLabel4.setVisible(true);
         }
-        share4Panel.add(share4ValueLabel); share4Panel.add(share4ChangeLabel); share4Panel.add(share4ValueChangeLabel);
-        share4Panel.setBackground(color);
+        share4Panel.add(share4ValueLabel);
+        share4Panel.add(share4ChangeLabel);
+        share4Panel.add(share4ValueChangeLabel);
+        share4Panel.setBackground(UserAccount.getColourTheme());
     }
 
     public void addComponentsToContainer() {
@@ -221,8 +227,8 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
             frame.setTitle("Investments Account");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);          
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -234,8 +240,8 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         if (e.getSource() == buy1Button) {
             BuySharesScreen frame = new BuySharesScreen();
             frame.setTitle("Buy Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -243,12 +249,11 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             frame.setBackground(Color.CYAN);
             this.dispose();
-        }
-        else if(e.getSource() == buy2Button){
+        } else if (e.getSource() == buy2Button) {
             BuySharesScreen frame = new BuySharesScreen();
             frame.setTitle("Buy Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -256,12 +261,11 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             frame.setBackground(Color.CYAN);
             this.dispose();
-        }
-        else if(e.getSource() == buy3Button){
+        } else if (e.getSource() == buy3Button) {
             BuySharesScreen frame = new BuySharesScreen();
             frame.setTitle("Buy Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -269,12 +273,11 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             frame.setBackground(Color.CYAN);
             this.dispose();
-        }
-        else if(e.getSource() == buy4Button){
+        } else if (e.getSource() == buy4Button) {
             BuySharesScreen frame = new BuySharesScreen();
             frame.setTitle("Buy Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -288,44 +291,41 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
         if (e.getSource() == sell1Button) {
             SellSharesScreen frame = new SellSharesScreen();
             frame.setTitle("Sell Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             this.dispose();
-        }
-        else if (e.getSource() == sell2Button) {
+        } else if (e.getSource() == sell2Button) {
             SellSharesScreen frame = new SellSharesScreen();
             frame.setTitle("Sell Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             this.dispose();
-        }
-        else if (e.getSource() == sell3Button) {
+        } else if (e.getSource() == sell3Button) {
             SellSharesScreen frame = new SellSharesScreen();
             frame.setTitle("Sell Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             this.dispose();
-        }
-        else if (e.getSource() == sell4Button) {
+        } else if (e.getSource() == sell4Button) {
             SellSharesScreen frame = new SellSharesScreen();
             frame.setTitle("Sell Shares");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);         
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

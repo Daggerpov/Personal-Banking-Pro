@@ -1,4 +1,5 @@
 package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -40,13 +41,13 @@ public class SettingsScreen extends JFrame implements ActionListener {
         themeLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         themeLabel.setBounds(10, 130, 500, 30);
 
-        theme1Label.setBounds(130,135,150,60);
+        theme1Label.setBounds(130, 135, 150, 60);
         theme1Box.setBounds(155, 180, 100, 60);
 
-        theme2Label.setBounds(290,135,150,60);
+        theme2Label.setBounds(290, 135, 150, 60);
         theme2Box.setBounds(320, 180, 100, 60);
 
-        theme3Label.setBounds(460,135,150,60);
+        theme3Label.setBounds(460, 135, 150, 60);
         theme3Box.setBounds(490, 180, 100, 60);
 
         messageLabel.setFont(new Font("Serif", Font.PLAIN, 16));
@@ -74,6 +75,9 @@ public class SettingsScreen extends JFrame implements ActionListener {
     public void addActionEvent() {
         backButton.addActionListener(this);
         deleteAccountButton.addActionListener(this);
+        theme1Box.addActionListener(this);
+        theme2Box.addActionListener(this);
+        theme3Box.addActionListener(this);
     }
 
     @Override
@@ -82,8 +86,8 @@ public class SettingsScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,8 +99,8 @@ public class SettingsScreen extends JFrame implements ActionListener {
         if (e.getSource() == deleteAccountButton) {
             DeleteAccountScreen frame = new DeleteAccountScreen();
             frame.setTitle("Delete Account");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -104,5 +108,20 @@ public class SettingsScreen extends JFrame implements ActionListener {
             frame.setVisible(true);
             this.dispose();
         }
+
+        if (e.getSource() == theme1Box) {
+            UserAccount.setColourTheme("red");
+            theme2Box.setSelected(false);
+            theme3Box.setSelected(false);
+        } else if (e.getSource() == theme2Box) {
+            UserAccount.setColourTheme("purple");
+            theme1Box.setSelected(false);
+            theme3Box.setSelected(false);
+        } else if (e.getSource() == theme3Box) {
+            UserAccount.setColourTheme("turquoise");
+            theme2Box.setSelected(false);
+            theme1Box.setSelected(false);
+        }
+
     }
 }

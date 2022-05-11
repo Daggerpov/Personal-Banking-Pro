@@ -1,4 +1,5 @@
 package src.Accounts.Account_Methods;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
@@ -57,43 +58,44 @@ public class DepositScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-       confirmButton.addActionListener(this);
-       backButton.addActionListener(this);
+        confirmButton.addActionListener(this);
+        backButton.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
-		if (e.getSource() == confirmButton) {
-			if (accountFrom.equals("Chequings")){
-                UserAccount.setChequingsBalance(UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
+        if (e.getSource() == confirmButton) {
+            if (accountFrom.equals("Chequings")) {
+                UserAccount.setChequingsBalance(
+                        UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
             }
-            if (accountFrom.equals("Savings")){
-                UserAccount.setSavingsBalance(UserAccount.getSavingsBalance() + Integer.parseInt(amountTextField.getText()));
+            if (accountFrom.equals("Savings")) {
+                UserAccount.setSavingsBalance(
+                        UserAccount.getSavingsBalance() + Integer.parseInt(amountTextField.getText()));
             }
             if (accountFrom.equals("Investment")) {
                 UserAccount.setInvestmentsBalance(
                         UserAccount.getInvestmentsBalance() + Integer.parseInt(amountTextField.getText()));
             }
 
-              
             GeneralScreen frame = new GeneralScreen();
-			frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);			
+            frame.setTitle("General");
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
-			frame.setBounds(10, 10, 600, 600);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setVisible(true);
-			this.dispose();
-		}
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
         if (e.getSource() == backButton) {
-            if (accountFrom.equals("Chequings")){
+            if (accountFrom.equals("Chequings")) {
                 ChequingsAccountScreen frame = new ChequingsAccountScreen();
                 frame.setTitle("Chequings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,23 +105,23 @@ public class DepositScreen extends JFrame implements ActionListener {
             } else if (accountFrom.equals("Savings")) {
                 SavingsAccountScreen frame = new SavingsAccountScreen();
                 frame.setTitle("Savings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true); this.dispose();
+                frame.setVisible(true);
+                this.dispose();
             }
             if (accountFrom.equals("Investments")) {
                 InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
                 frame.setTitle("Investments");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                         
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
                 this.dispose();
                 this.dispose();

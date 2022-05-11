@@ -1,4 +1,5 @@
 package src.Accounts.Account_Methods;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
@@ -28,7 +29,6 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     JButton confirmButton = new JButton("Confirm");
 
     String accountFrom;
-
 
     public WithdrawScreen(String accountScreenFrom) {
         // Calling methods inside constructor.
@@ -114,11 +114,11 @@ public class WithdrawScreen extends JFrame implements ActionListener {
                 UserAccount.setInvestmentsBalance(
                         UserAccount.getInvestmentsBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
-            
+
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);        
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,12 +132,12 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             percent50CheckBox.setSelected(false);
             percent100CheckBox.setSelected(false);
             if (customCheckBox.isSelected() == true) {
-                customTextField.setVisible(true); 
+                customTextField.setVisible(true);
             } else {
                 customTextField.setVisible(false);
             }
         } else if (e.getSource() == percent100CheckBox) {
-            if (accountFrom.equals("Savings")){
+            if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getSavingsBalance()));
             } else if (accountFrom.equals("Chequings")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getChequingsBalance()));
@@ -186,13 +186,12 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             percent100CheckBox.setSelected(false);
         }
 
-
         if (e.getSource() == backButton) {
             if (accountFrom.equals("Chequings")) {
                 ChequingsAccountScreen frame = new ChequingsAccountScreen();
                 frame.setTitle("Chequings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -202,8 +201,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             } else if (accountFrom.equals("Savings")) {
                 SavingsAccountScreen frame = new SavingsAccountScreen();
                 frame.setTitle("Savings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -214,8 +213,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
             if (accountFrom.equals("Investments")) {
                 InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
                 frame.setTitle("Investments");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -66,8 +66,7 @@ public class DeleteAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             SettingsScreen frame = new SettingsScreen();
             frame.setTitle("Settings");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());            
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,8 +78,7 @@ public class DeleteAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == confirmButton) {
             LoginScreen frame = new LoginScreen();
             frame.setTitle("Login");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());          
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

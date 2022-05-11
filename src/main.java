@@ -16,8 +16,8 @@ public class main {
         LoginScreen frame = new LoginScreen();
         frame.setVisible(true);
         frame.setTitle("Login");
-        Color color=new Color(41, 171, 135);
-        frame.getContentPane().setBackground(color);
+
+        frame.getContentPane().setBackground(UserAccount.getColourTheme());
         frame.setVisible(true);
         frame.setBounds(10, 10, 600, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

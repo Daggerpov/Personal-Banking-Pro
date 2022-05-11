@@ -1,4 +1,5 @@
 package src.Accounts;
+
 import javax.swing.*;
 
 import src.GeneralScreen;
@@ -66,10 +67,10 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-       withdrawButton.addActionListener(this);
-       depositButton.addActionListener(this);
-       transferButton.addActionListener(this);
-       backButton.addActionListener(this);
+        withdrawButton.addActionListener(this);
+        depositButton.addActionListener(this);
+        transferButton.addActionListener(this);
+        backButton.addActionListener(this);
     }
 
     @Override
@@ -78,8 +79,9 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == withdrawButton) {
             WithdrawScreen frame = new WithdrawScreen("Savings");
             frame.setTitle("Withdraw from Savings Account");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            frame.setVisible(true);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
+            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,8 +92,9 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == depositButton) {
             DepositScreen frame = new DepositScreen("Savings");
             frame.setTitle("Deposit to Savings Account");
-            Color color = new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            frame.setVisible(true);
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
+            frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,8 +105,8 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == transferButton) {
             TransferScreen frame = new TransferScreen("Savings");
             frame.setTitle("Transfer from Savings Account");
-            Color color=new Color(41, 171, 135);
-            frame.getContentPane().setBackground(color);            
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -115,8 +118,8 @@ public class SavingsAccountScreen extends JFrame implements ActionListener {
         if (e.getSource() == backButton) {
             GeneralScreen frame = new GeneralScreen();
             frame.setTitle("General");
-            Color color=new Color(41, 171, 135);
-        	frame.getContentPane().setBackground(color);        
+
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

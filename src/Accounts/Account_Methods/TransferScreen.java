@@ -31,9 +31,9 @@ public class TransferScreen extends JFrame implements ActionListener {
     JCheckBox savingsCheckBox = new JCheckBox("Savings");
     JCheckBox chequingsCheckBox = new JCheckBox("Chequings");
     JCheckBox investmentsCheckBox = new JCheckBox("Investments");
-    
+
     JButton confirmButton = new JButton("Confirm");
-    
+
     String accountFrom;
 
     public TransferScreen(String accountScreenFrom) {
@@ -77,15 +77,14 @@ public class TransferScreen extends JFrame implements ActionListener {
         title2Label.setFont(new Font("Serif", Font.PLAIN, 20));
         title2Label.setBounds(120, 300, 600, 30);
 
-        
         savingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsCheckBox.setBounds(180, 340, 600, 30);
-        
+
         chequingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         chequingsCheckBox.setBounds(300, 340, 600, 30);
 
         investmentsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
-        investmentsCheckBox.setBounds(420, 340, 600, 30); 
+        investmentsCheckBox.setBounds(420, 340, 600, 30);
 
         confirmButton.setFont(new Font("Serif", Font.PLAIN, 20));
         confirmButton.setBounds(225, 425, 150, 40);
@@ -129,21 +128,24 @@ public class TransferScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
-            if ((accountFrom.equals("Savings") && savingsCheckBox.isSelected() == true) || (accountFrom.equals("Chequings") && chequingsCheckBox.isSelected() == true) || (accountFrom.equals("Investments") && investmentsCheckBox.isSelected() == true)){
-                JOptionPane.showMessageDialog(this, "Cannot transfer to the same account as its from.", "Error", JOptionPane.ERROR_MESSAGE);
+            if ((accountFrom.equals("Savings") && savingsCheckBox.isSelected() == true)
+                    || (accountFrom.equals("Chequings") && chequingsCheckBox.isSelected() == true)
+                    || (accountFrom.equals("Investments") && investmentsCheckBox.isSelected() == true)) {
+                JOptionPane.showMessageDialog(this, "Cannot transfer to the same account as its from.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
             } else {
                 if (accountFrom.equals("Chequings")) {
                     UserAccount.setChequingsBalance(
-                        UserAccount.getChequingsBalance() + Integer.parseInt(amountValueLabel.getText()));
+                            UserAccount.getChequingsBalance() + Integer.parseInt(amountValueLabel.getText()));
                 } else if (accountFrom.equals("Savings")) {
                     UserAccount.setSavingsBalance(
-                        UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
+                            UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (accountFrom.equals("Investments")) {
                     UserAccount.setInvestmentsBalance(
-                        UserAccount.getInvestmentsBalance() + Integer.parseInt(amountValueLabel.getText()));
+                            UserAccount.getInvestmentsBalance() + Integer.parseInt(amountValueLabel.getText()));
                 }
 
-                if (savingsCheckBox.isSelected()){
+                if (savingsCheckBox.isSelected()) {
                     UserAccount.setSavingsBalance(
                             UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (chequingsCheckBox.isSelected()) {
@@ -156,8 +158,8 @@ public class TransferScreen extends JFrame implements ActionListener {
 
                 GeneralScreen frame = new GeneralScreen();
                 frame.setTitle("General");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -231,8 +233,8 @@ public class TransferScreen extends JFrame implements ActionListener {
             if (accountFrom.equals("Chequings")) {
                 ChequingsAccountScreen frame = new ChequingsAccountScreen();
                 frame.setTitle("Chequings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -242,8 +244,8 @@ public class TransferScreen extends JFrame implements ActionListener {
             } else if (accountFrom.equals("Savings")) {
                 SavingsAccountScreen frame = new SavingsAccountScreen();
                 frame.setTitle("Savings");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -254,8 +256,8 @@ public class TransferScreen extends JFrame implements ActionListener {
             if (accountFrom.equals("Investments")) {
                 InvestmentsAccountScreen frame = new InvestmentsAccountScreen();
                 frame.setTitle("Investments");
-                Color color = new Color(41, 171, 135);
-                frame.getContentPane().setBackground(color);
+
+                frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
                 frame.setBounds(10, 10, 600, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
