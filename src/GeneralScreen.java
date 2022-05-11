@@ -2,7 +2,7 @@ package src;
 
 import javax.swing.*;
 
-import src.Accounts.ChequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 import src.Authentication.LoginScreen;
@@ -30,9 +30,9 @@ public class GeneralScreen extends JFrame implements ActionListener {
     JLabel summaryLabel = new JLabel("User Account (" + UserAccount.getUsername() + ") Summary:");
     JLabel visitLabel = new JLabel("Visit:");
 
-    JButton visitChequingsButton = new JButton("Chequing");
-    JLabel chequingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingsBalance()); // chequings balance
-                                                                                                    // appears here
+    JButton visitChequingButton = new JButton("Chequing");
+    JLabel chequingBalanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingBalance()); // Chequing balance
+                                                                                                  // appears here
 
     JButton visitSavingsButton = new JButton("Savings");
     JLabel savingsBalanceLabel = new JLabel("Balance ($): " + UserAccount.getSavingsBalance()); // savings balance
@@ -84,10 +84,10 @@ public class GeneralScreen extends JFrame implements ActionListener {
         summaryLabel.setFont(new Font("Serif", Font.PLAIN, 26));
         summaryLabel.setBounds(100, 275, 500, 40);
 
-        visitChequingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
-        visitChequingsButton.setBounds(50, 350, 100, 40);
-        chequingsBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
-        chequingsBalanceLabel.setBounds(30, 400, 300, 40);
+        visitChequingButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        visitChequingButton.setBounds(50, 350, 100, 40);
+        chequingBalanceLabel.setFont(new Font("Serif", Font.PLAIN, 17));
+        chequingBalanceLabel.setBounds(30, 400, 300, 40);
 
         visitSavingsButton.setFont(new Font("Serif", Font.PLAIN, 20));
         visitSavingsButton.setBounds(240, 350, 120, 40);
@@ -118,8 +118,8 @@ public class GeneralScreen extends JFrame implements ActionListener {
         container.add(summaryLabel);
         container.add(settingsButton);
         container.add(visitLabel);
-        container.add(visitChequingsButton);
-        container.add(chequingsBalanceLabel);
+        container.add(visitChequingButton);
+        container.add(chequingBalanceLabel);
         container.add(visitInvestmentsButton);
         container.add(investmentsBalanceLabel);
         container.add(visitSavingsButton);
@@ -129,7 +129,7 @@ public class GeneralScreen extends JFrame implements ActionListener {
     }
 
     public void addActionEvent() {
-        visitChequingsButton.addActionListener(this);
+        visitChequingButton.addActionListener(this);
         visitInvestmentsButton.addActionListener(this);
         visitSavingsButton.addActionListener(this);
         settingsButton.addActionListener(this);
@@ -139,10 +139,10 @@ public class GeneralScreen extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // VISIT CHEQUINGS button logic
-        if (e.getSource() == visitChequingsButton) {
-            ChequingsAccountScreen frame = new ChequingsAccountScreen();
-            frame.setTitle("Chequings Account");
+        // VISIT CHEQUING button logic
+        if (e.getSource() == visitChequingButton) {
+            ChequingAccountScreen frame = new ChequingAccountScreen();
+            frame.setTitle("Chequing Account");
 
             frame.getContentPane().setBackground(UserAccount.getColourTheme());
             frame.setVisible(true);

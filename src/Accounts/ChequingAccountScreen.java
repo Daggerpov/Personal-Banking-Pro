@@ -12,19 +12,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChequingsAccountScreen extends JFrame implements ActionListener {
+public class ChequingAccountScreen extends JFrame implements ActionListener {
 
     // ! can change to whatever value
     int maxSpendingLimit = 250;
     Container container = getContentPane();
     JLabel maxSpendingLabel = new JLabel("Your max spending limit is: " + maxSpendingLimit);
     JButton backButton = new JButton("Back");
-    JLabel balanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingsBalance());
+    JLabel balanceLabel = new JLabel("Balance ($): " + UserAccount.getChequingBalance());
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
     JButton transferButton = new JButton("Transfer");
 
-    public ChequingsAccountScreen() {
+    public ChequingAccountScreen() {
         // Calling methods inside constructor.
         setLayoutManager();
         setLocationAndSize();

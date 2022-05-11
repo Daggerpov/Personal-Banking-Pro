@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import src.GeneralScreen;
 import src.UserAccount;
-import src.Accounts.ChequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 
@@ -102,9 +102,9 @@ public class WithdrawScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
-            if (accountFrom.equals("Chequings")) {
-                UserAccount.setChequingsBalance(
-                        UserAccount.getChequingsBalance() - Integer.parseInt(amountValueLabel.getText()));
+            if (accountFrom.equals("Chequing")) {
+                UserAccount.setChequingBalance(
+                        UserAccount.getChequingBalance() - Integer.parseInt(amountValueLabel.getText()));
             }
             if (accountFrom.equals("Savings")) {
                 UserAccount.setSavingsBalance(
@@ -139,8 +139,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent100CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getSavingsBalance()));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Integer.toString(UserAccount.getChequingsBalance()));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getChequingBalance()));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getInvestmentsBalance()));
             }
@@ -151,8 +151,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent50CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.5));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.5));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.5));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.5));
             }
@@ -163,8 +163,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent25CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.25));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.25));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.25));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.25));
             }
@@ -175,8 +175,8 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent10CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.10));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.10));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.10));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.10));
             }
@@ -187,9 +187,9 @@ public class WithdrawScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == backButton) {
-            if (accountFrom.equals("Chequings")) {
-                ChequingsAccountScreen frame = new ChequingsAccountScreen();
-                frame.setTitle("Chequings");
+            if (accountFrom.equals("Chequing")) {
+                ChequingAccountScreen frame = new ChequingAccountScreen();
+                frame.setTitle("Chequing");
 
                 frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);

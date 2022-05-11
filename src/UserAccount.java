@@ -38,16 +38,16 @@ public class UserAccount {
     }
 
     //* default bank balances
-    private static int chequingsBalance = 500;
+    private static int chequingBalance = 500;
     private static int savingsBalance = 500;
     private static int investmentsBalance = 500;
 
-    public static void setChequingsBalance(int inputtedChequingsBalance) {
-        chequingsBalance = inputtedChequingsBalance;
+    public static void setChequingBalance(int inputtedChequingBalance) {
+        chequingBalance = inputtedChequingBalance;
     }
 
-    public static int getChequingsBalance() {
-        return chequingsBalance;
+    public static int getChequingBalance() {
+        return chequingBalance;
     }
 
     public static void setSavingsBalance(int inputtedSavingsBalance) {

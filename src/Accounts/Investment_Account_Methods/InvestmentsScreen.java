@@ -91,8 +91,6 @@ public class InvestmentsScreen extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
-        Color color = new Color(112, 230, 210);
-
         // Setting location and Size of each components using setBounds() method.
         backButton.setFont(new Font("Serif", Font.PLAIN, 20));
         backButton.setBounds(10, 10, 60, 40);

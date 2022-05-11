@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import src.GeneralScreen;
 import src.UserAccount;
-import src.Accounts.ChequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 
@@ -29,7 +29,7 @@ public class TransferScreen extends JFrame implements ActionListener {
     JLabel title2Label = new JLabel("Which account would you like to transfer to?");
 
     JCheckBox savingsCheckBox = new JCheckBox("Savings");
-    JCheckBox chequingsCheckBox = new JCheckBox("Chequings");
+    JCheckBox chequingCheckBox = new JCheckBox("Chequing");
     JCheckBox investmentsCheckBox = new JCheckBox("Investments");
 
     JButton confirmButton = new JButton("Confirm");
@@ -80,8 +80,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         savingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         savingsCheckBox.setBounds(180, 340, 600, 30);
 
-        chequingsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
-        chequingsCheckBox.setBounds(300, 340, 600, 30);
+        chequingCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
+        chequingCheckBox.setBounds(300, 340, 600, 30);
 
         investmentsCheckBox.setFont(new Font("Serif", Font.PLAIN, 20));
         investmentsCheckBox.setBounds(420, 340, 600, 30);
@@ -105,7 +105,7 @@ public class TransferScreen extends JFrame implements ActionListener {
         container.add(amountValueLabel);
         container.add(title2Label);
         container.add(savingsCheckBox);
-        container.add(chequingsCheckBox);
+        container.add(chequingCheckBox);
         container.add(investmentsCheckBox);
         container.add(confirmButton);
     }
@@ -120,7 +120,7 @@ public class TransferScreen extends JFrame implements ActionListener {
 
         backButton.addActionListener(this);
         savingsCheckBox.addActionListener(this);
-        chequingsCheckBox.addActionListener(this);
+        chequingCheckBox.addActionListener(this);
         investmentsCheckBox.addActionListener(this);
     }
 
@@ -129,14 +129,14 @@ public class TransferScreen extends JFrame implements ActionListener {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
             if ((accountFrom.equals("Savings") && savingsCheckBox.isSelected() == true)
-                    || (accountFrom.equals("Chequings") && chequingsCheckBox.isSelected() == true)
+                    || (accountFrom.equals("Chequing") && chequingCheckBox.isSelected() == true)
                     || (accountFrom.equals("Investments") && investmentsCheckBox.isSelected() == true)) {
                 JOptionPane.showMessageDialog(this, "Cannot transfer to the same account as its from.", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else {
-                if (accountFrom.equals("Chequings")) {
-                    UserAccount.setChequingsBalance(
-                            UserAccount.getChequingsBalance() + Integer.parseInt(amountValueLabel.getText()));
+                if (accountFrom.equals("Chequing")) {
+                    UserAccount.setChequingBalance(
+                            UserAccount.getChequingBalance() + Integer.parseInt(amountValueLabel.getText()));
                 } else if (accountFrom.equals("Savings")) {
                     UserAccount.setSavingsBalance(
                             UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
@@ -148,9 +148,9 @@ public class TransferScreen extends JFrame implements ActionListener {
                 if (savingsCheckBox.isSelected()) {
                     UserAccount.setSavingsBalance(
                             UserAccount.getSavingsBalance() - Integer.parseInt(amountValueLabel.getText()));
-                } else if (chequingsCheckBox.isSelected()) {
-                    UserAccount.setChequingsBalance(
-                            UserAccount.getChequingsBalance() - Integer.parseInt(amountValueLabel.getText()));
+                } else if (chequingCheckBox.isSelected()) {
+                    UserAccount.setChequingBalance(
+                            UserAccount.getChequingBalance() - Integer.parseInt(amountValueLabel.getText()));
                 } else if (investmentsCheckBox.isSelected()) {
                     UserAccount.setInvestmentsBalance(
                             UserAccount.getInvestmentsBalance() - Integer.parseInt(amountValueLabel.getText()));
@@ -182,8 +182,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent100CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getSavingsBalance()));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Integer.toString(UserAccount.getChequingsBalance()));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Integer.toString(UserAccount.getChequingBalance()));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Integer.toString(UserAccount.getInvestmentsBalance()));
             }
@@ -194,8 +194,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent50CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.5));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.5));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.5));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.5));
             }
@@ -206,8 +206,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent25CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.25));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.25));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.25));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.25));
             }
@@ -218,8 +218,8 @@ public class TransferScreen extends JFrame implements ActionListener {
         } else if (e.getSource() == percent10CheckBox) {
             if (accountFrom.equals("Savings")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getSavingsBalance() * 0.10));
-            } else if (accountFrom.equals("Chequings")) {
-                amountValueLabel.setText(Double.toString(UserAccount.getChequingsBalance() * 0.10));
+            } else if (accountFrom.equals("Chequing")) {
+                amountValueLabel.setText(Double.toString(UserAccount.getChequingBalance() * 0.10));
             } else if (accountFrom.equals("Investments")) {
                 amountValueLabel.setText(Double.toString(UserAccount.getInvestmentsBalance() * 0.10));
             }
@@ -230,9 +230,9 @@ public class TransferScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == backButton) {
-            if (accountFrom.equals("Chequings")) {
-                ChequingsAccountScreen frame = new ChequingsAccountScreen();
-                frame.setTitle("Chequings");
+            if (accountFrom.equals("Chequing")) {
+                ChequingAccountScreen frame = new ChequingAccountScreen();
+                frame.setTitle("Chequing");
 
                 frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);

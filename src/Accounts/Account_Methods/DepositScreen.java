@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import src.GeneralScreen;
 import src.UserAccount;
-import src.Accounts.ChequingsAccountScreen;
+import src.Accounts.ChequingAccountScreen;
 import src.Accounts.InvestmentsAccountScreen;
 import src.Accounts.SavingsAccountScreen;
 
@@ -66,9 +66,9 @@ public class DepositScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // CONFIRM button logic
         if (e.getSource() == confirmButton) {
-            if (accountFrom.equals("Chequings")) {
-                UserAccount.setChequingsBalance(
-                        UserAccount.getChequingsBalance() + Integer.parseInt(amountTextField.getText()));
+            if (accountFrom.equals("Chequing")) {
+                UserAccount.setChequingBalance(
+                        UserAccount.getChequingBalance() + Integer.parseInt(amountTextField.getText()));
             }
             if (accountFrom.equals("Savings")) {
                 UserAccount.setSavingsBalance(
@@ -91,9 +91,9 @@ public class DepositScreen extends JFrame implements ActionListener {
             this.dispose();
         }
         if (e.getSource() == backButton) {
-            if (accountFrom.equals("Chequings")) {
-                ChequingsAccountScreen frame = new ChequingsAccountScreen();
-                frame.setTitle("Chequings");
+            if (accountFrom.equals("Chequing")) {
+                ChequingAccountScreen frame = new ChequingAccountScreen();
+                frame.setTitle("Chequing");
 
                 frame.getContentPane().setBackground(UserAccount.getColourTheme());
                 frame.setVisible(true);
