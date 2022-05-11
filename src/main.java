@@ -4,8 +4,8 @@ import javax.swing.*;
 
 import src.Authentication.LoginScreen;
 
-public class main {
-    public static void main() {
+public class Main {
+    static void main(String[] args) {
         LoginScreen frame = new LoginScreen();
         frame.setVisible(true);
         frame.setTitle("Login");
