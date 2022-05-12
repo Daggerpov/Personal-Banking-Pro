@@ -124,29 +124,6 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 					|| passwordField.getPassword().length == 0 || confirmPasswordField
 							.getPassword().length == 0) {
 				JOptionPane.showMessageDialog(this, "Empty Field(s)", "Error", JOptionPane.ERROR_MESSAGE);
-				if (fNameTextField.getText().equals("")) {
-					errorIcon1Label.setVisible(true);
-				} else {
-					errorIcon1Label.setVisible(false);
-				}
-
-				if (usernameTextField.getText().equals("")) {
-					errorIcon2Label.setVisible(true);
-				} else {
-					errorIcon2Label.setVisible(false);
-				}
-
-				if (passwordField.getPassword().length == 0) {
-					errorIcon3Label.setVisible(true);
-				} else {
-					errorIcon3Label.setVisible(true);
-				}
-
-				if (confirmPasswordField.getPassword().length == 0) {
-					errorIcon4Label.setVisible(true);
-				} else {
-					errorIcon4Label.setVisible(false);
-				}
 
 			} else if (!passText.equals(confirmPassText)) {
 				JOptionPane.showMessageDialog(this, "Passwords don't match", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -169,6 +146,30 @@ public class RegistrationScreen extends JFrame implements ActionListener {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setVisible(true);
 				this.dispose();
+			}
+			
+			if (fNameTextField.getText().equals("")) {
+				errorIcon1Label.setVisible(true);
+			} else {
+				errorIcon1Label.setVisible(false);
+			}
+
+			if (usernameTextField.getText().equals("")) {
+				errorIcon2Label.setVisible(true);
+			} else {
+				errorIcon2Label.setVisible(false);
+			}
+
+			if (passwordField.getPassword().length == 0) {
+				errorIcon3Label.setVisible(true);
+			} else {
+				errorIcon3Label.setVisible(false);
+			}
+
+			if (confirmPasswordField.getPassword().length == 0) {
+				errorIcon4Label.setVisible(true);
+			} else {
+				errorIcon4Label.setVisible(false);
 			}
 		}
 	}

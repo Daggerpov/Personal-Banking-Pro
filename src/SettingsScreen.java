@@ -37,7 +37,8 @@ public class SettingsScreen extends JFrame implements ActionListener {
     public void setLocationAndSize() {
         // Setting location and Size of each components using setBounds() method.
 
-        Border blackline = BorderFactory.createLineBorder(Color.black);
+        //TODO make not ugly and then implement again if we want to
+        //Border blackline = BorderFactory.createLineBorder(Color.black); 
 
         backButton.setFont(new Font("Serif", Font.PLAIN, 20));
         backButton.setBounds(10, 10, 60, 40);
@@ -46,15 +47,15 @@ public class SettingsScreen extends JFrame implements ActionListener {
         themeLabel.setBounds(10, 130, 500, 30);
 
         theme1Label.setBounds(130, 135, 150, 60);
-        theme1Label.setBorder(blackline);
+        //theme1Label.setBorder(blackline);
         theme1Box.setBounds(155, 180, 100, 60);
 
         theme2Label.setBounds(290, 135, 150, 60);
-        theme2Label.setBorder(blackline);
+        //theme2Label.setBorder(blackline);
         theme2Box.setBounds(320, 180, 100, 60);
 
         theme3Label.setBounds(460, 135, 150, 60);
-        theme3Label.setBorder(blackline);
+        //theme3Label.setBorder(blackline);
         theme3Box.setBounds(490, 180, 100, 60);
 
         messageLabel.setFont(new Font("Serif", Font.PLAIN, 16));

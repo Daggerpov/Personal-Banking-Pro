@@ -67,6 +67,7 @@ public class BuySharesScreen extends JFrame implements ActionListener {
 
     public void addActionEvent() {
         confirmButton.addActionListener(this);
+        backButton.addActionListener(this);
     }
 
     @Override
@@ -77,6 +78,19 @@ public class BuySharesScreen extends JFrame implements ActionListener {
             frame.setTitle("General");
 
             frame.getContentPane().setBackground(UserAccount.getColourTheme());
+            frame.setVisible(true);
+            frame.setBounds(10, 10, 600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            this.dispose();
+        }
+
+        // BACK button logic
+        if (e.getSource() == backButton) {
+            InvestmentsScreen frame = new InvestmentsScreen();
+            frame.setTitle("Manage Investments");
+            frame.getContentPane().setBackground(UserAccount.getColourTheme());            
             frame.setVisible(true);
             frame.setBounds(10, 10, 600, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

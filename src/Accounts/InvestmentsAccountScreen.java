@@ -20,6 +20,7 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
     JButton manageInvestmentsButton = new JButton("Manage Investments");
     JButton withdrawButton = new JButton("Withdraw");
     JButton depositButton = new JButton("Deposit");
+    JButton transferButton = new JButton("Transfer");
 
     public InvestmentsAccountScreen() {
         // Calling methods inside constructor.
@@ -50,6 +51,9 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         depositButton.setFont(new Font("Serif", Font.PLAIN, 20));
         depositButton.setBounds(225, 350, 150, 40);
 
+        transferButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        transferButton.setBounds(225, 400, 150, 40);
+
     }
 
     public void addComponentsToContainer() {
@@ -59,6 +63,7 @@ public class InvestmentsAccountScreen extends JFrame implements ActionListener {
         container.add(manageInvestmentsButton);
         container.add(withdrawButton);
         container.add(depositButton);
+        container.add(transferButton);
     }
 
     public void addActionEvent() {
