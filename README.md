@@ -15,18 +15,18 @@ https://docs.google.com/presentation/d/1xpvu_rsXjkcezBrdHl7M5vmKJUtUIr2RyAWDMm5X
 ### Login Screen
 <img width="598" alt="Login" src="https://user-images.githubusercontent.com/102742242/165013568-5472231d-3085-4753-82ed-e30d8d85e136.png">
 
-### Registeration Screen
-<img width="594" alt="Registeration" src="https://user-images.githubusercontent.com/102742242/165013625-13c67235-b7d1-472e-b165-2da80cd53564.png">
+### Registration Screen
+<img width="592" alt="Registration" src="https://user-images.githubusercontent.com/102742242/168101789-64985381-66e5-411b-a118-4372ee807b05.png">
+<img width="454" alt="image" src="https://user-images.githubusercontent.com/102742242/168102983-e387ca47-a7e4-4c63-89bb-b97c8931271c.png">
 
-### Setup Accounts Screen (empty and filled)
-<img width="593" alt="Setup Accounts" src="https://user-images.githubusercontent.com/102742242/165013693-d3c36342-cbef-4990-aac7-59070c9fa60f.png">
-<img width="595" alt="Setup Accounts Filled in" src="https://user-images.githubusercontent.com/102742242/165013701-946b2c84-9ef7-47da-bfa1-7e90bc22d9cd.png">
+### Setup Accounts Screen
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/102742242/168103263-78cf83ab-768f-40d8-8808-f7ba55f6f40c.png">
 
 ### General Screen
-<img width="599" alt="General" src="https://user-images.githubusercontent.com/102742242/165013725-33f445d0-7dc9-48e6-bdef-d561de1045ec.png">
+<img width="576" alt="image" src="https://user-images.githubusercontent.com/102742242/168103432-895d1245-a80a-445c-bbf3-7b68a66d95a3.png">
 
 ### Settings Screen
-<img width="598" alt="Settings" src="https://user-images.githubusercontent.com/102742242/165013763-2039ebd0-820f-4490-9da8-275147820f18.png">
+<img width="589" alt="image" src="https://user-images.githubusercontent.com/102742242/168104092-62fde402-d470-497f-b515-66c6b66a9474.png">
 
 ### Delete Account Screen
 <img width="597" alt="Delete Account" src="https://user-images.githubusercontent.com/102742242/165013794-e119bb72-ead1-4ea6-a4fd-40706204993d.png">
@@ -34,11 +34,14 @@ https://docs.google.com/presentation/d/1xpvu_rsXjkcezBrdHl7M5vmKJUtUIr2RyAWDMm5X
 ### E-Transfer Screen
 <img width="597" alt="E-transfer Screen" src="https://user-images.githubusercontent.com/102742242/165013809-ca19d493-a8db-4ad0-a4f1-7bf538d566b9.png">
 
-### Checkings Account
-<img width="596" alt="Checkings" src="https://user-images.githubusercontent.com/102742242/165013844-aa21a187-fe19-4bf6-bc35-2e191bd36588.png">
+### Checking Account
+<img width="390" alt="image" src="https://user-images.githubusercontent.com/102742242/168105348-f0d16ec6-b3d7-4b4b-8939-f239b2ef3be4.png">
 
-### Investments Account
-<img width="594" alt="Investments Account" src="https://user-images.githubusercontent.com/102742242/165013920-3188502b-309c-416d-bb4c-9d0137eb697a.png">
+### Savings Account
+<img width="379" alt="image" src="https://user-images.githubusercontent.com/102742242/168105246-8c3fa331-07db-48a6-8d91-d2fb3b773f63.png">
+
+### Investment Account
+<img width="406" alt="image" src="https://user-images.githubusercontent.com/102742242/168105461-57a9c783-5b2e-43f0-a72b-60867ace74ee.png">
 
 ### Manage Investments Screen
 <img width="593" alt="Manage Investments" src="https://user-images.githubusercontent.com/102742242/165014078-0b22e5cb-8763-4e33-8f5c-4002b45a67d5.png">
@@ -47,11 +50,14 @@ https://docs.google.com/presentation/d/1xpvu_rsXjkcezBrdHl7M5vmKJUtUIr2RyAWDMm5X
 <img width="596" alt="Buy Shares" src="https://user-images.githubusercontent.com/102742242/165014105-2d41266a-0595-48f7-af23-999b5ba4be71.png">
 <img width="594" alt="Sell Shares" src="https://user-images.githubusercontent.com/102742242/165014111-65f21e28-43d3-4f46-bce4-695ed266f358.png">
 
-### Savings Account
-<img width="595" alt="Savings Account" src="https://user-images.githubusercontent.com/102742242/165013950-775350be-1a4c-4cf7-88bf-d59f6d82c100.png">
+### Withdraw Screen
+<img width="445" alt="image" src="https://user-images.githubusercontent.com/102742242/168109214-abb2b272-e5c1-4d20-a8fb-a624723ffeaa.png">
 
-### Withdraw, Deposit and Tranfer Screens
-<img width="592" alt="Withdraw" src="https://user-images.githubusercontent.com/102742242/165014001-6466be2c-7157-4426-b7e9-331023dd5f17.png">
-<img width="593" alt="Deposit" src="https://user-images.githubusercontent.com/102742242/165014008-d03e7151-0c16-4503-a2bf-9cee89887e59.png">
-<img width="591" alt="Transfer" src="https://user-images.githubusercontent.com/102742242/165014017-27fc0d76-5c9b-4230-914a-d5a2e332bddf.png">
+### Deposit Screen
+<img width="493" alt="image" src="https://user-images.githubusercontent.com/102742242/168109294-3bf41fca-36dd-460f-a018-eff0ea730af7.png">
+
+### Transfer Screen
+<img width="504" alt="image" src="https://user-images.githubusercontent.com/102742242/168112215-3d471d5b-2e11-4778-9675-93cbee040fad.png">
+
+
 
